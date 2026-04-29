@@ -1,4 +1,5 @@
 package org.zigwheels.tests.electriccars;
+
 import basetest.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -12,17 +13,20 @@ public class TC_1ElecCarsCategoryFlow extends BaseTest {
     public void verifyElectricCarsCategoryFlow() {
 
         LogUtil.info("Starting TC_1ElecCarsCategoryFlow");
+
         HomePage homePage = new HomePage(driver);
+
         LogUtil.info("Navigating to Electric Cars from Home page");
-        homePage.openElectricCars();
+        homePage.openElectricCars(); // hover + click handled in Page via Actions
 
         ElectricCarsPage electricCarsPage = new ElectricCarsPage(driver);
-        LogUtil.info("Validating Electric Cars page load");
 
+        LogUtil.info("Validating Electric Cars page load");
         Assert.assertTrue(
                 electricCarsPage.isPageLoaded(),
                 "Electric Cars page did not load successfully"
         );
+
         LogUtil.info("Electric Cars page loaded successfully");
     }
 }

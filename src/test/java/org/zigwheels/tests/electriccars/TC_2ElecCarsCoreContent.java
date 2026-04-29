@@ -14,14 +14,15 @@ public class TC_2ElecCarsCoreContent extends BaseTest {
 
         LogUtil.info("Loading Electric Cars page");
 
-        new HomePage(driver).openElectricCars();
+        new HomePage(driver).openElectricCars(); // hover + click via Actions
         ElectricCarsPage electricCarsPage = new ElectricCarsPage(driver);
 
         LogUtil.info("Validating electric cars listing presence");
-
         Assert.assertTrue(
                 electricCarsPage.getListedElectricCarsCount() > 0,
                 "No electric cars are displayed on Electric Cars page"
         );
+
+        LogUtil.info("Electric cars core content validated successfully");
     }
 }
