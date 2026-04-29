@@ -38,8 +38,8 @@ public class ElectricCarsPage extends BasePage {
     }
 
     public int getListedElectricCarsCount() {
-        waitUtils.waitForAllVisible(electricCarCards);
-        return electricCarCards.size();
+        waitUtils.waitForVisibility(electricCarsHeader);
+        return electricCarCards.size(); // initial visible cards only
     }
 
     public boolean isEvTagPresent() {
