@@ -1,5 +1,4 @@
 package org.zigwheels.tests.scooters;
-
 import basetest.BaseTest;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
