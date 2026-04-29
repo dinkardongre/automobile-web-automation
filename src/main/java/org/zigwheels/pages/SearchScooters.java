@@ -5,9 +5,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+
 public class SearchScooters extends BasePage{
 
-    // Scooters menu option in the header
     @FindBy(xpath = "(//div[@id='headerNewVNavWrap']/nav/ul/li/span)[4]")
     private WebElement scootersOptions;
 
@@ -24,7 +24,6 @@ public class SearchScooters extends BasePage{
         PageFactory.initElements(driver, this);
     }
 
-    // Getter methods
     public WebElement getScootersOptions() {
         return scootersOptions;
     }
