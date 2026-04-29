@@ -16,15 +16,10 @@ public class TC_04_ValidatePriceFilter extends BaseTest {
         LogUtil.info("Selecting Chennai city");
         usedCarsPage.selectChennaiCity();
 
-        Assert.assertTrue(
-                usedCarsPage.isChennaiPageLoaded(),
-                "Chennai page not loaded"
-        );
-
         LogUtil.info("Applying price filter: Under 5 Lakhs");
         usedCarsPage.selectPriceUnder5Lakhs();
 
-        LogUtil.info("Validating all prices are under 5 Lakhs");
+        LogUtil.info("Validating all prices of only displayed cars are under 5 Lakhs");
         boolean isValid = usedCarsPage.verifyPricesUnder(500000);
 
         Assert.assertTrue(

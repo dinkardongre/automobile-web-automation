@@ -26,10 +26,6 @@ public class UsedCarsPage extends BasePage {
     @FindBy(xpath = "//h1[contains(text(),'Used Cars in')]")
     WebElement cityHeading;
 
-    // Used car result cards (list)
-    @FindBy(xpath = "//div[contains(@class,'zw-sr-result')]")
-    private List<WebElement> carResults;
-
     @FindBy(xpath = "//label[@for='price2']")
     WebElement under5LakhsOption;
 
@@ -45,24 +41,22 @@ public class UsedCarsPage extends BasePage {
 
     // Open Used Cars page
     public void openUsedCarsPage() {
-        LogUtil.info("Opening Used Cars page");
+
         moreMenu.click();
-        waitUtils.waitForClickable(usedCarsLink).click();  // avoids menu interception
+        waitUtils.waitForClickable(usedCarsLink).click();
     }
 
     // Select Chennai city
     public void selectChennaiCity() {
-        LogUtil.info("Selecting Chennai city");
+
         waitUtils.waitForVisibility(chennaiCity);
         scrollIntoView(chennaiCity);
         jsClick(chennaiCity);
     }
 
-
     public boolean isChennaiPageLoaded() {
 
         LogUtil.info("Waiting for Chennai heading");
-
         return waitUtils.waitForCondition(driver ->
                 cityHeading.getText().toLowerCase().contains("chennai")
         );
@@ -70,15 +64,9 @@ public class UsedCarsPage extends BasePage {
 
     public void selectPriceUnder5Lakhs() {
 
-        LogUtil.info("Selecting Under 5 Lakhs filter");
         waitUtils.waitForClickable(under5LakhsOption);
-        // Scroll (important)
         scrollIntoView(under5LakhsOption);
-        // Click label (NOT input)
         under5LakhsOption.click();
-        LogUtil.info("Clicked on Under 5 Lakhs label");
-
-        // Wait for filter to apply (loader or DOM refresh)
         waitForPriceFilterUpdate();
     }
 
@@ -86,8 +74,6 @@ public class UsedCarsPage extends BasePage {
 
         priceText = priceText.toLowerCase()
                 .replace("rs.", "")
-                .replace(",", "")
-                .replace("rs","")
                 .trim();
 
         if (priceText.contains("lakh")) {
@@ -99,13 +85,11 @@ public class UsedCarsPage extends BasePage {
             double value = Double.parseDouble(priceText.replace("crore", "").trim());
             return (int) (value * 10000000);
         }
-
         return Integer.parseInt(priceText);
     }
 
     public boolean verifyPricesUnder(int maxPrice) {
 
-        LogUtil.info("Verifying all car prices are under: " + maxPrice);
         waitUtils.waitForCondition(driver -> carPrices.size() > 0);
 
         for (WebElement priceElement : carPrices) {
@@ -117,13 +101,11 @@ public class UsedCarsPage extends BasePage {
                 return false;
             }
         }
-
         return true;
     }
     public void waitForPriceFilterUpdate() {
 
         WebElement oldFirstCar = carPrices.get(0);
-
         waitUtils.waitForCondition(driver -> {
             try {
                 oldFirstCar.isDisplayed();
