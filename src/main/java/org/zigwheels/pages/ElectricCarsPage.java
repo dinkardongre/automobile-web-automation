@@ -4,6 +4,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.WaitUtils;
+
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -26,6 +28,9 @@ public class ElectricCarsPage extends BasePage {
 
     @FindBy(css = ".rw-l-Ev")
     private List<WebElement> evTags;
+
+    @FindBy(css = "span.clr-bl.fr")
+    private List<WebElement> emiValues;
 
     public ElectricCarsPage(WebDriver driver) {
         super(driver);
@@ -59,4 +64,43 @@ public class ElectricCarsPage extends BasePage {
         }
         return false;
     }
+
+    public List<String> getElectricCarNames() {
+        waitUtils.waitForVisibility(electricCarsHeader);
+        waitUtils.waitForVisibility(carNames.get(0));
+        return carNames.stream()
+                .map(e -> e.getText().trim())
+                .filter(text -> !text.isEmpty())
+                .toList();
+    }
+
+    public List<String> getElectricCarPrices() {
+        waitUtils.waitForVisibility(electricCarsHeader);
+        waitUtils.waitForVisibility(carPrices.get(0));
+        return carPrices.stream()
+                .map(e -> e.getText().trim())
+                .filter(text -> !text.isEmpty())
+                .toList();
+    }
+
+    public List<String> getElectricCarEmiValues() {
+
+        waitUtils.waitForVisibility(electricCarsHeader);
+
+        if (emiValues.isEmpty()) {
+            return List.of();
+        }
+
+        waitUtils.waitForVisibility(emiValues.get(0));
+
+        List<String> emis = new ArrayList<>();
+        for (WebElement emi : emiValues) {
+            String text = emi.getText().trim();
+            if (!text.isEmpty()) {
+                emis.add(text);
+            }
+        }
+        return emis;
+    }
+
 }
