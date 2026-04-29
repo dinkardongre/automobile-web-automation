@@ -7,10 +7,10 @@ import org.zigwheels.pages.SearchScooters;
 import utilities.LogUtil;
 
 public class TC_6_ScootersDropdownTest extends BaseTest {
-
+    private SearchScooters scootersPage;
     @Test
     public void testDropdownVisibility() {
-        SearchScooters scootersPage = new SearchScooters(driver);
+        scootersPage = new SearchScooters(driver);
         Actions actions = new Actions(driver);
         actions.moveToElement(scootersPage.getScootersOptions()).perform();
 

@@ -39,4 +39,8 @@ public class SearchScooters extends BasePage{
     public void clickSearchNewScooters(){
         searchNewScooters.click();
     }
+
+    public void clickElectricScooters(){
+        electricScooters.click();
+    }
 }
