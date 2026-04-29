@@ -4,12 +4,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import utilities.WaitUtils;
 
 public class SearchScooters extends BasePage{
-
+    private WaitUtils waitUtils;
     // Scooters menu option in the header
-    @FindBy(xpath = "(//div[@id='headerNewVNavWrap']/nav/ul/li/span)[4]")
-    private WebElement scootersOptions;
+//    @FindBy(xpath = "(//div[@id='headerNewVNavWrap']/nav/ul/li/span)[4]")
+//    private WebElement scootersOptions;
 
     // Dropdown option: Search New Scooters
     @FindBy(linkText = "Search New Scooters")
@@ -25,19 +26,19 @@ public class SearchScooters extends BasePage{
     }
 
     // Getter methods
-    public WebElement getScootersOptions() {
-        return scootersOptions;
-    }
+//    public WebElement getScootersOptions() {
+//        return waitUtils.waitForVisibility(scootersOptions);
+//    }
 
     public WebElement getSearchNewScooters() {
-        return searchNewScooters;
+        return waitUtils.waitForVisibility(searchNewScooters);
     }
 
     public WebElement getElectricScooters() {
-        return electricScooters;
+        return waitUtils.waitForVisibility(electricScooters);
     }
 
     public void clickSearchNewScooters(){
-        searchNewScooters.click();
+        waitUtils.waitForClickable(searchNewScooters).click();
     }
 }
