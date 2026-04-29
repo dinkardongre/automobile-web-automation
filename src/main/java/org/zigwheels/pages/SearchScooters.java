@@ -36,4 +36,8 @@ public class SearchScooters extends BasePage{
     public WebElement getElectricScooters() {
         return electricScooters;
     }
+
+    public void clickSearchNewScooters(){
+        searchNewScooters.click();
+    }
 }

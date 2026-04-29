@@ -10,7 +10,7 @@ import utilities.LogUtil;
 public class TC_6_ScootersDropdownTest extends BaseTest {
     private SearchScooters scootersPage;
 
-    @Test(priority = 1)
+    @Test
     public void testDropdownVisibility() {
         // Initialize page object
         scootersPage = new SearchScooters(driver);
