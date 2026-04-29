@@ -5,6 +5,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.List;
+import java.util.function.Function;
 
 public class WaitUtils {
 
@@ -24,5 +25,9 @@ public class WaitUtils {
 
     public WebElement waitForClickable(WebElement element) {
         return wait.until(ExpectedConditions.elementToBeClickable(element));
+    }
+
+    public boolean waitForCondition(Function<WebDriver, Boolean> condition) {
+        return wait.until(condition);
     }
 }
