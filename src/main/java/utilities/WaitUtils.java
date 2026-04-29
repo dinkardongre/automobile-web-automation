@@ -37,7 +37,7 @@ public class WaitUtils {
 
     public void scrollIntoView(WebElement element) {
         JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("arguments[0].scrollIntoView({behavior:'smooth', block:'center'});", element);
+        js.executeScript("arguments[0].scrollIntoView(true);", element);
         waitForVisibility(element);
     }
 
