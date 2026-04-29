@@ -3,7 +3,7 @@
 <suite name="Alert Suite" parallel="classes">
     <test name="Alert Test Cases">
         <classes>
-            <class name="org."/>
+<!--            <class name="org."/>-->
         </classes>
     </test>
 </suite>
