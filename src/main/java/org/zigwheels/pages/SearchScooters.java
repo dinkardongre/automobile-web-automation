@@ -1,5 +1,4 @@
 package org.zigwheels.pages;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -7,7 +6,7 @@ import org.openqa.selenium.support.PageFactory;
 import utilities.WaitUtils;
 
 
-public class SearchScooters extends BasePage{
+public class SearchScooters extends CommanCode {
     private WaitUtils waitUtils;
     @FindBy(xpath = "(//div[@id='headerNewVNavWrap']/nav/ul/li/span)[4]")
     private WebElement scootersOptions;

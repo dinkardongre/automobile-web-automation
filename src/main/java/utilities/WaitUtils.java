@@ -34,11 +34,9 @@ public class WaitUtils {
         return wait.until(condition);
     }
 
-
     public void scrollIntoView(WebElement element) {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].scrollIntoView(true);", element);
         waitForVisibility(element);
     }
-
 }

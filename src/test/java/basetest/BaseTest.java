@@ -2,6 +2,8 @@ package basetest;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import utilities.ConfigReader;
@@ -16,21 +18,35 @@ public class BaseTest {
 
         LogUtil.info("Starting browser setup");
 
-        ChromeOptions chromeOptions = new ChromeOptions();
+        String browserName = ConfigReader.getProperty("browser").toLowerCase();
 
-        // Required Chrome options
-        chromeOptions.addArguments("--disable-notifications");
-        chromeOptions.addArguments("--disable-popup-blocking");
-        chromeOptions.addArguments("--start-maximized");
+        switch (browserName) {
 
-//         chromeOptions.addArguments("--headless=new");
+            case "chrome":
+                ChromeOptions chromeOptions = new ChromeOptions();
+                chromeOptions.addArguments("--disable-notifications");
+                chromeOptions.addArguments("--disable-popup-blocking");
+                chromeOptions.addArguments("--start-maximized");
+                driver = new ChromeDriver(chromeOptions);
+                break;
 
-        driver = new ChromeDriver(chromeOptions);
+            case "edge":
+                EdgeOptions edgeOptions = new EdgeOptions();
+                edgeOptions.addArguments("--disable-notifications");
+                edgeOptions.addArguments("--disable-popup-blocking");
+                edgeOptions.addArguments("--start-maximized");
+                driver = new EdgeDriver(edgeOptions);
+                break;
+
+            default:
+                throw new IllegalArgumentException(
+                        "Unsupported browser: " + browserName
+                );
+        }
 
         LogUtil.info("Launching application URL");
         driver.get(ConfigReader.getProperty("url"));
     }
-
     @AfterMethod
     public void tearDown() {
 

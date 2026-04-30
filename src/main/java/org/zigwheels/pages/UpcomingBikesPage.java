@@ -7,7 +7,7 @@ import utilities.WaitUtils;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UpcomingBikesPage extends BasePage {
+public class UpcomingBikesPage extends CommanCode {
 
     private final WaitUtils waitUtils;
 

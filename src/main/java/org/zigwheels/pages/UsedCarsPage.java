@@ -9,7 +9,7 @@ import utilities.WaitUtils;
 
 import java.util.List;
 
-public class UsedCarsPage extends BasePage {
+public class UsedCarsPage extends CommanCode {
 
     private WaitUtils waitUtils;
 
