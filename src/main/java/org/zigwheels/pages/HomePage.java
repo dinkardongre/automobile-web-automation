@@ -23,6 +23,12 @@ public class HomePage extends CommonCode {
     @FindBy(xpath = "//a[@title='Upcoming Bikes']")
     private WebElement upcomingBikesLink;
 
+    @FindBy(xpath = "//span[text()='MORE']")
+    private WebElement moreMenu;
+
+    @FindBy(xpath = "//a[normalize-space()='Used Cars']")
+    private WebElement usedCarsLink;
+
     public HomePage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
@@ -41,4 +47,10 @@ public class HomePage extends CommonCode {
     public void openUpcomingBikes(){
         upcomingBikesLink.click();
    }
+    public void openUsedCarsPage() {
+        actionCode.actionMethod(moreMenu);
+        wait.waitForVisibility(usedCarsLink);
+        usedCarsLink.click();
+    }
+
 }

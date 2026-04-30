@@ -2,26 +2,27 @@ package org.zigwheels.tests.usedcars;
 import basetest.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import org.zigwheels.pages.HomePage;
 import org.zigwheels.pages.UsedCarsPage;
 import utilities.ConfigReader;
 import utilities.LogUtil;
 
-public class TC_05_ValidateSortLowToHighTest extends BaseTest {
+public class TC_23UsedCars_ValidateSortLowToHigh extends BaseTest {
 
     @Test
     public void validateSortByPriceLowToHigh() {
 
-        UsedCarsPage usedCarsPage = new UsedCarsPage(driver);
-
+        HomePage homePage = new HomePage(driver);
         LogUtil.info("Opening Used Cars page");
-        usedCarsPage.openUsedCarsPage();
 
+        homePage.openUsedCarsPage();
         LogUtil.info("Selecting Chennai city");
+
+        UsedCarsPage usedCarsPage = new UsedCarsPage(driver);
         usedCarsPage.selectChennaiCity();
-
         LogUtil.info("Applying sort: Price Low to High");
-        usedCarsPage.selectSortByLowToHigh();
 
+        usedCarsPage.selectSortByLowToHigh();
         LogUtil.info("Validating selected sort option");
 
         String expectedSort =

@@ -17,13 +17,6 @@ public class UsedCarsPage extends CommonCode {
 
     private WaitUtils waitUtils;
 
-    @FindBy(xpath = "//span[text()='MORE']")
-    private WebElement moreMenu;
-
-    // Used Cars option
-    @FindBy(xpath = "//a[normalize-space()='Used Cars']")
-    private WebElement usedCarsLink;
-
     @FindBy(xpath = "//div[@id='ctpgray']//li//a[starts-with(text(),'Chennai')]")
     private WebElement chennaiCity;
 
@@ -48,14 +41,6 @@ public class UsedCarsPage extends CommonCode {
         this.waitUtils = new WaitUtils(driver);
     }
 
-    // Open Used Cars page
-    public void openUsedCarsPage() {
-
-        moreMenu.click();
-        waitUtils.waitForClickable(usedCarsLink).click();
-    }
-
-    // Select Chennai city
     public void selectChennaiCity() {
 
         waitUtils.waitForVisibility(chennaiCity);
@@ -64,6 +49,7 @@ public class UsedCarsPage extends CommonCode {
     }
 
     public boolean isChennaiPageLoaded() {
+
             try {
                 String expectedCity = ConfigReader.getProperty("city.chennai");
                 wait.until(ExpectedConditions.textToBePresentInElement(
@@ -75,6 +61,7 @@ public class UsedCarsPage extends CommonCode {
     }
 
     public void selectPriceUnder5Lakhs() {
+
         scrollIntoView(under5LakhsOption);
         waitUtils.waitForClickable(under5LakhsOption);
         under5LakhsOption.click();
@@ -98,7 +85,9 @@ public class UsedCarsPage extends CommonCode {
         }
         return Integer.parseInt(priceText);
     }
+
     public boolean waitForPricesToLoad() {
+
         try {
             waitUtils.waitForAllVisible(carPrices);
             return true;
@@ -107,11 +96,10 @@ public class UsedCarsPage extends CommonCode {
         }
     }
 
-public boolean verifyPricesUnder(int maxPrice) {
+    public boolean verifyPricesUnder(int maxPrice) {
 
-    waitForPricesToLoad();
-
-    for (WebElement priceElement : carPrices) {
+        waitForPricesToLoad();
+       for (WebElement priceElement : carPrices) {
         String priceText = priceElement.getText();
         int price = convertPriceToNumber(priceText);
 
@@ -144,14 +132,14 @@ public boolean verifyPricesUnder(int maxPrice) {
     }
 
     public boolean isFilterReset() {
-        // 1. No price filter should be selected
+
         boolean noFilterSelected = !under5LakhsOption.isSelected();
-        // 2. Car list should still be present
         boolean carsDisplayed = carPrices.size() > 0;
         return noFilterSelected && carsDisplayed;
     }
 
     public void selectSortByLowToHigh(){
+
         waitUtils.waitForVisibility(sortDropdown);
         Select select =new Select(sortDropdown);
         select.selectByVisibleText("Price : Low to High");
@@ -159,6 +147,7 @@ public boolean verifyPricesUnder(int maxPrice) {
     }
 
     public String getSelectedSortOption(){
+
         Select select=new Select(sortDropdown);
         return select.getFirstSelectedOption().getText();
     }

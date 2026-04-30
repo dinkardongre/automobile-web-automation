@@ -96,7 +96,7 @@ public class ElectricCarsPage extends CommonCode {
     }
     public void selectUnder20LakhBudget() {
 
-        waitUtils.scrollIntoView(under20LakhFilter);
+        scrollIntoView(under20LakhFilter);
         waitUtils.waitForClickable(under20LakhFilter);
         try {
             under20LakhFilter.click();
