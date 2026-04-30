@@ -11,20 +11,17 @@ public class TC_5ElectricCars_BudgetFilterValidation extends BaseTest {
 
     @Test
     public void verifyCarsUnder20Lakh() {
-
         LogUtil.info("Opening Electric Cars page");
+
         new HomePage(driver).openElectricCars();
-
         ElectricCarsPage electricCarsPage = new ElectricCarsPage(driver);
-
         LogUtil.info("Selecting Under 20 Lakh budget filter");
+
         electricCarsPage.selectUnder20LakhBudget();
-
         LogUtil.info("Fetching car prices after applying filter");
+
         List<String> prices = electricCarsPage.getElectricCarPricesUnder20Lakhs();
-
         Assert.assertFalse(prices.isEmpty(), "No cars displayed after applying budget filter");
-
         for (String price : prices) {
             double priceValue = extractPriceInLakhs(price);
             Assert.assertTrue(

@@ -27,6 +27,7 @@ public class BaseTest {
                 chromeOptions.addArguments("--disable-notifications");
                 chromeOptions.addArguments("--disable-popup-blocking");
                 chromeOptions.addArguments("--start-maximized");
+//                chromeOptions.addArguments("--headless=new");
                 driver = new ChromeDriver(chromeOptions);
                 break;
 
@@ -35,6 +36,7 @@ public class BaseTest {
                 edgeOptions.addArguments("--disable-notifications");
                 edgeOptions.addArguments("--disable-popup-blocking");
                 edgeOptions.addArguments("--start-maximized");
+//                edgeOptions.addArguments("--headless=new");
                 driver = new EdgeDriver(edgeOptions);
                 break;
 

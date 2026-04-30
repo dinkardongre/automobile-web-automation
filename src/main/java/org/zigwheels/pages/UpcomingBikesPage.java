@@ -31,7 +31,7 @@ public class UpcomingBikesPage extends CommonCode {
     }
 
     public void scrollToViewMoreBikes() {
-        waitUtils.scrollIntoView(viewMoreBikes);
+        scrollIntoView(viewMoreBikes);
     }
 
     public void clickHondaManufacturer() {
@@ -47,7 +47,7 @@ public class UpcomingBikesPage extends CommonCode {
         return names;
     }
     public void upcomingBikesUndrer5lakhs(){
-        waitUtils.scrollIntoView(upcmngBikesUndr5lkhs);
+        scrollIntoView(upcmngBikesUndr5lkhs);
         waitUtils.waitForClickable(upcmngBikesUndr5lkhs).click();
     }
 }

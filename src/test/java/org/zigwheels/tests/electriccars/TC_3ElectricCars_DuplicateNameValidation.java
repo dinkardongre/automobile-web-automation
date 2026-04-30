@@ -13,18 +13,20 @@ public class TC_3ElectricCars_DuplicateNameValidation extends BaseTest {
 
     @Test
     public void verifyNoDuplicateElectricCarNames() {
-
         LogUtil.info("Loading Electric Cars page");
+
         HomePage homePage = new HomePage(driver);
         homePage.openElectricCars();
         ElectricCarsPage electricCarsPage = new ElectricCarsPage(driver);
         LogUtil.info("Fetching electric car names");
+
         List<String> carNames = electricCarsPage.getElectricCarNames();
         Assert.assertFalse(
                 carNames.isEmpty(),
                 "Electric car names list is empty"
         );
         LogUtil.info("Validating duplicate electric car names");
+
         Set<String> uniqueCarNames = new HashSet<>(carNames);
         Assert.assertEquals(
                 uniqueCarNames.size(),

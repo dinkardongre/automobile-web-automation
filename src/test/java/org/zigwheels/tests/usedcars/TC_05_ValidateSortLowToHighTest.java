@@ -1,5 +1,4 @@
 package org.zigwheels.tests.usedcars;
-
 import basetest.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
