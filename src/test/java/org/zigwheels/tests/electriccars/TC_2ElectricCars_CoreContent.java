@@ -7,16 +7,14 @@ import org.zigwheels.pages.ElectricCarsPage;
 import org.zigwheels.pages.HomePage;
 import utilities.LogUtil;
 
-public class TC_2ElecCarsCoreContent extends BaseTest {
+public class TC_2ElectricCars_CoreContent extends BaseTest {
 
     @Test
     public void verifyElectricCarsCoreContent() {
 
         LogUtil.info("Loading Electric Cars page");
-
-        new HomePage(driver).openElectricCars(); // hover + click via Actions
+        new HomePage(driver).openElectricCars();
         ElectricCarsPage electricCarsPage = new ElectricCarsPage(driver);
-
         LogUtil.info("Validating electric cars listing presence");
         Assert.assertTrue(
                 electricCarsPage.getListedElectricCarsCount() > 0,

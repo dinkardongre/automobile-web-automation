@@ -11,7 +11,7 @@ import utilities.LogUtil;
 import java.io.IOException;
 import java.util.List;
 
-public class TC_4ElecCarsPriceIntegrity extends BaseTest {
+public class TC_4ElectricCars_PriceIntegrity extends BaseTest {
 
     @Test
     public void verifyElectricCarsPriceIntegrity() throws IOException {
@@ -34,26 +34,22 @@ public class TC_4ElecCarsPriceIntegrity extends BaseTest {
         Assert.assertFalse(carNames.isEmpty(), "Electric car names list is empty");
         Assert.assertFalse(carPrices.isEmpty(), "Electric car prices list is empty");
         Assert.assertFalse(carEmis.isEmpty(), "Electric car EMI list is empty");
-
         Assert.assertEquals(
                 carNames.size(),
                 carPrices.size(),
                 "Mismatch between car names and prices count"
         );
-
         Assert.assertEquals(
                 carNames.size(),
                 carEmis.size(),
                 "Mismatch between car names and EMI count"
         );
-
         LogUtil.info("Exporting electric car details to Excel");
         ExportVehicleDetails.writeElectricCarDetails(
                 carNames,
                 carPrices,
                 carEmis
         );
-
         LogUtil.info("Electric car price integrity validated and data exported successfully");
     }
 }

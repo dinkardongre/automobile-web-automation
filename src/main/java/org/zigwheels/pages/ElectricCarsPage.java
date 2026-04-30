@@ -1,4 +1,5 @@
 package org.zigwheels.pages;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -32,6 +33,12 @@ public class ElectricCarsPage extends BasePage {
     @FindBy(css = "span.clr-bl.fr")
     private List<WebElement> emiValues;
 
+    @FindBy(xpath = "//a[@title='Electric Cars Under 20 Lakh in India']")
+    private WebElement under20LakhFilter;
+
+    @FindBy(xpath = "//h1")
+    private WebElement evCarsUnder20LakhsHeader;
+
     public ElectricCarsPage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
@@ -47,24 +54,6 @@ public class ElectricCarsPage extends BasePage {
         return electricCarCards.size(); // initial visible cards only
     }
 
-    public boolean isEvTagPresent() {
-        return !evTags.isEmpty();
-    }
-
-    public boolean isNameAndPriceAvailableForCars() {
-        return !carNames.isEmpty() && !carPrices.isEmpty();
-    }
-
-    public boolean hasDuplicateCarNames() {
-        Set<String> uniqueNames = new HashSet<>();
-        for (WebElement car : carNames) {
-            if (!uniqueNames.add(car.getText().trim())) {
-                return true;
-            }
-        }
-        return false;
-    }
-
     public List<String> getElectricCarNames() {
         waitUtils.waitForVisibility(electricCarsHeader);
         waitUtils.waitForVisibility(carNames.get(0));
@@ -76,6 +65,15 @@ public class ElectricCarsPage extends BasePage {
 
     public List<String> getElectricCarPrices() {
         waitUtils.waitForVisibility(electricCarsHeader);
+        waitUtils.waitForVisibility(carPrices.get(0));
+        return carPrices.stream()
+                .map(e -> e.getText().trim())
+                .filter(text -> !text.isEmpty())
+                .toList();
+    }
+
+    public List<String> getElectricCarPricesUnder20Lakhs() {
+        waitUtils.waitForVisibility(evCarsUnder20LakhsHeader);
         waitUtils.waitForVisibility(carPrices.get(0));
         return carPrices.stream()
                 .map(e -> e.getText().trim())
@@ -102,5 +100,16 @@ public class ElectricCarsPage extends BasePage {
         }
         return emis;
     }
+    public void selectUnder20LakhBudget() {
 
+        waitUtils.scrollIntoView(under20LakhFilter);
+        waitUtils.waitForClickable(under20LakhFilter);
+
+        try {
+            under20LakhFilter.click();
+        } catch (Exception e) {
+            JavascriptExecutor js = (JavascriptExecutor) driver;
+            js.executeScript("arguments[0].click();", under20LakhFilter);
+        }
+    }
 }
