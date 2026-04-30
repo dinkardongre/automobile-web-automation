@@ -23,7 +23,7 @@ public class BaseTest {
         chromeOptions.addArguments("--disable-popup-blocking");
         chromeOptions.addArguments("--start-maximized");
 
-        // chromeOptions.addArguments("--headless=new");
+//         chromeOptions.addArguments("--headless=new");
 
         driver = new ChromeDriver(chromeOptions);
 
