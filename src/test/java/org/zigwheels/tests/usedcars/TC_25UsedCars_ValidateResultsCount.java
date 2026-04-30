@@ -6,9 +6,10 @@ import org.zigwheels.pages.HomePage;
 import org.zigwheels.pages.UsedCarsPage;
 import utilities.LogUtil;
 
-public class TC_24UsedCars_ValidateResetFilterTest extends BaseTest {
+public class TC_25UsedCars_ValidateResultsCount extends BaseTest {
+
     @Test
-    public void validateResetFilter(){
+    public void validateResultsCountConsistency() {
 
         HomePage homePage = new HomePage(driver);
         LogUtil.info("Opening Used Cars page");
@@ -18,17 +19,21 @@ public class TC_24UsedCars_ValidateResetFilterTest extends BaseTest {
 
         UsedCarsPage usedCarsPage = new UsedCarsPage(driver);
         usedCarsPage.selectChennaiCity();
-        LogUtil.info("Applying price filter: Under 5 Lakhs");
 
-        usedCarsPage.selectPriceUnder5Lakhs();
-        LogUtil.info("Clicking Reset All filter");
+        int totalResults = usedCarsPage.getResultsCountFromHeading();
 
-        usedCarsPage.clickReset();
-        LogUtil.info("Validating filter reset");
+        int visibleCars = usedCarsPage.getVisibleCarCount();
+        LogUtil.info("Validate data exists");
 
         Assert.assertTrue(
-                usedCarsPage.isFilterReset(),
-                "Filters not reset properly"
+                visibleCars > 0,
+                "No cars displayed on Chennai page"
+        );
+        LogUtil.info("Validate logical consistency");
+
+        Assert.assertTrue(
+                totalResults >= visibleCars,
+                "Visible cars exceed total results"
         );
     }
 }
