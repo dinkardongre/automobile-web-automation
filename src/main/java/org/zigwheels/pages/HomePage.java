@@ -82,5 +82,4 @@ public class HomePage extends CommonCode {
         wait.waitForVisibility(usedCarsLink);
         usedCarsLink.click();
     }
-
 }
