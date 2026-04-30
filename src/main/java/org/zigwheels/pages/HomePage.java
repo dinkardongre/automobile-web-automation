@@ -38,6 +38,45 @@ public class HomePage extends CommonCode {
     @FindBy(xpath = "//a[normalize-space()='Used Cars']")
     private WebElement usedCarsLink;
 
+
+
+    @FindBy(id = "CNG-cars")
+    private WebElement cngSection;
+
+    @FindBy(xpath = "//a[@title='View all CNG Cars']")
+    private WebElement viewAllCngCars;
+
+    @FindBy(xpath = "//*[@id='carModels']/div/span")
+    private WebElement viewMore;
+
+
+
+
+
+
+
+
+    // ✅ THIS METHOD WAS MISSING
+    public void clickCngSection() {
+        jsClick(cngSection);
+        jsClick(viewAllCngCars);
+    }
+
+
+    public void openCngCars() {
+        jsClick(cngSection);
+        jsClick(viewAllCngCars);
+    }
+
+    public void clickViewMoreIfPresent() {
+        try {
+            jsClick(viewMore);
+        } catch (Exception e) {
+            // View more not available
+        }
+    }
+
+
     public HomePage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
