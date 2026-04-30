@@ -5,13 +5,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.WaitUtils;
-
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
-public class ElectricCarsPage extends BasePage {
+public class ElectricCarsPage extends CommanCode {
 
     private final WaitUtils waitUtils;
 
@@ -71,7 +68,6 @@ public class ElectricCarsPage extends BasePage {
                 .filter(text -> !text.isEmpty())
                 .toList();
     }
-
     public List<String> getElectricCarPricesUnder20Lakhs() {
         waitUtils.waitForVisibility(evCarsUnder20LakhsHeader);
         waitUtils.waitForVisibility(carPrices.get(0));
@@ -80,15 +76,12 @@ public class ElectricCarsPage extends BasePage {
                 .filter(text -> !text.isEmpty())
                 .toList();
     }
-
     public List<String> getElectricCarEmiValues() {
 
         waitUtils.waitForVisibility(electricCarsHeader);
-
         if (emiValues.isEmpty()) {
             return List.of();
         }
-
         waitUtils.waitForVisibility(emiValues.get(0));
 
         List<String> emis = new ArrayList<>();
@@ -104,7 +97,6 @@ public class ElectricCarsPage extends BasePage {
 
         waitUtils.scrollIntoView(under20LakhFilter);
         waitUtils.waitForClickable(under20LakhFilter);
-
         try {
             under20LakhFilter.click();
         } catch (Exception e) {
