@@ -29,7 +29,7 @@ public class UsedCarsPage extends CommonCode {
 
     @FindBy(xpath = "//h1[contains(text(),'Used Cars in')]")
     WebElement cityHeading;
-////label[@for='price2']
+
     @FindBy(xpath = "//label[contains(text(),'Under 5 Lakhs')]")
     WebElement under5LakhsOption;
 
@@ -75,9 +75,8 @@ public class UsedCarsPage extends CommonCode {
     }
 
     public void selectPriceUnder5Lakhs() {
-
-        waitUtils.waitForClickable(under5LakhsOption);
         scrollIntoView(under5LakhsOption);
+        waitUtils.waitForClickable(under5LakhsOption);
         under5LakhsOption.click();
         waitForPriceFilterUpdate();
     }
