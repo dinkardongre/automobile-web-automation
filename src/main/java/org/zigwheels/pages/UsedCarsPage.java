@@ -131,13 +131,17 @@ public class UsedCarsPage extends CommonCode {
     }
 
     public void clickReset() {
+
         waitUtils.waitForClickable(resetButton);
         resetButton.click();
         waitForPriceFilterUpdate();
     }
 
-    public boolean isFilterReset(){
-        return under5LakhsOption.isSelected();
+    public String getUsedCarsHeading() {
+
+        waitUtils.waitForVisibility(cityHeading);
+        String headingText = cityHeading.getText();
+        return headingText;
     }
 
     public void selectSortByLowToHigh(){
@@ -163,10 +167,6 @@ public class UsedCarsPage extends CommonCode {
     public int getVisibleCarCount() {
         return cars.size();
     }
-
-
-
-
 }
 
 
