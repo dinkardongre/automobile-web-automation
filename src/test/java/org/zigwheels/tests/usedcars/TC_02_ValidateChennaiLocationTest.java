@@ -25,11 +25,5 @@ public class TC_02_ValidateChennaiLocationTest extends BaseTest {
                     usedCarsPage.isChennaiPageLoaded(),
                     "Chennai page not loaded correctly"
             );
-
-
-
-
-
-
     }
 }
