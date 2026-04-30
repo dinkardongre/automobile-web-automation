@@ -23,11 +23,14 @@ public class HomePage extends CommonCode {
     @FindBy(xpath = "//a[@title='Upcoming Bikes']")
     private WebElement upcomingBikesLink;
 
-    @FindBy(xpath = "//span[text()='MORE']")
-    private WebElement moreMenu;
+    @FindBy(xpath = "(//div[@id='headerNewVNavWrap']/nav/ul/li/span)[4]")
+    private WebElement scootersMenu;
 
-    @FindBy(xpath = "//a[normalize-space()='Used Cars']")
-    private WebElement usedCarsLink;
+    @FindBy(linkText = "Search New Scooters")
+    private WebElement searchNewScooters;
+
+    @FindBy(linkText = "Electric Scooters")
+    private WebElement electricScooters;
 
     public HomePage(WebDriver driver) {
         super(driver);
@@ -47,9 +50,25 @@ public class HomePage extends CommonCode {
     public void openUpcomingBikes(){
         upcomingBikesLink.click();
    }
-    public void openUsedCarsPage() {
-        actionCode.actionMethod(moreMenu);
-        wait.waitForVisibility(usedCarsLink);
-        usedCarsLink.click();
+
+
+    public void hoverOnScootersMenu() {
+        actionMethod(wait.waitForVisibility(scootersMenu));
+    }
+
+    public void clickSearchNewScooters() {
+        wait.waitForClickable(searchNewScooters).click();
+    }
+
+    public void clickElectricScooters() {
+        wait.waitForClickable(electricScooters).click();
+    }
+
+    public boolean isSearchNewScootersVisible() {
+        return wait.waitForVisibility(searchNewScooters).isDisplayed();
+    }
+
+    public boolean isElectricScootersVisible() {
+        return wait.waitForVisibility(electricScooters).isDisplayed();
     }
 }

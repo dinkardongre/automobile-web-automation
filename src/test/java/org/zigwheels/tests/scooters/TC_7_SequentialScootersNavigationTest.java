@@ -6,23 +6,22 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import org.zigwheels.pages.HomePage;
 import org.zigwheels.pages.SearchScooters;
 import utilities.LogUtil;
 
 public class TC_7_SequentialScootersNavigationTest extends BaseTest {
-    private SearchScooters scootersPage;
+    private HomePage homePage;
 
     @Test
     public void testSequentialNavigationScootersOptions() {
         LogUtil.info("Starting test: Validate sequential navigation for Scooters dropdown options");
-        scootersPage = new SearchScooters(driver);
-        Actions actions = new Actions(driver);
-
+        homePage = new HomePage(driver);
         // Navigate to Search New Scooters
-        actions.moveToElement(scootersPage.getScootersOptions()).perform();
+        homePage.hoverOnScootersMenu();
         LogUtil.info("Hovered over Scooters menu");
 
-        scootersPage.clickSearchNewScooters();
+        homePage.clickSearchNewScooters();
         LogUtil.info("Clicked on Search New Scooters option");
 
         String currentUrl = driver.getCurrentUrl();
@@ -36,10 +35,10 @@ public class TC_7_SequentialScootersNavigationTest extends BaseTest {
         LogUtil.info("Navigated back to home page");
 
         // Navigate to Electric Scooters
-        actions.moveToElement(scootersPage.getScootersOptions()).perform();
+        homePage.hoverOnScootersMenu();
         LogUtil.info("Hovered over Scooters menu again");
 
-        scootersPage.clickElectricScooters();
+        homePage.clickElectricScooters();
         LogUtil.info("Clicked on Electric Scooters option");
 
         currentUrl = driver.getCurrentUrl();
