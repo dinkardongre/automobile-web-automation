@@ -32,6 +32,12 @@ public class HomePage extends CommonCode {
     @FindBy(linkText = "Electric Scooters")
     private WebElement electricScooters;
 
+    @FindBy(xpath = "//span[text()='MORE']")
+    private WebElement moreMenu;
+
+    @FindBy(xpath = "//a[normalize-space()='Used Cars']")
+    private WebElement usedCarsLink;
+
     public HomePage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
@@ -50,7 +56,6 @@ public class HomePage extends CommonCode {
     public void openUpcomingBikes(){
         upcomingBikesLink.click();
    }
-
 
     public void hoverOnScootersMenu() {
         actionMethod(wait.waitForVisibility(scootersMenu));
@@ -71,4 +76,11 @@ public class HomePage extends CommonCode {
     public boolean isElectricScootersVisible() {
         return wait.waitForVisibility(electricScooters).isDisplayed();
     }
+
+    public void openUsedCarsPage() {
+        actionCode.actionMethod(moreMenu);
+        wait.waitForVisibility(usedCarsLink);
+        usedCarsLink.click();
+    }
+
 }
