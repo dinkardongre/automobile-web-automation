@@ -23,7 +23,7 @@ public class UsedCarsPage extends CommonCode {
     @FindBy(xpath = "//h1[contains(text(),'Used Cars in')]")
     WebElement cityHeading;
 
-    @FindBy(xpath = "//label[contains(text(),'Under 5 Lakhs')]")
+    @FindBy(xpath = "//input[@id='price2']")
     WebElement under5LakhsOption;
 
     @FindBy(xpath = "//span[contains(@class,'zw-cmn-price')]")
@@ -34,6 +34,12 @@ public class UsedCarsPage extends CommonCode {
 
     @FindBy(id="websortbyusedcar")
     private WebElement sortDropdown;
+
+    @FindBy(xpath = "//div[contains(@class,'zw-sr-paddingLeft')]")
+    private List<WebElement> cars;
+
+    @FindBy(className = "ucCounth")
+    private WebElement heading;
 
     public UsedCarsPage(WebDriver driver) {
         super(driver);
@@ -60,11 +66,10 @@ public class UsedCarsPage extends CommonCode {
             }
     }
 
-    public void selectPriceUnder5Lakhs() {
-
-        scrollIntoView(under5LakhsOption);
-        waitUtils.waitForClickable(under5LakhsOption);
-        under5LakhsOption.click();
+    public void selectPriceUnder5Lakhs()  {
+        System.out.println(under5LakhsOption.isSelected());
+        jsClick(under5LakhsOption);
+        System.out.println(under5LakhsOption.isSelected());
         waitForPriceFilterUpdate();
     }
 
@@ -131,11 +136,8 @@ public class UsedCarsPage extends CommonCode {
         waitForPriceFilterUpdate();
     }
 
-    public boolean isFilterReset() {
-
-        boolean noFilterSelected = !under5LakhsOption.isSelected();
-        boolean carsDisplayed = carPrices.size() > 0;
-        return noFilterSelected && carsDisplayed;
+    public boolean isFilterReset(){
+        return under5LakhsOption.isSelected();
     }
 
     public void selectSortByLowToHigh(){
@@ -151,6 +153,17 @@ public class UsedCarsPage extends CommonCode {
         Select select=new Select(sortDropdown);
         return select.getFirstSelectedOption().getText();
     }
+
+    public int getResultsCountFromHeading() {
+
+        String text = heading.getText();
+        return Integer.parseInt(text);
+    }
+
+    public int getVisibleCarCount() {
+        return cars.size();
+    }
+
 
 
 
