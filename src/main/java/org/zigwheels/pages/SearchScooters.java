@@ -3,10 +3,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import utilities.CommonCode;
 import utilities.WaitUtils;
 
 
-public class SearchScooters extends CommanCode {
+public class SearchScooters extends CommonCode {
     private WaitUtils waitUtils;
     @FindBy(xpath = "(//div[@id='headerNewVNavWrap']/nav/ul/li/span)[4]")
     private WebElement scootersOptions;

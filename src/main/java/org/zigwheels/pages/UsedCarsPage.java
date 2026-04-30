@@ -6,13 +6,14 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import utilities.CommonCode;
 import utilities.ConfigReader;
 import utilities.LogUtil;
 import utilities.WaitUtils;
 
 import java.util.List;
 
-public class UsedCarsPage extends CommanCode {
+public class UsedCarsPage extends CommonCode {
 
     private WaitUtils waitUtils;
 

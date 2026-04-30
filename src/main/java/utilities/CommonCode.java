@@ -1,16 +1,16 @@
-package org.zigwheels.pages;
+package utilities;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
-public class CommanCode {
+public class CommonCode {
 
     protected WebDriver driver;
     protected WebDriverWait wait;
 
-    public CommanCode(WebDriver driver)  {
+    public CommonCode(WebDriver driver)  {
         this.driver = driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(15));
     }
@@ -24,6 +24,3 @@ public class CommanCode {
                     .executeScript("arguments[0].click();", element);
         }
    }
-
-
-

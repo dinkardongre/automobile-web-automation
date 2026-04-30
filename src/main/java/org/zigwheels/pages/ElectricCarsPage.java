@@ -4,11 +4,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import utilities.CommonCode;
 import utilities.WaitUtils;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ElectricCarsPage extends CommanCode {
+public class ElectricCarsPage extends CommonCode {
 
     private final WaitUtils waitUtils;
 
