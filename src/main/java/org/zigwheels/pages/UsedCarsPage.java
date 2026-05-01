@@ -1,4 +1,5 @@
 package org.zigwheels.pages;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -71,7 +72,7 @@ public class UsedCarsPage extends CommonCode {
     public void selectPriceUnder5Lakhs()  {
 
         jsClick(under5LakhsOption);
-        waitForPricesToLoad();
+        waitForPriceFilterUpdate();
     }
 
     public int convertPriceToNumber(String priceText) {
@@ -102,6 +103,19 @@ public class UsedCarsPage extends CommonCode {
             return false;
         }
     }
+    public void waitForPriceFilterUpdate() {
+
+        WebElement FirstCar = carPrices.get(0);
+        waitUtils.waitForCondition(driver -> {
+            try {
+                FirstCar.isDisplayed();
+                return false;
+            } catch (StaleElementReferenceException e) {
+                return true;
+            }
+        });
+    }
+
 
     public boolean verifyPricesUnder(int maxPrice) {
 
@@ -154,8 +168,6 @@ public class UsedCarsPage extends CommonCode {
 
             String priceText = priceElement.getText();
             int currentPrice = convertPriceToNumber(priceText);
-
-            LogUtil.info("Price captured: " + currentPrice);
 
             if (currentPrice < previousPrice) {
                 LogUtil.error(

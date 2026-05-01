@@ -24,6 +24,7 @@ public class TC_22UsedCars_ValidatePriceFilter extends BaseTest {
         LogUtil.info("Validating all prices of only displayed cars are under 5 Lakhs");
 
         boolean isValid = usedCarsPage.verifyPricesUnder(500000);
+        System.out.println(isValid);
 
         Assert.assertTrue(
                 isValid,
