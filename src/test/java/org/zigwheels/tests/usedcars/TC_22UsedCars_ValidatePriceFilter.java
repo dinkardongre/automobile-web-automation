@@ -8,7 +8,7 @@ import utilities.LogUtil;
 
 public class TC_22UsedCars_ValidatePriceFilter extends BaseTest {
     @Test
-    public void validatePriceFilterUnder5Lakhs() throws InterruptedException {
+    public void validatePriceFilterUnder5Lakhs() {
 
         HomePage homePage = new HomePage(driver);
         LogUtil.info("Opening Used Cars page");
@@ -24,7 +24,6 @@ public class TC_22UsedCars_ValidatePriceFilter extends BaseTest {
         LogUtil.info("Validating all prices of only displayed cars are under 5 Lakhs");
 
         boolean isValid = usedCarsPage.verifyPricesUnder(500000);
-        System.out.println(isValid);
 
         Assert.assertTrue(
                 isValid,

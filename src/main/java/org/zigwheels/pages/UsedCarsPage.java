@@ -1,5 +1,4 @@
 package org.zigwheels.pages;
-import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -20,7 +19,7 @@ public class UsedCarsPage extends CommonCode {
     @FindBy(xpath = "//div[@id='ctpgray']//li//a[starts-with(text(),'Chennai')]")
     private WebElement chennaiCity;
 
-    @FindBy(xpath = "//h1[contains(text(),'Used Cars in')]")
+    @FindBy(xpath = "//h1")
     WebElement cityHeading;
 
     @FindBy(xpath = "//input[@id='price2']")
@@ -40,6 +39,9 @@ public class UsedCarsPage extends CommonCode {
 
     @FindBy(className = "ucCounth")
     private WebElement heading;
+
+    @FindBy(xpath = "//h1[contains(text(),'Used Cars in Chennai')]")
+    private WebElement  Usedcarheading;
 
     public UsedCarsPage(WebDriver driver) {
         super(driver);
@@ -67,16 +69,16 @@ public class UsedCarsPage extends CommonCode {
     }
 
     public void selectPriceUnder5Lakhs()  {
-        System.out.println(under5LakhsOption.isSelected());
+
         jsClick(under5LakhsOption);
-        System.out.println(under5LakhsOption.isSelected());
-        waitForPriceFilterUpdate();
+        waitForPricesToLoad();
     }
 
     public int convertPriceToNumber(String priceText) {
 
         priceText = priceText.toLowerCase()
                 .replace("rs.", "")
+                .replace(",","")
                 .trim();
 
         if (priceText.contains("lakh")) {
@@ -117,35 +119,21 @@ public class UsedCarsPage extends CommonCode {
     return true;
 }
 
-    public void waitForPriceFilterUpdate() {
-
-       WebElement oldFirstCar = carPrices.get(0);
-        waitUtils.waitForCondition(driver -> {
-            try {
-                oldFirstCar.isDisplayed();
-                return false;
-            } catch (StaleElementReferenceException e) {
-                return true;
-            }
-        });
-    }
-
     public void clickReset() {
 
         waitUtils.waitForClickable(resetButton);
         resetButton.click();
-        waitForPriceFilterUpdate();
+        waitForPricesToLoad();
     }
 
     public String getUsedCarsHeading() {
-
-        waitUtils.waitForVisibility(cityHeading);
-        String headingText = cityHeading.getText();
+        waitUtils.waitForVisibility(Usedcarheading);
+        String headingText = Usedcarheading.getText();
         return headingText;
     }
 
     public void selectSortByLowToHigh(){
-
+        waitUtils.waitForVisibility(cityHeading);
         waitUtils.waitForVisibility(sortDropdown);
         Select select =new Select(sortDropdown);
         select.selectByVisibleText("Price : Low to High");
@@ -158,8 +146,34 @@ public class UsedCarsPage extends CommonCode {
         return select.getFirstSelectedOption().getText();
     }
 
+    public boolean verifyPricesSortedLowToHigh() {
+
+        waitForPricesToLoad();
+        int previousPrice = 0;
+        for (WebElement priceElement : carPrices) {
+
+            String priceText = priceElement.getText();
+            int currentPrice = convertPriceToNumber(priceText);
+
+            LogUtil.info("Price captured: " + currentPrice);
+
+            if (currentPrice < previousPrice) {
+                LogUtil.error(
+                        "Sorting failed. Previous price: "
+                                + previousPrice + " | Current price: "
+                                + currentPrice
+                );
+                return false;
+            }
+
+            previousPrice = currentPrice;
+        }
+        return true;
+    }
+
     public int getResultsCountFromHeading() {
 
+        waitUtils.waitForVisibility(Usedcarheading);
         String text = heading.getText();
         return Integer.parseInt(text);
     }
