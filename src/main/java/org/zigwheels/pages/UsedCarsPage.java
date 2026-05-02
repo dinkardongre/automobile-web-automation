@@ -124,9 +124,7 @@ public class UsedCarsPage extends CommonCode {
        for (WebElement priceElement : carPrices) {
         String priceText = priceElement.getText();
         int price = convertPriceToNumber(priceText);
-
-        LogUtil.info("Price found: " + price);
-
+        //LogUtil.info("Price found: " + price);
         if (price > maxPrice) {
             return false;
         }
