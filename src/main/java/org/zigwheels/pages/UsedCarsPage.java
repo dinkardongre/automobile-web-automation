@@ -1,4 +1,5 @@
 package org.zigwheels.pages;
+import org.openqa.selenium.By;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -29,6 +30,8 @@ public class UsedCarsPage extends CommonCode {
     @FindBy(xpath = "//span[contains(@class,'zw-cmn-price')]")
     List<WebElement> carPrices;
 
+    By carPricesLocator = By.xpath("//span[contains(text(),'Rs.')]");
+
     @FindBy(xpath = "//a[text()='Reset All']")
     private WebElement resetButton;
 
@@ -43,6 +46,12 @@ public class UsedCarsPage extends CommonCode {
 
     @FindBy(xpath = "//h1[contains(text(),'Used Cars in Chennai')]")
     private WebElement  Usedcarheading;
+
+    @FindBy(xpath = "(//input[@class='ui-autocomplete-input usedCarMakeModel'])[1]")
+    private WebElement searchInput;
+
+    @FindBy(xpath = "//ul[contains(@class,'ui-autocomplete')]//li//a")
+    private List<WebElement> autoCompleteOptions;
 
     public UsedCarsPage(WebDriver driver) {
         super(driver);
@@ -70,9 +79,8 @@ public class UsedCarsPage extends CommonCode {
     }
 
     public void selectPriceUnder5Lakhs()  {
-
         jsClick(under5LakhsOption);
-        waitForPriceFilterUpdate();
+        waitForPricesToLoad();
     }
 
     public int convertPriceToNumber(String priceText) {
@@ -104,33 +112,58 @@ public class UsedCarsPage extends CommonCode {
         }
     }
 
-    public void waitForPriceFilterUpdate() {
+    public void scrollToSearchButton() {
 
-    String oldFirstPrice = carPrices.get(0).getText();
+        waitUtils.waitForVisibility(searchInput);
+        scrollIntoView(searchInput);
 
-    waitUtils.waitForCondition(driver -> {
-        try {
-            String newFirstPrice = carPrices.get(0).getText();
-            return !newFirstPrice.equals(oldFirstPrice);
-        } catch (StaleElementReferenceException e) {
-            return true;
-        }
-    });
+        LogUtil.info("Scrolled to Search button");
+    }
+
+    public boolean areAutoCompleteSuggestionsDisplayed(String searchText) {
+
+       try {
+        // Ensure element is visible & focused
+        scrollToSearchButton();
+
+        searchInput.clear();
+        searchInput.sendKeys(searchText);
+
+        //Small wait to allow JS autocomplete to trigger
+        waitUtils.waitForCondition(driver ->
+                autoCompleteOptions.size() > 0
+        );
+
+        LogUtil.info("Autocomplete suggestions count: " + autoCompleteOptions.size());
+        return autoCompleteOptions.size() > 0;
+
+    } catch (Exception e) {
+        return false;
+    }
 }
 
 
     public boolean verifyPricesUnder(int maxPrice) {
 
-       for (WebElement priceElement : carPrices) {
-        String priceText = priceElement.getText();
-        int price = convertPriceToNumber(priceText);
-        //LogUtil.info("Price found: " + price);
-        if (price > maxPrice) {
-            return false;
+        List<WebElement> prices = driver.findElements(carPricesLocator);
+
+        for (WebElement element : prices) {
+
+            try {
+                int price = convertPriceToNumber(element.getText());
+
+                LogUtil.info("Price found: " + price);
+
+                if (price > maxPrice) {
+                    return false;
+                }
+
+            } catch (StaleElementReferenceException e) {
+                return verifyPricesUnder(maxPrice); // retry
+            }
         }
+        return true;
     }
-    return true;
-}
 
     public void clickReset() {
 
