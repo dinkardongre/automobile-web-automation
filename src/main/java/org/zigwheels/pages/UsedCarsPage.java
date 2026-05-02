@@ -103,23 +103,24 @@ public class UsedCarsPage extends CommonCode {
             return false;
         }
     }
+
     public void waitForPriceFilterUpdate() {
 
-        WebElement FirstCar = carPrices.get(0);
-        waitUtils.waitForCondition(driver -> {
-            try {
-                FirstCar.isDisplayed();
-                return false;
-            } catch (StaleElementReferenceException e) {
-                return true;
-            }
-        });
-    }
+    String oldFirstPrice = carPrices.get(0).getText();
+
+    waitUtils.waitForCondition(driver -> {
+        try {
+            String newFirstPrice = carPrices.get(0).getText();
+            return !newFirstPrice.equals(oldFirstPrice);
+        } catch (StaleElementReferenceException e) {
+            return true;
+        }
+    });
+}
 
 
     public boolean verifyPricesUnder(int maxPrice) {
 
-        waitForPricesToLoad();
        for (WebElement priceElement : carPrices) {
         String priceText = priceElement.getText();
         int price = convertPriceToNumber(priceText);
