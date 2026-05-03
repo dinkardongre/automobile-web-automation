@@ -6,7 +6,7 @@ import org.zigwheels.pages.ElectricCarsPage;
 import org.zigwheels.pages.HomePage;
 import utilities.LogUtil;
 
-public class TC_1ElectricCars_CategoryFlow extends BaseTest {
+public class TC_6ElectricCars_CategoryFlow extends BaseTest {
 
     @Test
     public void verifyElectricCarsCategoryFlow() {

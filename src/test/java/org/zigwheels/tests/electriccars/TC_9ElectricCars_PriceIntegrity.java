@@ -9,7 +9,7 @@ import utilities.LogUtil;
 import java.io.IOException;
 import java.util.List;
 
-public class TC_4ElectricCars_PriceIntegrity extends BaseTest {
+public class TC_9ElectricCars_PriceIntegrity extends BaseTest {
 
     @Test
     public void verifyElectricCarsPriceIntegrity() throws IOException {

@@ -6,7 +6,7 @@ import org.zigwheels.pages.ElectricCarsPage;
 import org.zigwheels.pages.HomePage;
 import utilities.LogUtil;
 
-public class TC_2ElectricCars_CoreContent extends BaseTest {
+public class TC_7ElectricCars_CoreContent extends BaseTest {
 
     @Test
     public void verifyElectricCarsCoreContent() {

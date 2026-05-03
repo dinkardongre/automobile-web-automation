@@ -7,7 +7,7 @@ import org.zigwheels.pages.HomePage;
 import utilities.LogUtil;
 import java.util.List;
 
-public class TC_5ElectricCars_BudgetFilterValidation extends BaseTest {
+public class TC_10ElectricCars_BudgetFilterValidation extends BaseTest {
 
     @Test
     public void verifyCarsUnder20Lakh() {
