@@ -5,10 +5,13 @@ import org.testng.annotations.Test;
 import org.zigwheels.pages.HomePage;
 import org.zigwheels.pages.UsedCarsPage;
 import utilities.LogUtil;
+import utilities.ScreenshotUtil;
+
+import java.io.IOException;
 
 public class TC_24UsedCars_ValidateResetFilterTest extends BaseTest {
     @Test
-    public void validateResetFilter(){
+    public void validateResetFilter() throws IOException {
 
         HomePage homePage = new HomePage(driver);
 
@@ -25,6 +28,7 @@ public class TC_24UsedCars_ValidateResetFilterTest extends BaseTest {
         LogUtil.info("Applying price filter: Under 5 Lakhs");
 
         usedCarsPage.selectPriceUnder5Lakhs();
+        ScreenshotUtil.captureScreenshot(driver, "UsedCarsUnder5Lakhs_loaded.png");
         LogUtil.info("Clicking Reset All filter");
 
         usedCarsPage.clickReset();

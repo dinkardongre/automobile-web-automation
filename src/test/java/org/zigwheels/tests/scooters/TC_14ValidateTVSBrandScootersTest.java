@@ -8,6 +8,7 @@ import org.zigwheels.pages.HomePage;
 import org.zigwheels.pages.SearchScooters;
 import utilities.ExportScooterNames;
 import utilities.LogUtil;
+import utilities.ScreenshotUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,7 +31,7 @@ public class TC_14ValidateTVSBrandScootersTest extends BaseTest {
 
         LogUtil.info("Selecting TVS brand");
         scootersPage.clickTVSBrand();
-
+        ScreenshotUtil.captureScreenshot(driver,"TVSScooter_Loaded");
         List<WebElement> scooterElements = scootersPage.getScooterNames();
         Assert.assertTrue(scooterElements.size() > 0, "No TVS scooters listed");
 

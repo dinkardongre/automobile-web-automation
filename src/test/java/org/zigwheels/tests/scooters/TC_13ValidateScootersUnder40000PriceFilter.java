@@ -7,13 +7,15 @@ import org.testng.annotations.Test;
 import org.zigwheels.pages.HomePage;
 import org.zigwheels.pages.SearchScooters;
 import utilities.LogUtil;
+import utilities.ScreenshotUtil;
 
+import java.io.IOException;
 import java.util.List;
 
 public class TC_13ValidateScootersUnder40000PriceFilter extends BaseTest {
 
     @Test
-    public void validateScootersUnder40000PriceFilter() {
+    public void validateScootersUnder40000PriceFilter() throws IOException {
 
         HomePage homePage = new HomePage(driver);
         SearchScooters scootersPage = new SearchScooters(driver);
@@ -29,7 +31,7 @@ public class TC_13ValidateScootersUnder40000PriceFilter extends BaseTest {
         LogUtil.info("Applying price filter: Scooters under 40000");
 
         scootersPage.clickScootersUnder40000Filter();
-
+        ScreenshotUtil.captureScreenshot(driver,"ScootersUnder40000_Loaded");
         List<WebElement> prices = scootersPage.getAllScooterPrices();
         Assert.assertTrue(prices.size() > 0, "No scooters displayed");
 
