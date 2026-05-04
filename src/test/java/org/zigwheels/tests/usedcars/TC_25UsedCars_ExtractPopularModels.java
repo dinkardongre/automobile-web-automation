@@ -10,7 +10,6 @@ import java.io.IOException;
 import java.util.List;
 
 public class TC_25UsedCars_ExtractPopularModels extends BaseTest {
-
     @Test
     public void extractAndStorePopularModels() throws IOException {
 
