@@ -47,6 +47,9 @@ public class HomePage extends CommonCode {
     @FindBy(xpath = "//*[@id='carModels']/div/span")
     private WebElement viewMore;
 
+    @FindBy(xpath = "//a[text()='Electric Bikes']")
+    private WebElement electricBikes;
+
     public void clickCngSection() {
         jsClick(cngSection);
         jsClick(viewAllCngCars);
@@ -72,6 +75,13 @@ public class HomePage extends CommonCode {
         wait.waitForVisibility(upcomingBikesLink);
         upcomingBikesLink.click();
    }
+
+    public void openElectricBikes(){
+        actionMethod(newBikesMenu);
+        wait.waitForVisibility(electricBikes);
+        electricBikes.click();
+    }
+
 
     public void hoverOnScootersMenu() {
         actionMethod(wait.waitForVisibility(scootersMenu));
