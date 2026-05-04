@@ -76,24 +76,6 @@ public class UsedCarsPage extends CommonCode {
         waitForPricesToLoad();
     }
 
-    public int convertPriceToNumber(String priceText) {
-        priceText = priceText.toLowerCase()
-                .replace("rs.", "")
-                .replace(",","")
-                .trim();
-
-        if (priceText.contains("lakh")) {
-            double value = Double.parseDouble(priceText.replace("lakh", "").trim());
-            return (int) (value * 100000);
-        }
-
-        if (priceText.contains("crore")) {
-            double value = Double.parseDouble(priceText.replace("crore", "").trim());
-            return (int) (value * 10000000);
-        }
-        return Integer.parseInt(priceText);
-    }
-
     public boolean waitForPricesToLoad() {
         try {
             waitUtils.waitForAllVisible(carPrices);

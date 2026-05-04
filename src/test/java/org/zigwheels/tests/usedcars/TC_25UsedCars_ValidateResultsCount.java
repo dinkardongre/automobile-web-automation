@@ -33,7 +33,7 @@ public class TC_25UsedCars_ValidateResultsCount extends BaseTest {
 
         Assert.assertTrue(
                 totalResults >= visibleCars,
-                "Visible cars exceed total results"
+                "Total results is less than visible cars"
         );
     }
 }
