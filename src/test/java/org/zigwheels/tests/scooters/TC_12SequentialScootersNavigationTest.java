@@ -7,12 +7,15 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.zigwheels.pages.HomePage;
 import utilities.LogUtil;
+import utilities.ScreenshotUtil;
+
+import java.io.IOException;
 
 public class TC_12SequentialScootersNavigationTest extends BaseTest {
     private HomePage homePage;
 
     @Test
-    public void testSequentialNavigationScootersOptions() {
+    public void testSequentialNavigationScootersOptions() throws IOException {
         LogUtil.info("Starting test: Validate sequential navigation for Scooters dropdown options");
         homePage = new HomePage(driver);
         // Navigate to Search New Scooters
@@ -20,6 +23,7 @@ public class TC_12SequentialScootersNavigationTest extends BaseTest {
         LogUtil.info("Hovered over Scooters menu");
 
         homePage.clickSearchNewScooters();
+        ScreenshotUtil.captureScreenshot(driver,"SearchNewScooter_Loaded");
         LogUtil.info("Clicked on Search New Scooters option");
 
         String currentUrl = driver.getCurrentUrl();
@@ -37,6 +41,7 @@ public class TC_12SequentialScootersNavigationTest extends BaseTest {
         LogUtil.info("Hovered over Scooters menu again");
 
         homePage.clickElectricScooters();
+        ScreenshotUtil.captureScreenshot(driver,"ElectricScooter_Loaded");
         LogUtil.info("Clicked on Electric Scooters option");
 
         currentUrl = driver.getCurrentUrl();
