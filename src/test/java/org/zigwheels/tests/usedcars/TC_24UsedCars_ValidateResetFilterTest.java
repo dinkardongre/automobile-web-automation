@@ -6,7 +6,6 @@ import org.zigwheels.pages.HomePage;
 import org.zigwheels.pages.UsedCarsPage;
 import utilities.LogUtil;
 import utilities.ScreenshotUtil;
-
 import java.io.IOException;
 
 public class TC_24UsedCars_ValidateResetFilterTest extends BaseTest {
