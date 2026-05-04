@@ -1,4 +1,6 @@
 package org.zigwheels.pages;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -18,8 +20,11 @@ public class UpcomingBikesPage extends CommonCode {
     @FindBy(xpath = "//a[text()='Honda']")
     private WebElement hondaManufacturer;
 
-    @FindBy(xpath = "//div[contains(@class,'modelName')]")
+    @FindBy(css = ".lnk-hvr.block.of-hid.h-height.txt-ulne")
     private List<WebElement> hondaBikeNames;
+
+    @FindBy(xpath = "//h2[text()='Upcoming Honda Bikes in India ']")
+    private WebElement hondaBikeHeader;
 
     @FindBy(xpath = "(//a[@class='lnk-c'])[4]")
     private WebElement upcmngBikesUndr5lkhs;
@@ -30,22 +35,24 @@ public class UpcomingBikesPage extends CommonCode {
         this.waitUtils = new WaitUtils(driver);
     }
 
-    public void scrollToViewMoreBikes() {
-        scrollIntoView(viewMoreBikes);
-    }
-
     public void clickHondaManufacturer() {
-        waitUtils.waitForClickable(hondaManufacturer).click();
+        scrollIntoView(hondaManufacturer);
+        try {
+            waitUtils.waitForClickable(hondaManufacturer).click();
+        } catch (Exception e) {
+            ((JavascriptExecutor) driver).executeScript("arguments[0].click();", hondaManufacturer);
+        }
     }
 
     public List<String> getHondaBikeNames() {
-        List<String> names = new ArrayList<>();
-        waitUtils.waitForAllVisible(hondaBikeNames);
-        for (WebElement bike : hondaBikeNames) {
-            names.add(bike.getText().trim());
-        }
-        return names;
+        waitUtils.waitForVisibility(hondaBikeHeader);
+        waitUtils.waitForVisibility(hondaBikeNames.get(0));
+        return hondaBikeNames.stream()
+                .map(e -> e.getText().trim())
+                .filter(text -> !text.isEmpty())
+                .toList();
     }
+
     public void upcomingBikesUndrer5lakhs(){
         scrollIntoView(upcmngBikesUndr5lkhs);
         waitUtils.waitForClickable(upcmngBikesUndr5lkhs).click();

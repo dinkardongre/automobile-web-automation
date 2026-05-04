@@ -31,7 +31,7 @@ public class SearchScooters extends CommonCode {
 
 
     // Search Scooters section
-    @FindBy(xpath = "//*[@id='zwn-search']/div[1]/h2")
+    @FindBy(xpath = "//*[@id='manufacturers']/h2")
     private WebElement searchScootersSection;
 
 
