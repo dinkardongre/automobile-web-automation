@@ -5,39 +5,49 @@ import com.aventstack.extentreports.reporter.configuration.Theme;
 import org.testng.*;
 
 public class ExtentReportManager implements ITestListener {
-    private ExtentReports extent;
-    private ExtentTest test;
+
+    private static ExtentReports extent;
+    private static ThreadLocal<ExtentTest> extentTest = new ThreadLocal<>();
+
     @Override
     public void onStart(ITestContext context) {
-        ExtentSparkReporter sparkReporter = new ExtentSparkReporter(System.getProperty("user.dir") + "/reports/ExtentReport.html");
-        sparkReporter.config().setDocumentTitle("Automation Report");
-        sparkReporter.config().setReportName("Functional Testing");
-        sparkReporter.config().setTheme(Theme.STANDARD);
+        ExtentSparkReporter spark =
+                new ExtentSparkReporter(System.getProperty("user.dir")
+                        + "/reports/ExtentReport.html");
+
+        spark.config().setDocumentTitle("ZigWheels Automation Report");
+        spark.config().setReportName("Full Regression Suite");
+        spark.config().setTheme(Theme.STANDARD);
 
         extent = new ExtentReports();
-        extent.attachReporter(sparkReporter);
+        extent.attachReporter(spark);
+
+        extent.setSystemInfo("Project", "ZigWheels");
         extent.setSystemInfo("Environment", "QA");
-        extent.setSystemInfo("Tester", "Shiva");
     }
 
+    @Override
+    public void onTestStart(ITestResult result) {
+        ExtentTest test = extent.createTest(
+                result.getTestClass().getName() + " :: " +
+                        result.getMethod().getMethodName()
+        );
+        extentTest.set(test);
+    }
+
+    @Override
     public void onTestSuccess(ITestResult result) {
-
-        test = extent.createTest(result.getName()); // create a new enty in the report
-        test.log(Status.PASS, "Test case PASSED is:" + result.getName()); // update status p/f/s
-
+        extentTest.get().pass("Test passed");
     }
 
+    @Override
     public void onTestFailure(ITestResult result) {
-
-        test = extent.createTest(result.getName());
-        test.log(Status.FAIL, "Test case FAILED is:" + result.getName());
-        test.log(Status.FAIL, "Test Case FAILED cause is: " + result.getThrowable());
+        extentTest.get().fail(result.getThrowable());
     }
 
     @Override
     public void onTestSkipped(ITestResult result) {
-        test = extent.createTest(result.getName());
-        test.log(Status.SKIP, "Test case SKIPPED: " + result.getName());
+        extentTest.get().skip(result.getThrowable());
     }
 
     @Override

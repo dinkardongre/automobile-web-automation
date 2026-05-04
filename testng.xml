@@ -16,5 +16,4 @@
                 <package name="org.zigwheels.tests.usedcars"/>
             </packages>
     </test>
-
 </suite>

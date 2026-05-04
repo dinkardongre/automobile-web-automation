@@ -6,7 +6,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.zigwheels.pages.HomePage;
 import org.zigwheels.pages.SearchScooters;
-import utilities.ExportScooterNames;
+import utilities.ExportVehicleDetails;
 import utilities.LogUtil;
 import utilities.ScreenshotUtil;
 
@@ -47,7 +47,7 @@ public class TC_14ValidateTVSBrandScootersTest extends BaseTest {
             scooterNames.add(name);
         }
 
-        ExportScooterNames.writeScooterNames(scooterNames);
+        ExportVehicleDetails.writeScooterNames(scooterNames);
 
         LogUtil.info("TVS scooter names exported to Excel successfully");
     }
