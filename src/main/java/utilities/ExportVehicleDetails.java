@@ -44,4 +44,31 @@ public class ExportVehicleDetails {
         }
         workbook.close();
     }
+    // ✅ ADD ONLY THIS METHOD – CNG Rating Export
+    public static void writeCngCarRatingDetails(
+            List<String> carNames,
+            List<Double> ratings) throws IOException {
+
+        String filePath =
+                System.getProperty("user.dir")
+                        + "/src/test/resources/testData/CngCarsRatingGreaterThan_4.xlsx";
+
+        Workbook workbook = new XSSFWorkbook();
+        Sheet sheet = workbook.createSheet("CNG Cars Rating > 4");
+
+        Row header = sheet.createRow(0);
+        header.createCell(0).setCellValue("Car Name");
+        header.createCell(1).setCellValue("Rating");
+
+        for (int i = 0; i < carNames.size(); i++) {
+            Row row = sheet.createRow(i + 1);
+            row.createCell(0).setCellValue(carNames.get(i));
+            row.createCell(1).setCellValue(ratings.get(i));
+        }
+
+        try (FileOutputStream fos = new FileOutputStream(filePath)) {
+            workbook.write(fos);
+        }
+        workbook.close();
+    }
 }
