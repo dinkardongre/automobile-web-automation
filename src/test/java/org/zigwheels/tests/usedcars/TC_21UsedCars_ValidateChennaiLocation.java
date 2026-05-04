@@ -5,11 +5,14 @@ import org.testng.annotations.Test;
 import org.zigwheels.pages.HomePage;
 import org.zigwheels.pages.UsedCarsPage;
 import utilities.LogUtil;
+import utilities.ScreenshotUtil;
+
+import java.io.IOException;
 
 public class TC_21UsedCars_ValidateChennaiLocation extends BaseTest {
 
     @Test
-    public void validateChennaiLocationSelected() {
+    public void validateChennaiLocationSelected() throws IOException {
 
         HomePage homePage = new HomePage(driver);
 
@@ -20,6 +23,8 @@ public class TC_21UsedCars_ValidateChennaiLocation extends BaseTest {
 
         UsedCarsPage usedCarsPage = new UsedCarsPage(driver);
         usedCarsPage.selectChennaiCity();
+        ScreenshotUtil.captureScreenshot(driver, "UsedCar_page_loaded.png");
+
         LogUtil.info("Validating Chennai location");
 
             Assert.assertTrue(
