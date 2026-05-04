@@ -9,7 +9,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class TC_3ElectricCars_DuplicateNameValidation extends BaseTest {
+public class TC_8ElectricCars_DuplicateNameValidation extends BaseTest {
 
     @Test
     public void verifyNoDuplicateElectricCarNames() {

@@ -9,13 +9,9 @@ public class TestListener implements ITestListener {
 
     @Override
     public void onTestFailure(ITestResult result) {
-
         Object currentClass = result.getInstance();
-
         if (currentClass instanceof BaseTest) {
-
             BaseTest baseTest = (BaseTest) currentClass;
-
             try {
                 ScreenshotUtil.captureScreenshot(
                         baseTest.driver,

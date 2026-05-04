@@ -27,7 +27,7 @@
 
             <!-- Used Cars -->
             <class name="org.zigwheels.tests.usedcars.TC_21UsedCars_ValidateChennaiLocation"/>
-            <class name="org.zigwheels.tests.usedcars.TC_22UsedCars_ValidateScrollAndSearch"/>
+            <class name="org.zigwheels.tests.usedcars.TC_22UsedCars_ValidatePriceFilter"/>
             <class name="org.zigwheels.tests.usedcars.TC_23UsedCars_ValidateSortLowToHigh"/>
             <class name="org.zigwheels.tests.usedcars.TC_24UsedCars_ValidateResetFilterTest"/>
 

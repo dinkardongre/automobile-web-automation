@@ -5,12 +5,15 @@ import org.testng.annotations.Test;
 import org.zigwheels.pages.ElectricCarsPage;
 import org.zigwheels.pages.HomePage;
 import utilities.LogUtil;
+import utilities.ScreenshotUtil;
+
+import java.io.IOException;
 import java.util.List;
 
-public class TC_5ElectricCars_BudgetFilterValidation extends BaseTest {
+public class TC_10ElectricCars_BudgetFilterValidation extends BaseTest {
 
     @Test
-    public void verifyCarsUnder20Lakh() {
+    public void verifyCarsUnder20Lakh() throws IOException {
         LogUtil.info("Opening Electric Cars page");
 
         new HomePage(driver).openElectricCars();
@@ -19,6 +22,8 @@ public class TC_5ElectricCars_BudgetFilterValidation extends BaseTest {
 
         electricCarsPage.selectUnder20LakhBudget();
         LogUtil.info("Fetching car prices after applying filter");
+
+        ScreenshotUtil.captureScreenshot(driver, "BudgetFilter_Applied_Page");
 
         List<String> prices = electricCarsPage.getElectricCarPricesUnder20Lakhs();
         Assert.assertFalse(prices.isEmpty(), "No cars displayed after applying budget filter");
