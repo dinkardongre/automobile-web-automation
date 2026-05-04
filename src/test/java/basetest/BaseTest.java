@@ -11,7 +11,7 @@ import utilities.LogUtil;
 
 public class BaseTest {
 
-    public WebDriver driver;
+    public static WebDriver driver;
 
     @BeforeMethod
     public void setUp() {

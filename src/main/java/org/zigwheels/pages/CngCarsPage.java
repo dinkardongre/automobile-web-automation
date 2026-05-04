@@ -14,8 +14,6 @@ public class CngCarsPage extends CommonCode {
         PageFactory.initElements(driver, this);
     }
 
-    // ================= EXISTING LOCATORS (UNCHANGED) =================
-
     @FindBy(xpath = "//*[@id='carModels']/div/span")
     private WebElement viewMore;
 
@@ -33,6 +31,18 @@ public class CngCarsPage extends CommonCode {
 
     @FindBy(xpath = "//table[contains(@class,'new-price-container-rhs')]//tbody/tr")
     private List<WebElement> rhsPriceRows;
+
+
+
+    @FindBy(xpath = "//ul[@id='modelList']/li/div/a/div[1]")
+    private List<WebElement> carRatings;
+
+    public List<WebElement> getCarRatings() {
+        if (!carRatings.isEmpty()) {
+            scrollIntoView(carRatings.get(0));
+        }
+        return carRatings;
+    }
 
 
     public void clickViewMore() {
