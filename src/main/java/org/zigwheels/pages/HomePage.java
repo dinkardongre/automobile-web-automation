@@ -17,7 +17,7 @@ public class HomePage extends CommonCode {
     @FindBy(xpath = "//a[text()='Electric Cars']")
     private WebElement electricCarsOption;
 
-    @FindBy(xpath = "//*[@id='headerNewVNavWrap']/nav/ul/li[3]/span")
+    @FindBy(xpath = "//span[text()='NEW BIKES']")
     private WebElement newBikesMenu;
 
     @FindBy(xpath = "//a[@title='Upcoming Bikes']")
@@ -68,6 +68,8 @@ public class HomePage extends CommonCode {
     }
 
     public void openUpcomingBikes(){
+        actionMethod(newBikesMenu);
+        wait.waitForVisibility(upcomingBikesLink);
         upcomingBikesLink.click();
    }
 

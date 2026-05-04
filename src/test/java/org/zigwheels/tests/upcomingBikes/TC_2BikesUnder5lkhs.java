@@ -7,29 +7,26 @@ import org.testng.annotations.Test;
 import org.zigwheels.pages.HomePage;
 import org.zigwheels.pages.UpcomingBikesPage;
 import utilities.LogUtil;
+import utilities.ScreenshotUtil;
+
+import java.io.IOException;
 
 public class TC_2BikesUnder5lkhs extends BaseTest {
-
-    private HomePage newBike;
-
     @Test
-    public void upcomingBikesRange() {
+    public void upcomingBikesRange() throws IOException {
 
         LogUtil.info("Test Started: Verify Upcoming Bikes Under 5 Lakhs");
 
-        newBike = new HomePage(driver);
-        Actions actions = new Actions(driver);
+        HomePage newBike = new HomePage(driver);
+        LogUtil.info("Navigating to Upcoming Bikes from Home page");
 
-        LogUtil.info("Hovering over New Bikes menu");
-        actions.moveToElement(newBike.getNewBikesMenus()).perform();
-
-        LogUtil.info("Opening Upcoming Bikes page");
         newBike.openUpcomingBikes();
-
         UpcomingBikesPage bp = new UpcomingBikesPage(driver);
 
         LogUtil.info("Selecting Upcoming Bikes Under 5 Lakhs filter");
         bp.upcomingBikesUndrer5lakhs();
+
+        ScreenshotUtil.captureScreenshot(driver, "BikesUnder5Lakhs_page.png");
 
         LogUtil.info("Validating navigation to Upcoming Bikes Under 5 Lakhs page");
 
