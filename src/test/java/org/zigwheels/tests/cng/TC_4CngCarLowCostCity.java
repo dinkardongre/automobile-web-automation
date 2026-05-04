@@ -1,5 +1,4 @@
 package org.zigwheels.tests.cng;
-
 import basetest.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -8,7 +7,6 @@ import org.zigwheels.pages.HomePage;
 import utilities.LogUtil;
 
 public class TC_4CngCarLowCostCity extends BaseTest {
-
     @Test
     public void LowCostCity() {
 
@@ -25,7 +23,6 @@ public class TC_4CngCarLowCostCity extends BaseTest {
             int carCount = cngCarsPage.getCarCount();
             LogUtil.info("Current visible car count: " + carCount);
 
-            // Load More handling
             if (index >= carCount) {
                 LogUtil.info("Reached end of list, attempting View More");
                 if (cngCarsPage.clickViewMoreIfAvailable()) {
@@ -36,33 +33,25 @@ public class TC_4CngCarLowCostCity extends BaseTest {
                     break;
                 }
             }
-
-            // Click car
             LogUtil.info("Clicking car at index: " + index);
             cngCarsPage.clickCarByIndex(index);
 
             String pageTitle = driver.getTitle();
             LogUtil.info("Navigated to car detail page: " + pageTitle);
 
-            // Read RHS table & find lowest price
             String lowestCityResult = cngCarsPage.findLowestCityPriceFromRhs();
             LogUtil.info("Lowest city price info: " + lowestCityResult);
 
-            // ✅ Assertion
             Assert.assertNotNull(
                     lowestCityResult,
                     "Lowest city price result should not be null"
             );
-
             Assert.assertTrue(
                     lowestCityResult.contains("Rs."),
                     "Lowest city price should contain price information"
             );
-
-            // Back to listing
             LogUtil.info("Navigating back to CNG list page");
             driver.navigate().back();
-
             index++;
         }
 
