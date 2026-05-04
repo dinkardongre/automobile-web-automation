@@ -29,6 +29,24 @@ public class UpcomingBikesPage extends CommonCode {
     @FindBy(xpath = "//a[text()='Upcoming Bikes Under 5 Lakhs']")
     private WebElement upcmngBikesUndr5lkhs;
 
+    @FindBy(xpath = "//h2[text()='Upcoming Bikes Between 2 To 5 Lakhs in 2026 ']")
+    private WebElement under5LakhBikePageHeader;
+
+    @FindBy(css = ".b.fnt-15")
+    private List<WebElement> bikePrices;
+
+    @FindBy(xpath = "//a[text()='Electric Bikes']")
+    private WebElement electricBikes;
+
+    @FindBy(xpath = "//span[text()='EV']")
+    private List<WebElement> evTags;
+
+    @FindBy(xpath = "//a[text()='Under 50,000']")
+    private WebElement priceFilterUnder50K;
+
+    @FindBy(xpath = "//span[@title='Ex-Showroom Price']")
+    private List<WebElement> priceTags;
+
     public UpcomingBikesPage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
@@ -53,8 +71,53 @@ public class UpcomingBikesPage extends CommonCode {
                 .toList();
     }
 
+    public List<String> getUpcomingBikesPrices() {
+        waitUtils.waitForVisibility(under5LakhBikePageHeader);
+        waitUtils.waitForVisibility(bikePrices.get(0));
+        return bikePrices.stream()
+                .map(e -> e.getText().trim())
+                .filter(text -> !text.isEmpty())
+                .toList();
+    }
+
     public void upcomingBikesUndrer5lakhs(){
         scrollIntoView(upcmngBikesUndr5lkhs);
         jsClick(upcmngBikesUndr5lkhs);
+    }
+
+    public List<String> getEVTagsText() {
+        waitUtils.waitForVisibility(evTags.get(0));
+        return evTags.stream()
+                .map(e -> e.getText().trim())
+                .filter(text -> !text.isEmpty())
+                .toList();
+    }
+
+    public void priceUnder50K() {
+        scrollIntoView(priceFilterUnder50K);
+        jsClick(priceFilterUnder50K);
+    }
+
+    public boolean areAllPricesUnder50K() {
+
+        for (WebElement priceElement : priceTags) {
+            String priceText = priceElement.getText().trim();
+
+            if (priceText.isEmpty()) {
+                continue;
+            }
+
+            int price = Integer.parseInt(
+                    priceText
+                            .replace("Rs.", "")
+                            .replace(",", "")
+                            .trim()
+            );
+
+            if (price > 50000) {
+                return false;
+            }
+        }
+        return true;
     }
 }
