@@ -14,6 +14,9 @@ public class SearchScooters extends CommonCode {
     private WaitUtils waitUtils;
 
 
+    @FindBy(xpath = "//h2[text()='Browse Scooters By Budget']")
+    private WebElement scrollToScootersByBudget;
+
     @FindBy(xpath = "//a[contains(text(),'Scooters under 40000')]")
     private WebElement scootersUnder40000Filter;
 
@@ -58,7 +61,7 @@ public class SearchScooters extends CommonCode {
     }
 
     public void clickScootersUnder40000Filter() {
-        scrollIntoView(scootersUnder40000Filter);
+        scrollIntoView(scrollToScootersByBudget);
         waitUtils.waitForClickable(scootersUnder40000Filter).click();
     }
 
