@@ -13,6 +13,8 @@ public class TC_24UsedCars_ValidateResetFilterTest extends BaseTest {
     @Test
     public void validateResetFilter() throws IOException {
 
+        LogUtil.info("Test Started: Validate Reset Filter");
+
         HomePage homePage = new HomePage(driver);
 
         LogUtil.info("Opening Used Cars page");
@@ -42,6 +44,8 @@ public class TC_24UsedCars_ValidateResetFilterTest extends BaseTest {
                 "Page heading did not reset correctly after Reset All"
         );
         LogUtil.info("Reset filter validated successfully");
+
+        LogUtil.info("Test Finished Successfully");
 
     }
 }

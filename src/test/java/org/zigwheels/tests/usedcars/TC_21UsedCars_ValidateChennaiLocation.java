@@ -14,8 +14,9 @@ public class TC_21UsedCars_ValidateChennaiLocation extends BaseTest {
     @Test
     public void validateChennaiLocationSelected() throws IOException {
 
-        HomePage homePage = new HomePage(driver);
+        LogUtil.info("Test Started: Validate Chennai Location");
 
+        HomePage homePage = new HomePage(driver);
         LogUtil.info("Opening Used Cars page");
 
         homePage.openUsedCarsPage();
@@ -27,9 +28,11 @@ public class TC_21UsedCars_ValidateChennaiLocation extends BaseTest {
 
         LogUtil.info("Validating Chennai location");
 
-            Assert.assertTrue(
-                    usedCarsPage.isChennaiPageLoaded(),
-                    "Chennai page not loaded correctly"
-            );
+        Assert.assertTrue(
+                usedCarsPage.isChennaiPageLoaded(),
+                "Chennai page not loaded correctly"
+        );
+        LogUtil.info("Test Finished Successfully");
+
     }
 }

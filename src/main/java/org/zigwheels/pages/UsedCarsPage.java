@@ -1,4 +1,5 @@
 package org.zigwheels.pages;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -9,6 +10,8 @@ import utilities.CommonCode;
 import utilities.ConfigReader;
 import utilities.LogUtil;
 import utilities.WaitUtils;
+
+import java.util.ArrayList;
 import java.util.List;
 
 public class UsedCarsPage extends CommonCode {
@@ -47,6 +50,11 @@ public class UsedCarsPage extends CommonCode {
 
     @FindBy(xpath = "//ul[contains(@class,'ui-autocomplete')]//li//a")
     private List<WebElement> autoCompleteOptions;
+
+    @FindBy(xpath = "//ul[contains(@class,'popularModels')]//label")
+    private List<WebElement> popularModels ;
+
+
 
     public UsedCarsPage(WebDriver driver) {
         super(driver);
@@ -88,8 +96,6 @@ public class UsedCarsPage extends CommonCode {
     public void scrollToSearchButton() {
         waitUtils.waitForVisibility(searchInput);
         scrollIntoView(searchInput);
-
-        LogUtil.info("Scrolled to Search button");
     }
 
     public boolean areAutoCompleteSuggestionsDisplayed(String searchText) {
@@ -121,17 +127,35 @@ public class UsedCarsPage extends CommonCode {
         return headingText;
     }
 
-    public void selectSortByLowToHigh(){
-        waitUtils.waitForVisibility(cityHeading);
-        waitUtils.waitForVisibility(sortDropdown);
-        Select select =new Select(sortDropdown);
-        select.selectByVisibleText("Price : Low to High");
-        waitForPricesToLoad();
-    }
+//    public void selectSortByLowToHigh(){
+//        waitUtils.waitForVisibility(cityHeading);
+//        waitUtils.waitForVisibility(sortDropdown);
+//        Select select =new Select(sortDropdown);
+//        select.selectByVisibleText("Price : Low to High");
+//        waitForPricesToLoad();
+//    }
+//
+//    public String getSelectedSortOption(){
+//        Select select=new Select(sortDropdown);
+//        return select.getFirstSelectedOption().getText();
+//    }
+public void selectSortByLowToHigh() {
 
-    public String getSelectedSortOption(){
-        Select select=new Select(sortDropdown);
-        return select.getFirstSelectedOption().getText();
+    waitUtils.waitForVisibility(sortDropdown);
+
+    String sortValue =
+            ConfigReader.getProperty("sort.lowToHigh");
+
+    Select select = new Select(sortDropdown);
+    select.selectByVisibleText(sortValue);
+
+    waitForPricesToLoad();
+}
+
+    public String getSelectedSortOption() {
+
+        Select select = new Select(sortDropdown);
+        return select.getFirstSelectedOption().getText().trim();
     }
 
     public int getResultsCountFromHeading() {
@@ -143,7 +167,18 @@ public class UsedCarsPage extends CommonCode {
     public int getVisibleCarCount() {
         return cars.size();
     }
+
+    public List<String> getPopularModelsList() {
+        List<String> popularModelsList = new ArrayList<>();
+
+        for (WebElement model : popularModels) {
+            popularModelsList.add(model.getText().trim());
+        }
+
+        return popularModelsList;
+    }
 }
+
 
 
 

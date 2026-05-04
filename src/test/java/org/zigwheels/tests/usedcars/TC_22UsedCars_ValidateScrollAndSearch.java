@@ -11,6 +11,8 @@ public class TC_22UsedCars_ValidateScrollAndSearch extends BaseTest {
     @Test
     public void validateSearchButtonAfterScroll() {
 
+        LogUtil.info("Test Started: Validate Scroll And Search");
+
         HomePage homePage = new HomePage(driver);
         LogUtil.info("Opening Used Cars page");
 
@@ -28,7 +30,9 @@ public class TC_22UsedCars_ValidateScrollAndSearch extends BaseTest {
                 usedCarsPage.areAutoCompleteSuggestionsDisplayed("Hyundai"),
                     "Autocomplete suggestions are NOT displayed"
             );
-            LogUtil.info("Autocomplete suggestions displayed successfully");
+        LogUtil.info("Autocomplete suggestions displayed successfully");
+
+        LogUtil.info("Test Finished Successfully");
 
         }
     }

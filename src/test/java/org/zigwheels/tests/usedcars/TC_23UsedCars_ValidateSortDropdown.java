@@ -1,4 +1,5 @@
 package org.zigwheels.tests.usedcars;
+
 import basetest.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -7,23 +8,23 @@ import org.zigwheels.pages.UsedCarsPage;
 import utilities.ConfigReader;
 import utilities.LogUtil;
 
-public class TC_23UsedCars_ValidateSortLowToHigh extends BaseTest {
+public class TC_23UsedCars_ValidateSortDropdown extends BaseTest {
 
     @Test
-    public void validateSortByPriceLowToHigh() {
+    public void validateSortDropdownLowToHighSelection() {
+
+        LogUtil.info("Test Started: Validate Sort Dropdown");
 
         HomePage homePage = new HomePage(driver);
-        LogUtil.info("Opening Used Cars page");
-
         homePage.openUsedCarsPage();
-        LogUtil.info("Selecting Chennai city");
+        LogUtil.info("Opened Used Cars page");
 
         UsedCarsPage usedCarsPage = new UsedCarsPage(driver);
         usedCarsPage.selectChennaiCity();
-        LogUtil.info("Applying sort: Price Low to High");
+        LogUtil.info("Selected Chennai city");
 
         usedCarsPage.selectSortByLowToHigh();
-        LogUtil.info("Validating selected sort option");
+        LogUtil.info("Applied sort: Price Low to High");
 
         String expectedSort =
                 ConfigReader.getProperty("sort.lowToHigh");
@@ -34,8 +35,11 @@ public class TC_23UsedCars_ValidateSortLowToHigh extends BaseTest {
         Assert.assertEquals(
                 actualSort,
                 expectedSort,
-                "Sort option is not set correctly"
+                "Sort dropdown value mismatch"
         );
-        LogUtil.info("Sort By Price Low to High validated successfully");
+
+        LogUtil.info("Sort dropdown validated successfully");
+
+        LogUtil.info("Test Finished Successfully");
     }
 }
