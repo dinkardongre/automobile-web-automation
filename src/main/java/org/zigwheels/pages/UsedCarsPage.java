@@ -1,6 +1,4 @@
 package org.zigwheels.pages;
-import org.openqa.selenium.By;
-import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -11,7 +9,6 @@ import utilities.CommonCode;
 import utilities.ConfigReader;
 import utilities.LogUtil;
 import utilities.WaitUtils;
-
 import java.util.List;
 
 public class UsedCarsPage extends CommonCode {
@@ -29,8 +26,6 @@ public class UsedCarsPage extends CommonCode {
 
     @FindBy(xpath = "//span[contains(@class,'zw-cmn-price')]")
     List<WebElement> carPrices;
-
-    By carPricesLocator = By.xpath("//span[contains(text(),'Rs.')]");
 
     @FindBy(xpath = "//a[text()='Reset All']")
     private WebElement resetButton;
@@ -60,14 +55,12 @@ public class UsedCarsPage extends CommonCode {
     }
 
     public void selectChennaiCity() {
-
         waitUtils.waitForVisibility(chennaiCity);
         scrollIntoView(chennaiCity);
         jsClick(chennaiCity);
     }
 
     public boolean isChennaiPageLoaded() {
-
             try {
                 String expectedCity = ConfigReader.getProperty("city.chennai");
                 wait.until(ExpectedConditions.textToBePresentInElement(
@@ -84,7 +77,6 @@ public class UsedCarsPage extends CommonCode {
     }
 
     public int convertPriceToNumber(String priceText) {
-
         priceText = priceText.toLowerCase()
                 .replace("rs.", "")
                 .replace(",","")
@@ -103,7 +95,6 @@ public class UsedCarsPage extends CommonCode {
     }
 
     public boolean waitForPricesToLoad() {
-
         try {
             waitUtils.waitForAllVisible(carPrices);
             return true;
@@ -113,7 +104,6 @@ public class UsedCarsPage extends CommonCode {
     }
 
     public void scrollToSearchButton() {
-
         waitUtils.waitForVisibility(searchInput);
         scrollIntoView(searchInput);
 
@@ -123,13 +113,9 @@ public class UsedCarsPage extends CommonCode {
     public boolean areAutoCompleteSuggestionsDisplayed(String searchText) {
 
        try {
-        // Ensure element is visible & focused
         scrollToSearchButton();
-
         searchInput.clear();
         searchInput.sendKeys(searchText);
-
-        //Small wait to allow JS autocomplete to trigger
         waitUtils.waitForCondition(driver ->
                 autoCompleteOptions.size() > 0
         );
@@ -142,31 +128,7 @@ public class UsedCarsPage extends CommonCode {
     }
 }
 
-
-    public boolean verifyPricesUnder(int maxPrice) {
-
-        List<WebElement> prices = driver.findElements(carPricesLocator);
-
-        for (WebElement element : prices) {
-
-            try {
-                int price = convertPriceToNumber(element.getText());
-
-                LogUtil.info("Price found: " + price);
-
-                if (price > maxPrice) {
-                    return false;
-                }
-
-            } catch (StaleElementReferenceException e) {
-                return verifyPricesUnder(maxPrice); // retry
-            }
-        }
-        return true;
-    }
-
     public void clickReset() {
-
         waitUtils.waitForClickable(resetButton);
         resetButton.click();
         waitForPricesToLoad();
@@ -187,13 +149,11 @@ public class UsedCarsPage extends CommonCode {
     }
 
     public String getSelectedSortOption(){
-
         Select select=new Select(sortDropdown);
         return select.getFirstSelectedOption().getText();
     }
 
     public boolean verifyPricesSortedLowToHigh() {
-
         waitForPricesToLoad();
         int previousPrice = 0;
         for (WebElement priceElement : carPrices) {
@@ -216,7 +176,6 @@ public class UsedCarsPage extends CommonCode {
     }
 
     public int getResultsCountFromHeading() {
-
         waitUtils.waitForVisibility(Usedcarheading);
         String text = heading.getText();
         return Integer.parseInt(text);
