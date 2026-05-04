@@ -1119,3 +1119,103 @@
 2026-05-04 10:26:24 INFO  utilities.LogUtil - Launching application URL
 2026-05-04 10:26:31 INFO  utilities.LogUtil - Collected 31 car names and 31 car prices
 2026-05-04 10:26:31 INFO  utilities.LogUtil - Closing browser
+2026-05-04 10:34:46 INFO  utilities.LogUtil - Starting browser setup
+2026-05-04 10:34:50 INFO  utilities.LogUtil - Launching application URL
+2026-05-04 10:34:53 INFO  utilities.LogUtil - Test Started: Verify Upcoming Bikes URL Flow
+2026-05-04 10:34:53 INFO  utilities.LogUtil - Navigating to Home URL: https://www.zigwheels.com/
+2026-05-04 10:34:57 INFO  utilities.LogUtil - PASS: Home URL verified successfully
+2026-05-04 10:34:57 INFO  utilities.LogUtil - Navigating to Upcoming Bikes from Home page
+2026-05-04 10:34:59 INFO  utilities.LogUtil - PASS: Upcoming Bikes URL verified successfully
+2026-05-04 10:34:59 INFO  utilities.LogUtil - Test Completed: Verify Upcoming Bikes URL Flow
+2026-05-04 10:34:59 INFO  utilities.LogUtil - Closing browser
+2026-05-04 10:35:02 INFO  utilities.LogUtil - Starting browser setup
+2026-05-04 10:35:05 INFO  utilities.LogUtil - Launching application URL
+2026-05-04 10:35:13 INFO  utilities.LogUtil - Test Started: Verify Upcoming Bikes Under 5 Lakhs
+2026-05-04 10:35:13 INFO  utilities.LogUtil - Navigating to Upcoming Bikes from Home page
+2026-05-04 10:35:15 INFO  utilities.LogUtil - Selecting Upcoming Bikes Under 5 Lakhs filter
+2026-05-04 10:35:17 INFO  utilities.LogUtil - Closing browser
+2026-05-04 10:35:21 INFO  utilities.LogUtil - Starting browser setup
+2026-05-04 10:35:24 INFO  utilities.LogUtil - Launching application URL
+2026-05-04 10:35:31 INFO  utilities.LogUtil - Test Started: Verify Honda Upcoming Bikes
+2026-05-04 10:35:31 INFO  utilities.LogUtil - Navigating to Upcoming Bikes from Home page
+2026-05-04 10:35:33 INFO  utilities.LogUtil - Selecting Honda manufacturer
+2026-05-04 10:35:35 INFO  utilities.LogUtil - Fetching Honda bike names
+2026-05-04 10:35:35 INFO  utilities.LogUtil - All bikes are Honda manufacturer
+2026-05-04 10:35:35 INFO  utilities.LogUtil - Closing browser
+2026-05-04 10:38:35 INFO  utilities.LogUtil - Starting browser setup
+2026-05-04 10:38:41 INFO  utilities.LogUtil - Launching application URL
+2026-05-04 10:38:50 INFO  utilities.LogUtil - Test Started: Verify Upcoming Bikes URL Flow
+2026-05-04 10:38:50 INFO  utilities.LogUtil - Navigating to Home URL: https://www.zigwheels.com/
+2026-05-04 10:38:53 INFO  utilities.LogUtil - PASS: Home URL verified successfully
+2026-05-04 10:38:53 INFO  utilities.LogUtil - Navigating to Upcoming Bikes from Home page
+2026-05-04 10:38:55 INFO  utilities.LogUtil - PASS: Upcoming Bikes URL verified successfully
+2026-05-04 10:38:55 INFO  utilities.LogUtil - Test Completed: Verify Upcoming Bikes URL Flow
+2026-05-04 10:38:55 INFO  utilities.LogUtil - Closing browser
+2026-05-04 10:39:00 INFO  utilities.LogUtil - Starting browser setup
+2026-05-04 10:39:05 INFO  utilities.LogUtil - Launching application URL
+2026-05-04 10:39:12 INFO  utilities.LogUtil - Test Started: Verify Upcoming Bikes Under 5 Lakhs
+2026-05-04 10:39:12 INFO  utilities.LogUtil - Navigating to Upcoming Bikes from Home page
+2026-05-04 10:39:15 INFO  utilities.LogUtil - Selecting Upcoming Bikes Under 5 Lakhs filter
+2026-05-04 10:39:17 INFO  utilities.LogUtil - Closing browser
+2026-05-04 10:39:22 INFO  utilities.LogUtil - Starting browser setup
+2026-05-04 10:39:26 INFO  utilities.LogUtil - Launching application URL
+2026-05-04 10:39:31 INFO  utilities.LogUtil - Test Started: Verify Honda Upcoming Bikes
+2026-05-04 10:39:31 INFO  utilities.LogUtil - Navigating to Upcoming Bikes from Home page
+2026-05-04 10:39:47 INFO  utilities.LogUtil - Closing browser
+2026-05-04 10:43:33 INFO  utilities.LogUtil - Starting browser setup
+2026-05-04 10:43:35 INFO  utilities.LogUtil - Launching application URL
+2026-05-04 10:43:39 INFO  utilities.LogUtil - Test Started: Verify Upcoming Bikes URL Flow
+2026-05-04 10:43:39 INFO  utilities.LogUtil - Navigating to Home URL: https://www.zigwheels.com/
+2026-05-04 10:43:42 INFO  utilities.LogUtil - PASS: Home URL verified successfully
+2026-05-04 10:43:42 INFO  utilities.LogUtil - Navigating to Upcoming Bikes from Home page
+2026-05-04 10:43:43 INFO  utilities.LogUtil - PASS: Upcoming Bikes URL verified successfully
+2026-05-04 10:43:43 INFO  utilities.LogUtil - Test Completed: Verify Upcoming Bikes URL Flow
+2026-05-04 10:43:43 INFO  utilities.LogUtil - Closing browser
+2026-05-04 10:43:47 INFO  utilities.LogUtil - Starting browser setup
+2026-05-04 10:43:49 INFO  utilities.LogUtil - Launching application URL
+2026-05-04 10:43:50 INFO  utilities.LogUtil - Test Started: Verify Upcoming Bikes Under 5 Lakhs
+2026-05-04 10:43:50 INFO  utilities.LogUtil - Navigating to Upcoming Bikes from Home page
+2026-05-04 10:43:54 INFO  utilities.LogUtil - Selecting Upcoming Bikes Under 5 Lakhs filter
+2026-05-04 10:43:55 INFO  utilities.LogUtil - Closing browser
+2026-05-04 10:43:58 INFO  utilities.LogUtil - Starting browser setup
+2026-05-04 10:44:00 INFO  utilities.LogUtil - Launching application URL
+2026-05-04 10:44:04 INFO  utilities.LogUtil - Test Started: Verify Honda Upcoming Bikes
+2026-05-04 10:44:04 INFO  utilities.LogUtil - Navigating to Upcoming Bikes from Home page
+2026-05-04 10:44:06 INFO  utilities.LogUtil - Selecting Honda manufacturer
+2026-05-04 10:44:09 INFO  utilities.LogUtil - Fetching Honda bike names
+2026-05-04 10:44:09 INFO  utilities.LogUtil - All bikes are Honda manufacturer
+2026-05-04 10:44:09 INFO  utilities.LogUtil - Closing browser
+2026-05-04 10:44:36 INFO  utilities.LogUtil - Starting browser setup
+2026-05-04 10:44:39 INFO  utilities.LogUtil - Launching application URL
+2026-05-04 10:44:40 INFO  utilities.LogUtil - Test Started: Verify Upcoming Bikes Under 5 Lakhs
+2026-05-04 10:44:40 INFO  utilities.LogUtil - Navigating to Upcoming Bikes from Home page
+2026-05-04 10:44:43 INFO  utilities.LogUtil - Selecting Upcoming Bikes Under 5 Lakhs filter
+2026-05-04 10:44:45 INFO  utilities.LogUtil - Closing browser
+2026-05-04 10:45:42 INFO  utilities.LogUtil - Starting browser setup
+2026-05-04 10:45:45 INFO  utilities.LogUtil - Launching application URL
+2026-05-04 10:45:49 INFO  utilities.LogUtil - Test Started: Verify Upcoming Bikes Under 5 Lakhs
+2026-05-04 10:45:49 INFO  utilities.LogUtil - Navigating to Upcoming Bikes from Home page
+2026-05-04 10:45:51 INFO  utilities.LogUtil - Selecting Upcoming Bikes Under 5 Lakhs filter
+2026-05-04 10:45:52 INFO  utilities.LogUtil - Closing browser
+2026-05-04 10:48:50 INFO  utilities.LogUtil - Starting browser setup
+2026-05-04 10:48:53 INFO  utilities.LogUtil - Launching application URL
+2026-05-04 10:48:56 INFO  utilities.LogUtil - Test Started: Verify Upcoming Bikes Under 5 Lakhs
+2026-05-04 10:48:56 INFO  utilities.LogUtil - Navigating to Upcoming Bikes from Home page
+2026-05-04 10:48:59 INFO  utilities.LogUtil - Selecting Upcoming Bikes Under 5 Lakhs filter
+2026-05-04 10:49:00 INFO  utilities.LogUtil - Closing browser
+2026-05-04 10:49:51 INFO  utilities.LogUtil - Starting browser setup
+2026-05-04 10:49:53 INFO  utilities.LogUtil - Launching application URL
+2026-05-04 10:49:57 INFO  utilities.LogUtil - Test Started: Verify Upcoming Bikes Under 5 Lakhs
+2026-05-04 10:49:57 INFO  utilities.LogUtil - Navigating to Upcoming Bikes from Home page
+2026-05-04 10:50:00 INFO  utilities.LogUtil - Selecting Upcoming Bikes Under 5 Lakhs filter
+2026-05-04 10:50:01 INFO  utilities.LogUtil - Validating navigation to Upcoming Bikes Under 5 Lakhs page
+2026-05-04 10:50:01 INFO  utilities.LogUtil - PASS: Upcoming Bikes Under 5 Lakhs page displayed successfully
+2026-05-04 10:50:01 INFO  utilities.LogUtil - Closing browser
+2026-05-04 10:50:17 INFO  utilities.LogUtil - Starting browser setup
+2026-05-04 10:50:20 INFO  utilities.LogUtil - Launching application URL
+2026-05-04 10:50:23 INFO  utilities.LogUtil - Test Started: Verify Honda Upcoming Bikes
+2026-05-04 10:50:23 INFO  utilities.LogUtil - Navigating to Upcoming Bikes from Home page
+2026-05-04 10:50:26 INFO  utilities.LogUtil - Selecting Honda manufacturer
+2026-05-04 10:50:27 INFO  utilities.LogUtil - Fetching Honda bike names
+2026-05-04 10:50:28 INFO  utilities.LogUtil - All bikes are Honda manufacturer
+2026-05-04 10:50:28 INFO  utilities.LogUtil - Closing browser

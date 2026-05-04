@@ -26,7 +26,7 @@ public class UpcomingBikesPage extends CommonCode {
     @FindBy(xpath = "//h2[text()='Upcoming Honda Bikes in India ']")
     private WebElement hondaBikeHeader;
 
-    @FindBy(xpath = "(//a[@class='lnk-c'])[4]")
+    @FindBy(xpath = "//a[text()='Upcoming Bikes Under 5 Lakhs']")
     private WebElement upcmngBikesUndr5lkhs;
 
     public UpcomingBikesPage(WebDriver driver) {
@@ -55,6 +55,6 @@ public class UpcomingBikesPage extends CommonCode {
 
     public void upcomingBikesUndrer5lakhs(){
         scrollIntoView(upcmngBikesUndr5lkhs);
-        waitUtils.waitForClickable(upcmngBikesUndr5lkhs).click();
+        jsClick(upcmngBikesUndr5lkhs);
     }
 }
