@@ -1747,3 +1747,21 @@
 2026-05-04 15:06:40 INFO  utilities.LogUtil - Excel exported successfully for CNG cars with rating > 4
 2026-05-04 15:06:40 INFO  utilities.LogUtil - ===== Test Finished Successfully =====
 2026-05-04 15:06:40 INFO  utilities.LogUtil - Closing browser
+2026-05-04 15:07:27 INFO  utilities.LogUtil - Starting browser setup
+2026-05-04 15:07:32 INFO  utilities.LogUtil - Launching application URL
+2026-05-04 15:07:37 INFO  utilities.LogUtil - Navigating to CNG Cars section
+2026-05-04 15:07:41 INFO  utilities.LogUtil - Current visible car count: 31
+2026-05-04 15:07:41 INFO  utilities.LogUtil - Clicking car at index: 0
+2026-05-04 15:07:43 INFO  utilities.LogUtil - Navigated to car detail page: Tata Punch On Road Price in Delhi - 2026 Punch price in Delhi, RTO, insurance and EMI
+2026-05-04 15:07:44 INFO  utilities.LogUtil - Lowest city price info: Kolkata | Rs. 6.34 Lakh
+2026-05-04 15:07:44 INFO  utilities.LogUtil - Navigating back to CNG list page
+2026-05-04 15:07:46 INFO  utilities.LogUtil - Current visible car count: 31
+2026-05-04 15:07:46 INFO  utilities.LogUtil - Clicking car at index: 1
+2026-05-04 15:07:49 INFO  utilities.LogUtil - Navigated to car detail page: Maruti Suzuki FRONX On Road Price in Delhi - 2026 FRONX price in Delhi, RTO, insurance and EMI
+2026-05-04 15:07:50 INFO  utilities.LogUtil - Lowest city price info: Ahmedabad | Rs. 7.77 Lakh
+2026-05-04 15:07:50 INFO  utilities.LogUtil - Navigating back to CNG list page
+2026-05-04 15:07:52 INFO  utilities.LogUtil - Current visible car count: 31
+2026-05-04 15:07:52 INFO  utilities.LogUtil - Clicking car at index: 2
+2026-05-04 15:07:54 INFO  utilities.LogUtil - Navigated to car detail page: Tata Nexon On Road Price in Delhi - 2026 Nexon price in Delhi, RTO, insurance and EMI
+2026-05-04 15:07:56 INFO  utilities.LogUtil - Lowest city price info: Kolkata | Rs. 8.22 Lakh
+2026-05-04 15:07:56 INFO  utilities.LogUtil - Navigating back to CNG list page
