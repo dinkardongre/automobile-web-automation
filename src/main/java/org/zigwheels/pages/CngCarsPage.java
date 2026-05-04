@@ -3,19 +3,18 @@ package org.zigwheels.pages;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import utilities.CommonCode;
 
 import java.util.List;
 
-public class CngCarsPage {
-
-    private WebDriver driver;
-    private JavascriptExecutor js;
+public class CngCarsPage extends CommonCode {
 
     public CngCarsPage(WebDriver driver) {
-        this.driver = driver;
-        this.js = (JavascriptExecutor) driver;
+        super(driver);
         PageFactory.initElements(driver, this);
     }
+
+    // ================= EXISTING LOCATORS (UNCHANGED) =================
 
     @FindBy(xpath = "//*[@id='carModels']/div/span")
     private WebElement viewMore;
@@ -29,20 +28,71 @@ public class CngCarsPage {
     @FindBy(xpath = "//span[contains(@class,'clr-bl fr')]")
     private List<WebElement> emiValues;
 
+    @FindBy(xpath = "//*[@id='modelList']/li/div/div/a")
+    private List<WebElement> carLinks;
+
+    @FindBy(xpath = "//table[contains(@class,'new-price-container-rhs')]//tbody/tr")
+    private List<WebElement> rhsPriceRows;
+
 
     public void clickViewMore() {
         try {
-            js.executeScript("arguments[0].scrollIntoView(true);", viewMore);
-            js.executeScript("arguments[0].click();", viewMore);
+            scrollIntoView(viewMore);
+            jsClick(viewMore);
         } catch (Exception ignored) {}
     }
 
-
     public List<WebElement> getCarNames() {
         if (!carNames.isEmpty()) {
-            js.executeScript("arguments[0].scrollIntoView(true);", carNames.get(0));
+            scrollIntoView(carNames.get(0));
         }
         return carNames;
+    }
+
+    public int getCarCount() {
+        return carLinks.size();
+    }
+
+    public void clickCarByIndex(int index) {
+        WebElement car = carLinks.get(index);
+        scrollIntoView(car);
+        jsClick(car);
+    }
+
+    public boolean clickViewMoreIfAvailable() {
+        try {
+            if (viewMore.isDisplayed()) {
+                scrollIntoView(viewMore);
+                jsClick(viewMore);
+                return true;
+            }
+        } catch (Exception ignored) {}
+        return false;
+    }
+
+    public String findLowestCityPriceFromRhs() {
+
+        String lowestCity = "";
+        double lowestPrice = Double.MAX_VALUE;
+
+        for (WebElement row : rhsPriceRows) {
+
+            String city = row.findElement(By.xpath("./td[1]")).getText().trim();
+            String priceText = row.findElement(By.xpath("./td[2]")).getText().trim();
+
+            double price = Double.parseDouble(
+                    priceText.replace("Rs.", "")
+                            .replace("Lakh", "")
+                            .trim()
+            );
+
+            if (price < lowestPrice) {
+                lowestPrice = price;
+                lowestCity = city;
+            }
+        }
+
+        return lowestCity + " | Rs. " + lowestPrice + " Lakh";
     }
 
     public List<WebElement> getCarPrices() {
@@ -51,7 +101,7 @@ public class CngCarsPage {
 
     public List<WebElement> getEmiValues() {
         if (!emiValues.isEmpty()) {
-            js.executeScript("arguments[0].scrollIntoView(true);", emiValues.get(0));
+            scrollIntoView(emiValues.get(0));
         }
         return emiValues;
     }
