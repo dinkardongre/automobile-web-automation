@@ -24,19 +24,25 @@ public class BaseTest {
 
             case "chrome":
                 ChromeOptions chromeOptions = new ChromeOptions();
+                chromeOptions.addArguments("--headless=new");
+                chromeOptions.addArguments("--window-size=1920,1080");
                 chromeOptions.addArguments("--disable-notifications");
                 chromeOptions.addArguments("--disable-popup-blocking");
-                chromeOptions.addArguments("--start-maximized");
-//                chromeOptions.addArguments("--headless=new");
+                chromeOptions.addArguments("--disable-infobars");
+                chromeOptions.addArguments("--disable-gpu"); // extra stability on Windows
+
                 driver = new ChromeDriver(chromeOptions);
                 break;
 
             case "edge":
                 EdgeOptions edgeOptions = new EdgeOptions();
+                edgeOptions.addArguments("--headless=new");
+                edgeOptions.addArguments("--window-size=1920,1080");
                 edgeOptions.addArguments("--disable-notifications");
                 edgeOptions.addArguments("--disable-popup-blocking");
-                edgeOptions.addArguments("--start-maximized");
-//                edgeOptions.addArguments("--headless=new");
+                edgeOptions.addArguments("--disable-infobars");
+                edgeOptions.addArguments("--disable-gpu");
+
                 driver = new EdgeDriver(edgeOptions);
                 break;
 

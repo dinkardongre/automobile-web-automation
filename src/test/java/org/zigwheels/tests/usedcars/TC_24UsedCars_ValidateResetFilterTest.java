@@ -13,25 +13,24 @@ public class TC_24UsedCars_ValidateResetFilterTest extends BaseTest {
         HomePage homePage = new HomePage(driver);
 
         LogUtil.info("Opening Used Cars page");
-        homePage.openUsedCarsPage();
 
+        homePage.openUsedCarsPage();
         LogUtil.info("Selecting Chennai city");
+
         UsedCarsPage usedCarsPage = new UsedCarsPage(driver);
         usedCarsPage.selectChennaiCity();
-
         LogUtil.info("Capturing heading before reset");
+
         String headingBeforeReset = usedCarsPage.getUsedCarsHeading();
-
-
         LogUtil.info("Applying price filter: Under 5 Lakhs");
+
         usedCarsPage.selectPriceUnder5Lakhs();
-
         LogUtil.info("Clicking Reset All filter");
+
         usedCarsPage.clickReset();
-
         LogUtil.info("Capturing heading after reset");
-        String headingAfterReset = usedCarsPage.getUsedCarsHeading();
 
+        String headingAfterReset = usedCarsPage.getUsedCarsHeading();
 
         Assert.assertEquals(
                 headingAfterReset,
