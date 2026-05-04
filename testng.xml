@@ -16,6 +16,7 @@
             <class name="org.zigwheels.tests.cng.TC_1CngCarsNavigationTest"/>
             <class name="org.zigwheels.tests.cng.TC_2CngCarsPriceRangeTest"/>
             <class name="org.zigwheels.tests.cng.TC_3CngCarsEmiRangeTest"/>
+            <class name="org.zigwheels.tests.cng.TC_4CngCarLowCostCity"/>
 
             <!-- Electric Cars -->
             <class name="org.zigwheels.tests.electriccars.TC_6ElectricCars_CategoryFlow"/>
