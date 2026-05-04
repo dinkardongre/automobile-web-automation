@@ -38,6 +38,20 @@ public class HomePage extends CommonCode {
     @FindBy(xpath = "//a[normalize-space()='Used Cars']")
     private WebElement usedCarsLink;
 
+    @FindBy(id = "CNG-cars")
+    private WebElement cngSection;
+
+    @FindBy(xpath = "//a[@title='View all CNG Cars']")
+    private WebElement viewAllCngCars;
+
+    @FindBy(xpath = "//*[@id='carModels']/div/span")
+    private WebElement viewMore;
+
+    public void clickCngSection() {
+        jsClick(cngSection);
+        jsClick(viewAllCngCars);
+    }
+
     public HomePage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);

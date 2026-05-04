@@ -1,4 +1,5 @@
 package org.zigwheels.pages;
+import org.openqa.selenium.By;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -20,7 +21,7 @@ public class UsedCarsPage extends CommonCode {
     @FindBy(xpath = "//div[@id='ctpgray']//li//a[starts-with(text(),'Chennai')]")
     private WebElement chennaiCity;
 
-    @FindBy(xpath = "//h1[contains(text(),'Used Cars in')]")
+    @FindBy(xpath = "//h1")
     WebElement cityHeading;
 
     @FindBy(xpath = "//input[@id='price2']")
@@ -28,6 +29,8 @@ public class UsedCarsPage extends CommonCode {
 
     @FindBy(xpath = "//span[contains(@class,'zw-cmn-price')]")
     List<WebElement> carPrices;
+
+    By carPricesLocator = By.xpath("//span[contains(text(),'Rs.')]");
 
     @FindBy(xpath = "//a[text()='Reset All']")
     private WebElement resetButton;
@@ -40,6 +43,15 @@ public class UsedCarsPage extends CommonCode {
 
     @FindBy(className = "ucCounth")
     private WebElement heading;
+
+    @FindBy(xpath = "//h1[contains(text(),'Used Cars in Chennai')]")
+    private WebElement  Usedcarheading;
+
+    @FindBy(xpath = "(//input[@class='ui-autocomplete-input usedCarMakeModel'])[1]")
+    private WebElement searchInput;
+
+    @FindBy(xpath = "//ul[contains(@class,'ui-autocomplete')]//li//a")
+    private List<WebElement> autoCompleteOptions;
 
     public UsedCarsPage(WebDriver driver) {
         super(driver);
@@ -67,16 +79,15 @@ public class UsedCarsPage extends CommonCode {
     }
 
     public void selectPriceUnder5Lakhs()  {
-        System.out.println(under5LakhsOption.isSelected());
         jsClick(under5LakhsOption);
-        System.out.println(under5LakhsOption.isSelected());
-        waitForPriceFilterUpdate();
+        waitForPricesToLoad();
     }
 
     public int convertPriceToNumber(String priceText) {
 
         priceText = priceText.toLowerCase()
                 .replace("rs.", "")
+                .replace(",","")
                 .trim();
 
         if (priceText.contains("lakh")) {
@@ -101,51 +112,74 @@ public class UsedCarsPage extends CommonCode {
         }
     }
 
-    public boolean verifyPricesUnder(int maxPrice) {
+    public void scrollToSearchButton() {
 
-        waitForPricesToLoad();
-       for (WebElement priceElement : carPrices) {
-        String priceText = priceElement.getText();
-        int price = convertPriceToNumber(priceText);
+        waitUtils.waitForVisibility(searchInput);
+        scrollIntoView(searchInput);
 
-        LogUtil.info("Price found: " + price);
-
-        if (price > maxPrice) {
-            return false;
-        }
+        LogUtil.info("Scrolled to Search button");
     }
-    return true;
+
+    public boolean areAutoCompleteSuggestionsDisplayed(String searchText) {
+
+       try {
+        // Ensure element is visible & focused
+        scrollToSearchButton();
+
+        searchInput.clear();
+        searchInput.sendKeys(searchText);
+
+        //Small wait to allow JS autocomplete to trigger
+        waitUtils.waitForCondition(driver ->
+                autoCompleteOptions.size() > 0
+        );
+
+        LogUtil.info("Autocomplete suggestions count: " + autoCompleteOptions.size());
+        return autoCompleteOptions.size() > 0;
+
+    } catch (Exception e) {
+        return false;
+    }
 }
 
-    public void waitForPriceFilterUpdate() {
 
-       WebElement oldFirstCar = carPrices.get(0);
-        waitUtils.waitForCondition(driver -> {
+    public boolean verifyPricesUnder(int maxPrice) {
+
+        List<WebElement> prices = driver.findElements(carPricesLocator);
+
+        for (WebElement element : prices) {
+
             try {
-                oldFirstCar.isDisplayed();
-                return false;
+                int price = convertPriceToNumber(element.getText());
+
+                LogUtil.info("Price found: " + price);
+
+                if (price > maxPrice) {
+                    return false;
+                }
+
             } catch (StaleElementReferenceException e) {
-                return true;
+                return verifyPricesUnder(maxPrice); // retry
             }
-        });
+        }
+        return true;
     }
 
     public void clickReset() {
 
         waitUtils.waitForClickable(resetButton);
         resetButton.click();
-        waitForPriceFilterUpdate();
+        waitForPricesToLoad();
     }
 
     public String getUsedCarsHeading() {
-
-        waitUtils.waitForVisibility(cityHeading);
-        String headingText = cityHeading.getText();
+        waitUtils.waitForVisibility(Usedcarheading);
+        String headingText = Usedcarheading.getText();
         return headingText;
     }
 
     public void selectSortByLowToHigh(){
-
+        waitUtils.waitForVisibility(cityHeading);
         waitUtils.waitForVisibility(sortDropdown);
         Select select =new Select(sortDropdown);
         select.selectByVisibleText("Price : Low to High");
@@ -158,8 +192,32 @@ public class UsedCarsPage extends CommonCode {
         return select.getFirstSelectedOption().getText();
     }
 
+    public boolean verifyPricesSortedLowToHigh() {
+
+        waitForPricesToLoad();
+        int previousPrice = 0;
+        for (WebElement priceElement : carPrices) {
+
+            String priceText = priceElement.getText();
+            int currentPrice = convertPriceToNumber(priceText);
+
+            if (currentPrice < previousPrice) {
+                LogUtil.error(
+                        "Sorting failed. Previous price: "
+                                + previousPrice + " | Current price: "
+                                + currentPrice
+                );
+                return false;
+            }
+
+            previousPrice = currentPrice;
+        }
+        return true;
+    }
+
     public int getResultsCountFromHeading() {
 
+        waitUtils.waitForVisibility(Usedcarheading);
         String text = heading.getText();
         return Integer.parseInt(text);
     }
