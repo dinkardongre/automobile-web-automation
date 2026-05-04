@@ -29,8 +29,4 @@ public class CommonCode {
             ((JavascriptExecutor) driver)
                     .executeScript("arguments[0].click();", element);
         }
-    protected  void scrollDown(WebDriver driver) {
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollBy(0,500);");
-    }
    }
