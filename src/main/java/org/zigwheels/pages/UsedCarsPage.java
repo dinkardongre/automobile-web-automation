@@ -93,7 +93,6 @@ public class UsedCarsPage extends CommonCode {
     }
 
     public boolean areAutoCompleteSuggestionsDisplayed(String searchText) {
-
        try {
         scrollToSearchButton();
         searchInput.clear();
