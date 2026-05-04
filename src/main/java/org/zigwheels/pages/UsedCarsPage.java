@@ -153,28 +153,6 @@ public class UsedCarsPage extends CommonCode {
         return select.getFirstSelectedOption().getText();
     }
 
-    public boolean verifyPricesSortedLowToHigh() {
-        waitForPricesToLoad();
-        int previousPrice = 0;
-        for (WebElement priceElement : carPrices) {
-
-            String priceText = priceElement.getText();
-            int currentPrice = convertPriceToNumber(priceText);
-
-            if (currentPrice < previousPrice) {
-                LogUtil.error(
-                        "Sorting failed. Previous price: "
-                                + previousPrice + " | Current price: "
-                                + currentPrice
-                );
-                return false;
-            }
-
-            previousPrice = currentPrice;
-        }
-        return true;
-    }
-
     public int getResultsCountFromHeading() {
         waitUtils.waitForVisibility(Usedcarheading);
         String text = heading.getText();
