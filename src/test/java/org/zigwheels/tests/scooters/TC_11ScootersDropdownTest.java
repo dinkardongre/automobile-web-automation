@@ -12,20 +12,15 @@ public class TC_11ScootersDropdownTest extends BaseTest {
         LogUtil.info("Starting test: Validate Scooters dropdown visibility");
         homePage = new HomePage(driver);
 
-
-        // Hover on Scooters menu
         homePage.hoverOnScootersMenu();
         LogUtil.info("Hovered over Scooters menu");
 
-
-        // Validate Search New Scooters option
         Assert.assertTrue(
                 homePage.isSearchNewScootersVisible(),
                 "Search New Scooters option is not visible"
         );
         LogUtil.info("Search New Scooters option is visible");
 
-        // Validate Electric Scooters option
         Assert.assertTrue(
                 homePage.isElectricScootersVisible(),
                 "Electric Scooters option is not visible"
