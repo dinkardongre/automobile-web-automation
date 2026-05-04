@@ -6,7 +6,7 @@ import org.zigwheels.pages.HomePage;
 import utilities.ConfigReader;
 import utilities.LogUtil;
 
-public class TC_1GetUrl extends BaseTest {
+public class TC_16GetUrl extends BaseTest {
 
     @Test
     public void verifyUpcomingBikesFlow() {

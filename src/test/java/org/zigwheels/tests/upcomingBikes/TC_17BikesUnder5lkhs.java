@@ -1,7 +1,6 @@
 package org.zigwheels.tests.upcomingBikes;
 
 import basetest.BaseTest;
-import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.zigwheels.pages.HomePage;
@@ -11,7 +10,7 @@ import utilities.ScreenshotUtil;
 
 import java.io.IOException;
 
-public class TC_2BikesUnder5lkhs extends BaseTest {
+public class TC_17BikesUnder5lkhs extends BaseTest {
     @Test
     public void upcomingBikesRange() throws IOException {
 

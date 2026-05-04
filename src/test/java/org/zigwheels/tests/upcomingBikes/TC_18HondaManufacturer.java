@@ -1,6 +1,5 @@
 package org.zigwheels.tests.upcomingBikes;
 import basetest.BaseTest;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.zigwheels.pages.HomePage;
@@ -11,7 +10,7 @@ import utilities.ScreenshotUtil;
 import java.io.IOException;
 import java.util.List;
 
-public class TC_3HondaManufacturer extends BaseTest {
+public class TC_18HondaManufacturer extends BaseTest {
     @Test
     public void verifyHondaUpcomingBikes() throws IOException {
         LogUtil.info("Test Started: Verify Honda Upcoming Bikes");

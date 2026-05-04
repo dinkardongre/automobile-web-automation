@@ -1,13 +1,11 @@
 package org.zigwheels.tests.scooters;
 import basetest.BaseTest;
-import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.zigwheels.pages.HomePage;
-import org.zigwheels.pages.SearchScooters;
 import utilities.LogUtil;
 
-public class TC_6_ScootersDropdownTest extends BaseTest {
+public class TC_11ScootersDropdownTest extends BaseTest {
     private HomePage homePage;
     @Test
     public void testDropdownVisibility() {

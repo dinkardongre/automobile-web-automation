@@ -1,6 +1,8 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 
-<suite name="ZigWheels Automation Suite" parallel="classes" thread-count="3">
+<suite name="ZigWheels Automation Suite"
+       parallel="classes"
+       thread-count="3">
 
     <listeners>
         <listener class-name="listeners.TestListener"/>
@@ -10,26 +12,36 @@
 
         <classes>
 
+            <!-- CNG Cars -->
+            <class name="org.zigwheels.tests.cng.TC_1CngCarsNavigationTest"/>
+            <class name="org.zigwheels.tests.cng.TC_2CngCarsPriceRangeTest"/>
+            <class name="org.zigwheels.tests.cng.TC_3CngCarsEmiRangeTest"/>
+
             <!-- Electric Cars -->
-            <class name="org.zigwheels.tests.electriccars.TC_1ElectricCars_CategoryFlow"/>
-            <class name="org.zigwheels.tests.electriccars.TC_2ElectricCars_CoreContent"/>
-            <class name="org.zigwheels.tests.electriccars.TC_3ElectricCars_DuplicateNameValidation"/>
-            <class name="org.zigwheels.tests.electriccars.TC_4ElectricCars_PriceIntegrity"/>
-            <class name="org.zigwheels.tests.electriccars.TC_5ElectricCars_BudgetFilterValidation"/>
+            <class name="org.zigwheels.tests.electriccars.TC_6ElectricCars_CategoryFlow"/>
+            <class name="org.zigwheels.tests.electriccars.TC_7ElectricCars_CoreContent"/>
+            <class name="org.zigwheels.tests.electriccars.TC_8ElectricCars_DuplicateNameValidation"/>
+            <class name="org.zigwheels.tests.electriccars.TC_9ElectricCars_PriceIntegrity"/>
+            <class name="org.zigwheels.tests.electriccars.TC_10ElectricCars_BudgetFilterValidation"/>
 
             <!-- Scooters -->
-            <class name="org.zigwheels.tests.scooters.TC_6_ScootersDropdownTest"/>
-            <class name="org.zigwheels.tests.scooters.TC_7_SequentialScootersNavigationTest"/>
+            <class name="org.zigwheels.tests.scooters.TC_11ScootersDropdownTest"/>
+            <class name="org.zigwheels.tests.scooters.TC_12SequentialScootersNavigationTest"/>
+            <class name="org.zigwheels.tests.scooters.TC_13ValidateScootersUnder40000PriceFilter"/>
+            <class name="org.zigwheels.tests.scooters.TC_14ValidateTVSBrandScootersTest"/>
+            <class name="org.zigwheels.tests.scooters.TC_15SearchTVSJupiterUsingDropdown"/>
 
             <!-- Upcoming Bikes -->
-            <class name="org.zigwheels.tests.upcomingBikes.TC_1GetUrl"/>
-            <class name="org.zigwheels.tests.upcomingBikes.TC_2BikesUnder5lkhs"/>
+            <class name="org.zigwheels.tests.upcomingBikes.TC_16GetUrl"/>
+            <class name="org.zigwheels.tests.upcomingBikes.TC_17BikesUnder5lkhs"/>
+            <class name="org.zigwheels.tests.upcomingBikes.TC_18HondaManufacturer"/>
 
             <!-- Used Cars -->
             <class name="org.zigwheels.tests.usedcars.TC_21UsedCars_ValidateChennaiLocation"/>
-            <class name="org.zigwheels.tests.usedcars.TC_22UsedCars_ValidatePriceFilter"/>
+            <class name="org.zigwheels.tests.usedcars.TC_22UsedCars_ValidateScrollAndSearch"/>
             <class name="org.zigwheels.tests.usedcars.TC_23UsedCars_ValidateSortLowToHigh"/>
             <class name="org.zigwheels.tests.usedcars.TC_24UsedCars_ValidateResetFilterTest"/>
+            <class name="org.zigwheels.tests.usedcars.TC_25UsedCars_ValidateResultsCount"/>
 
         </classes>
 

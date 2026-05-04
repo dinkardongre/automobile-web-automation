@@ -10,7 +10,7 @@ import utilities.LogUtil;
 
 import java.util.List;
 
-public class TC_8_ValidateScootersUnder40000PriceFilter extends BaseTest {
+public class TC_13ValidateScootersUnder40000PriceFilter extends BaseTest {
 
     @Test
     public void validateScootersUnder40000PriceFilter() {

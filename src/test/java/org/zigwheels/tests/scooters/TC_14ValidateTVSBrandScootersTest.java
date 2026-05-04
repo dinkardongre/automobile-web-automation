@@ -12,7 +12,7 @@ import utilities.LogUtil;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TC_9_ValidateTVSBrandScootersTest extends BaseTest {
+public class TC_14ValidateTVSBrandScootersTest extends BaseTest {
 
     @Test
     public void validateAndExportTVSScooters() throws Exception {

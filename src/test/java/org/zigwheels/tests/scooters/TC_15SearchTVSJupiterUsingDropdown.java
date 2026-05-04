@@ -7,7 +7,7 @@ import org.zigwheels.pages.HomePage;
 import org.zigwheels.pages.SearchScooters;
 import utilities.LogUtil;
 
-public class TC__10_SearchTVSJupiterUsingDropdown extends BaseTest {
+public class TC_15SearchTVSJupiterUsingDropdown extends BaseTest {
 
     @Test
     public void validateTVSJupiterSearch() {
