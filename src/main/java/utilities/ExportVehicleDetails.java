@@ -3,7 +3,6 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.List;
@@ -44,7 +43,6 @@ public class ExportVehicleDetails {
         }
         workbook.close();
     }
-    // ✅ ADD ONLY THIS METHOD – CNG Rating Export
     public static void writeCngCarRatingDetails(
             List<String> carNames,
             List<Double> ratings) throws IOException {
@@ -116,6 +114,28 @@ public class ExportVehicleDetails {
         }
 
         try (FileOutputStream fos = new FileOutputStream(FILE_PATH1)) {
+            workbook.write(fos);
+        }
+        workbook.close();
+    }
+
+    private static final String FILE_PATH3 =
+            System.getProperty("user.dir")
+                    + "/src/test/resources/testData/HondaUpcomingBikes.xlsx";
+
+    public static void writeHondaBikeDetails(List<String> hondaBikeNames) throws IOException {
+        Workbook workbook = new XSSFWorkbook();
+        Sheet sheet = workbook.createSheet("HondaUpcomingBikes");
+
+        Row header = sheet.createRow(0);
+        header.createCell(0).setCellValue("Honda Bike Name");
+
+        for (int i = 0; i < hondaBikeNames.size(); i++) {
+            Row row = sheet.createRow(i + 1);
+            row.createCell(0).setCellValue(hondaBikeNames.get(i));
+        }
+
+        try (FileOutputStream fos = new FileOutputStream(FILE_PATH3)) {
             workbook.write(fos);
         }
         workbook.close();

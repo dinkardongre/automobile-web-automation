@@ -4,6 +4,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.zigwheels.pages.HomePage;
 import org.zigwheels.pages.UpcomingBikesPage;
+import utilities.ExportVehicleDetails;
 import utilities.LogUtil;
 import utilities.ScreenshotUtil;
 
@@ -33,6 +34,8 @@ public class TC_18HondaManufacturer extends BaseTest {
             Assert.assertTrue(name.contains("honda"),
                     "Found a bike that is not Honda: " + bikeName);
         }
+
+        ExportVehicleDetails.writeHondaBikeDetails(hondaBikes);
 
         LogUtil.info("All bikes are Honda manufacturer");
     }
