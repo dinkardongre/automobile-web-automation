@@ -6,12 +6,13 @@ import org.zigwheels.pages.HomePage;
 import org.zigwheels.pages.UsedCarsPage;
 import utilities.LogUtil;
 import utilities.ScreenshotUtil;
-
 import java.io.IOException;
 
 public class TC_24UsedCars_ValidateResetFilterTest extends BaseTest {
     @Test
     public void validateResetFilter() throws IOException {
+
+        LogUtil.info("Test Started: Validate Reset Filter");
 
         HomePage homePage = new HomePage(driver);
 
@@ -42,6 +43,8 @@ public class TC_24UsedCars_ValidateResetFilterTest extends BaseTest {
                 "Page heading did not reset correctly after Reset All"
         );
         LogUtil.info("Reset filter validated successfully");
+
+        LogUtil.info("Test Finished Successfully");
 
     }
 }

@@ -9,6 +9,7 @@ import utilities.CommonCode;
 import utilities.ConfigReader;
 import utilities.LogUtil;
 import utilities.WaitUtils;
+import java.util.ArrayList;
 import java.util.List;
 
 public class UsedCarsPage extends CommonCode {
@@ -30,23 +31,20 @@ public class UsedCarsPage extends CommonCode {
     @FindBy(xpath = "//a[text()='Reset All']")
     private WebElement resetButton;
 
-    @FindBy(id="websortbyusedcar")
+    @FindBy(id = "websortbyusedcar")
     private WebElement sortDropdown;
 
-    @FindBy(xpath = "//div[contains(@class,'zw-sr-paddingLeft')]")
-    private List<WebElement> cars;
-
-    @FindBy(className = "ucCounth")
-    private WebElement heading;
-
     @FindBy(xpath = "//h1[contains(text(),'Used Cars in Chennai')]")
-    private WebElement  Usedcarheading;
+    private WebElement Usedcarheading;
 
     @FindBy(xpath = "(//input[@class='ui-autocomplete-input usedCarMakeModel'])[1]")
     private WebElement searchInput;
 
     @FindBy(xpath = "//ul[contains(@class,'ui-autocomplete')]//li//a")
     private List<WebElement> autoCompleteOptions;
+
+    @FindBy(xpath = "//ul[contains(@class,'popularModels')]//label")
+    private List<WebElement> popularModels;
 
     public UsedCarsPage(WebDriver driver) {
         super(driver);
@@ -61,37 +59,19 @@ public class UsedCarsPage extends CommonCode {
     }
 
     public boolean isChennaiPageLoaded() {
-            try {
-                String expectedCity = ConfigReader.getProperty("city.chennai");
-                wait.until(ExpectedConditions.textToBePresentInElement(
-                        cityHeading, expectedCity));
-                return true;
-            } catch (Exception e) {
-                return false;
-            }
+        try {
+            String expectedCity = ConfigReader.getProperty("city.chennai");
+            wait.until(ExpectedConditions.textToBePresentInElement(
+                    cityHeading, expectedCity));
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
     }
 
-    public void selectPriceUnder5Lakhs()  {
+    public void selectPriceUnder5Lakhs() {
         jsClick(under5LakhsOption);
         waitForPricesToLoad();
-    }
-
-    public int convertPriceToNumber(String priceText) {
-        priceText = priceText.toLowerCase()
-                .replace("rs.", "")
-                .replace(",","")
-                .trim();
-
-        if (priceText.contains("lakh")) {
-            double value = Double.parseDouble(priceText.replace("lakh", "").trim());
-            return (int) (value * 100000);
-        }
-
-        if (priceText.contains("crore")) {
-            double value = Double.parseDouble(priceText.replace("crore", "").trim());
-            return (int) (value * 10000000);
-        }
-        return Integer.parseInt(priceText);
     }
 
     public boolean waitForPricesToLoad() {
@@ -106,27 +86,24 @@ public class UsedCarsPage extends CommonCode {
     public void scrollToSearchButton() {
         waitUtils.waitForVisibility(searchInput);
         scrollIntoView(searchInput);
-
-        LogUtil.info("Scrolled to Search button");
     }
 
     public boolean areAutoCompleteSuggestionsDisplayed(String searchText) {
+        try {
+            scrollToSearchButton();
+            searchInput.clear();
+            searchInput.sendKeys(searchText);
+            waitUtils.waitForCondition(driver ->
+                    autoCompleteOptions.size() > 0
+            );
 
-       try {
-        scrollToSearchButton();
-        searchInput.clear();
-        searchInput.sendKeys(searchText);
-        waitUtils.waitForCondition(driver ->
-                autoCompleteOptions.size() > 0
-        );
+            LogUtil.info("Autocomplete suggestions count: " + autoCompleteOptions.size());
+            return autoCompleteOptions.size() > 0;
 
-        LogUtil.info("Autocomplete suggestions count: " + autoCompleteOptions.size());
-        return autoCompleteOptions.size() > 0;
-
-    } catch (Exception e) {
-        return false;
+        } catch (Exception e) {
+            return false;
+        }
     }
-}
 
     public void clickReset() {
         waitUtils.waitForClickable(resetButton);
@@ -140,29 +117,34 @@ public class UsedCarsPage extends CommonCode {
         return headingText;
     }
 
-    public void selectSortByLowToHigh(){
-        waitUtils.waitForVisibility(cityHeading);
+    public void selectSortByLowToHigh() {
         waitUtils.waitForVisibility(sortDropdown);
-        Select select =new Select(sortDropdown);
-        select.selectByVisibleText("Price : Low to High");
+
+        String sortValue =
+                ConfigReader.getProperty("sort.lowToHigh");
+
+        Select select = new Select(sortDropdown);
+        select.selectByVisibleText(sortValue);
+
         waitForPricesToLoad();
     }
 
-    public String getSelectedSortOption(){
-        Select select=new Select(sortDropdown);
-        return select.getFirstSelectedOption().getText();
+    public String getSelectedSortOption() {
+        Select select = new Select(sortDropdown);
+        return select.getFirstSelectedOption().getText().trim();
     }
 
-    public int getResultsCountFromHeading() {
-        waitUtils.waitForVisibility(Usedcarheading);
-        String text = heading.getText();
-        return Integer.parseInt(text);
-    }
+    public List<String> getPopularModelsList() {
+        List<String> popularModelsList = new ArrayList<>();
 
-    public int getVisibleCarCount() {
-        return cars.size();
+        for (WebElement model : popularModels) {
+            popularModelsList.add(model.getText().trim());
+        }
+
+        return popularModelsList;
     }
 }
+
 
 
 

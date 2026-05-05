@@ -60,7 +60,8 @@ public class HomePage extends CommonCode {
         PageFactory.initElements(driver, this);
         this.wait = new WaitUtils(driver);
     }
-    public WebElement getNewBikesMenus(){
+
+    public WebElement getNewBikesMenus() {
         return newBikesMenu;
     }
 
@@ -70,18 +71,23 @@ public class HomePage extends CommonCode {
         electricCarsOption.click();
     }
 
-    public void openUpcomingBikes(){
+    public void openUpcomingBikes() {
         actionMethod(newBikesMenu);
         wait.waitForVisibility(upcomingBikesLink);
         upcomingBikesLink.click();
-   }
+    }
 
-    public void openElectricBikes(){
+    public void openElectricBikes() {
         actionMethod(newBikesMenu);
         wait.waitForVisibility(electricBikes);
         electricBikes.click();
     }
 
+    public void openUsedCarsPage() {
+        actionCode.actionMethod(moreMenu);
+        wait.waitForVisibility(usedCarsLink);
+        usedCarsLink.click();
+    }
 
     public void hoverOnScootersMenu() {
         actionMethod(wait.waitForVisibility(scootersMenu));
@@ -103,9 +109,4 @@ public class HomePage extends CommonCode {
         return wait.waitForVisibility(electricScooters).isDisplayed();
     }
 
-    public void openUsedCarsPage() {
-        actionCode.actionMethod(moreMenu);
-        wait.waitForVisibility(usedCarsLink);
-        usedCarsLink.click();
-    }
 }

@@ -1,5 +1,4 @@
 package org.zigwheels.tests.usedcars;
-
 import basetest.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -10,6 +9,8 @@ import utilities.LogUtil;
 public class TC_22UsedCars_ValidateScrollAndSearch extends BaseTest {
     @Test
     public void validateSearchButtonAfterScroll() {
+
+        LogUtil.info("Test Started: Validate Scroll And Search");
 
         HomePage homePage = new HomePage(driver);
         LogUtil.info("Opening Used Cars page");
@@ -26,12 +27,14 @@ public class TC_22UsedCars_ValidateScrollAndSearch extends BaseTest {
 
         Assert.assertTrue(
                 usedCarsPage.areAutoCompleteSuggestionsDisplayed("Hyundai"),
-                    "Autocomplete suggestions are NOT displayed"
-            );
-            LogUtil.info("Autocomplete suggestions displayed successfully");
+                "Autocomplete suggestions are NOT displayed"
+        );
+        LogUtil.info("Autocomplete suggestions displayed successfully");
 
-        }
+        LogUtil.info("Test Finished Successfully");
+
     }
+}
 
 
 

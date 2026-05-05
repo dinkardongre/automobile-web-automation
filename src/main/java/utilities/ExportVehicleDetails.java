@@ -71,6 +71,32 @@ public class ExportVehicleDetails {
         }
         workbook.close();
     }
+    private static final String FILE_PATH2 =
+            System.getProperty("user.dir")
+                    + "/src/test/resources/testData/UsedCars_PopularModels.xlsx";
+
+    public static void writePopularModelsToExcel(
+            List<String> popularModels) throws IOException {
+
+        Workbook workbook = new XSSFWorkbook();
+        Sheet sheet = workbook.createSheet("Popular Used Cars");
+
+        Row header = sheet.createRow(0);
+        header.createCell(0).setCellValue("Popular Used Car Models");
+
+        for (int i = 0; i < popularModels.size(); i++) {
+            Row row = sheet.createRow(i + 1);
+            row.createCell(0).setCellValue(popularModels.get(i));
+        }
+
+        try (FileOutputStream fos = new FileOutputStream(FILE_PATH2)) {
+            workbook.write(fos);
+        }
+
+        workbook.close();
+    }
+
+
     private static final String FILE_PATH1 =
             System.getProperty("user.dir")
                     + "/src/test/resources/testData/TVSScooters.xlsx";

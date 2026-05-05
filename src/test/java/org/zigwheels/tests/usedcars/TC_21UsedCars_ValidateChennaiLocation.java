@@ -6,7 +6,6 @@ import org.zigwheels.pages.HomePage;
 import org.zigwheels.pages.UsedCarsPage;
 import utilities.LogUtil;
 import utilities.ScreenshotUtil;
-
 import java.io.IOException;
 
 public class TC_21UsedCars_ValidateChennaiLocation extends BaseTest {
@@ -14,22 +13,27 @@ public class TC_21UsedCars_ValidateChennaiLocation extends BaseTest {
     @Test
     public void validateChennaiLocationSelected() throws IOException {
 
-        HomePage homePage = new HomePage(driver);
+        LogUtil.info("Test Started : Validate Chennai Location");
 
-        LogUtil.info("Opening Used Cars page");
+        HomePage homePage = new HomePage(driver);
+        LogUtil.info("Navigating to Used Cars page");
 
         homePage.openUsedCarsPage();
-        LogUtil.info("Selecting Chennai city");
-
         UsedCarsPage usedCarsPage = new UsedCarsPage(driver);
+        LogUtil.info("Selecting city as Chennai");
+
         usedCarsPage.selectChennaiCity();
-        ScreenshotUtil.captureScreenshot(driver, "UsedCar_page_loaded.png");
+        LogUtil.info("Capturing screenshot after Chennai selection");
 
-        LogUtil.info("Validating Chennai location");
+        ScreenshotUtil.captureScreenshot(driver, "UsedCars_ChennaiPageLoaded.png");
+        LogUtil.info("Verifying Chennai page is loaded successfully");
 
-            Assert.assertTrue(
-                    usedCarsPage.isChennaiPageLoaded(),
-                    "Chennai page not loaded correctly"
-            );
+        Assert.assertTrue(
+                usedCarsPage.isChennaiPageLoaded(),
+                "Chennai page not loaded correctly"
+        );
+        LogUtil.info("Chennai location validated successfully");
+
+        LogUtil.info("Test Finished Successfully");
     }
 }
