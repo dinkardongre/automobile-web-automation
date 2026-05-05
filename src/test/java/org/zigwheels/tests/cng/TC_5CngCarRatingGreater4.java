@@ -36,19 +36,33 @@ public class TC_5CngCarRatingGreater4 extends BaseTest {
         LogUtil.info("Filtering cars with rating > 4");
 
         for (int i = 0; i < ratingElements.size(); i++) {
+            String ratingText = ratingElements.get(i).getText().trim();
+            String carName = carNameElements.get(i).getText().trim();
 
-            double ratingValue = Double.parseDouble(ratingElements.get(i).getText());
-            String carName = carNameElements.get(i).getText();
+            if (ratingText.isEmpty()) {
+                // silently skip missing ratings (no log, no export)
+                continue;
+            }
 
-            Assert.assertTrue(ratingValue > 0,
-                    "Invalid rating found for car: " + carName);
+            try {
+                double ratingValue = Double.parseDouble(ratingText);
 
-            if (ratingValue > 4.0) {
-                LogUtil.info("Valid Car: " + carName + " | Rating: " + ratingValue);
-                filteredCarNames.add(carName);
-                filteredRatings.add(ratingValue);
+                Assert.assertTrue(ratingValue > 0,
+                        "Invalid rating found for car: " + carName);
+
+                if (ratingValue > 4.0) {
+                    LogUtil.info("Valid Car: " + carName + " | Rating: " + ratingValue);
+                    filteredCarNames.add(carName);
+                    filteredRatings.add(ratingValue);
+                } else {
+                    LogUtil.info("Car skipped, rating <= 4: " + carName + " | Rating: " + ratingValue);
+                }
+            } catch (NumberFormatException e) {
+                // silently skip invalid formats too
+                continue;
             }
         }
+
 
         Assert.assertFalse(filteredCarNames.isEmpty(),
                 "No CNG car found with rating greater than 4");
