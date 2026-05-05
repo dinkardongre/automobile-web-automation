@@ -1,10 +1,8 @@
 package org.zigwheels.pages;
-
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.CommonCode;
-
 import java.util.List;
 
 public class CngCarsPage extends CommonCode {
@@ -32,8 +30,6 @@ public class CngCarsPage extends CommonCode {
     @FindBy(xpath = "//table[contains(@class,'new-price-container-rhs')]//tbody/tr")
     private List<WebElement> rhsPriceRows;
 
-
-
     @FindBy(xpath = "//ul[@id='modelList']/li/div/a/div[1]")
     private List<WebElement> carRatings;
 
@@ -43,7 +39,6 @@ public class CngCarsPage extends CommonCode {
         }
         return carRatings;
     }
-
 
     public void clickViewMore() {
         try {
