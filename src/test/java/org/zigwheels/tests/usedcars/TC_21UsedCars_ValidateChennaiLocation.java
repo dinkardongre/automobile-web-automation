@@ -9,7 +9,6 @@ import utilities.ScreenshotUtil;
 import java.io.IOException;
 
 public class TC_21UsedCars_ValidateChennaiLocation extends BaseTest {
-
     @Test
     public void validateChennaiLocationSelected() throws IOException {
 
