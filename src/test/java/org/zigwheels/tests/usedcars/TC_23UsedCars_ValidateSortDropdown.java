@@ -8,7 +8,6 @@ import utilities.ConfigReader;
 import utilities.LogUtil;
 
 public class TC_23UsedCars_ValidateSortDropdown extends BaseTest {
-
     @Test
     public void validateSortDropdownLowToHighSelection() {
 
