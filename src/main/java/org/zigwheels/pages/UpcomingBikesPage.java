@@ -32,7 +32,7 @@ public class UpcomingBikesPage extends CommonCode {
     @FindBy(xpath = "//h2[text()='Upcoming Bikes Between 2 To 5 Lakhs in 2026 ']")
     private WebElement under5LakhBikePageHeader;
 
-    @FindBy(css = ".b.fnt-15")
+    @FindBy(xpath = "//div[@class='zw-B-bodyWrap']//a//following-sibling::div[contains(@class,'b fnt-')]")
     private List<WebElement> bikePrices;
 
     @FindBy(xpath = "//a[text()='Electric Bikes']")
