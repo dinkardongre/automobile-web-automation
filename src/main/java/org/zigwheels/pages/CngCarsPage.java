@@ -18,7 +18,7 @@ public class CngCarsPage extends CommonCode {
     @FindBy(xpath = "//a[@data-track-label='-model-name']")
     private List<WebElement> carNames;
 
-    @FindBy(xpath = "//span[contains(@class,'b fnt-black fnt-14 fl')]")
+    @FindBy(xpath = "//span[@title=' Ex-Showroom Price']")
     private List<WebElement> carPrices;
 
     @FindBy(xpath = "//span[contains(@class,'clr-bl fr')]")
@@ -30,7 +30,7 @@ public class CngCarsPage extends CommonCode {
     @FindBy(xpath = "//table[contains(@class,'new-price-container-rhs')]//tbody/tr")
     private List<WebElement> rhsPriceRows;
 
-    @FindBy(xpath = "//div[contains(@class,'r-w fnt-12 rel i-b rt-lg')]")
+    @FindBy(xpath = "//li[contains(@class,'modelItem')]//div[contains(@class,'r-w')]")
     private List<WebElement> carRatings;
 
     public List<WebElement> getCarRatings() {

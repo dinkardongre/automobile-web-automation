@@ -24,7 +24,7 @@ public class BaseTest {
 
             case "chrome":
                 ChromeOptions chromeOptions = new ChromeOptions();
-               // chromeOptions.addArguments("--headless=new");
+              /*  chromeOptions.addArguments("--headless=new");*/
                 chromeOptions.addArguments("--disable-notifications");
                 chromeOptions.addArguments("--disable-popup-blocking");
                 chromeOptions.addArguments("--disable-infobars");
@@ -35,7 +35,7 @@ public class BaseTest {
 
             case "edge":
                 EdgeOptions edgeOptions = new EdgeOptions();
-              //  edgeOptions.addArguments("--headless=new");
+                /*edgeOptions.addArguments("--headless=new");*/
                 edgeOptions.addArguments("--disable-notifications");
                 edgeOptions.addArguments("--disable-popup-blocking");
                 edgeOptions.addArguments("--disable-infobars");

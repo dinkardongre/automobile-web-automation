@@ -3566,3 +3566,125 @@
 2026-05-06 13:56:54 INFO  utilities.LogUtil - Excel exported successfully for CNG cars with rating > 4
 2026-05-06 13:56:54 INFO  utilities.LogUtil - ===== Test Finished Successfully =====
 2026-05-06 13:56:54 INFO  utilities.LogUtil - Closing browser
+2026-05-06 16:13:07 INFO  utilities.LogUtil - Starting browser setup
+2026-05-06 16:13:16 INFO  utilities.LogUtil - Launching application URL
+2026-05-06 16:13:34 INFO  utilities.LogUtil - Collected 41 car names and 41 car prices
+2026-05-06 16:13:34 INFO  utilities.LogUtil - Closing browser
+2026-05-06 16:13:42 INFO  utilities.LogUtil - Starting browser setup
+2026-05-06 16:13:45 INFO  utilities.LogUtil - Launching application URL
+2026-05-06 16:13:50 INFO  utilities.LogUtil - ===== Test Started: Verify CNG Cars Rating > 4 =====
+2026-05-06 16:13:54 INFO  utilities.LogUtil - Navigated to CNG Cars section
+2026-05-06 16:13:54 INFO  utilities.LogUtil - Clicked View More on CNG Cars
+2026-05-06 16:13:54 INFO  utilities.LogUtil - Filtering cars with rating > 4
+2026-05-06 16:13:54 INFO  utilities.LogUtil - Closing browser
+2026-05-06 16:14:46 INFO  utilities.LogUtil - Starting browser setup
+2026-05-06 16:14:49 INFO  utilities.LogUtil - Launching application URL
+2026-05-06 16:14:56 INFO  utilities.LogUtil - ===== Test Started: Verify CNG Cars Rating > 4 =====
+2026-05-06 16:14:59 INFO  utilities.LogUtil - Navigated to CNG Cars section
+2026-05-06 16:14:59 INFO  utilities.LogUtil - Clicked View More on CNG Cars
+2026-05-06 16:14:59 INFO  utilities.LogUtil - Filtering cars with rating > 4
+2026-05-06 16:14:59 INFO  utilities.LogUtil - Closing browser
+2026-05-06 16:16:34 INFO  utilities.LogUtil - Starting browser setup
+2026-05-06 16:16:37 INFO  utilities.LogUtil - Launching application URL
+2026-05-06 16:16:49 INFO  utilities.LogUtil - Collected 41 car names and 41 car prices
+2026-05-06 16:16:49 INFO  utilities.LogUtil - Closing browser
+2026-05-06 16:22:18 INFO  utilities.LogUtil - Starting browser setup
+2026-05-06 16:22:22 INFO  utilities.LogUtil - Launching application URL
+2026-05-06 16:22:29 INFO  utilities.LogUtil - ===== Test Started: Verify CNG Cars Rating > 4 =====
+2026-05-06 16:22:33 INFO  utilities.LogUtil - Navigated to CNG Cars section
+2026-05-06 16:22:33 INFO  utilities.LogUtil - Clicked View More on CNG Cars
+2026-05-06 16:22:34 INFO  utilities.LogUtil - Filtering cars with rating > 4
+2026-05-06 16:22:34 INFO  utilities.LogUtil - Valid Car: Tata Punch | Rating: 4.6
+2026-05-06 16:22:34 INFO  utilities.LogUtil - Valid Car: Maruti Suzuki FRONX | Rating: 4.3
+2026-05-06 16:22:34 INFO  utilities.LogUtil - Valid Car: Tata Nexon | Rating: 4.5
+2026-05-06 16:22:34 INFO  utilities.LogUtil - Valid Car: Maruti Suzuki Ertiga | Rating: 4.1
+2026-05-06 16:22:34 INFO  utilities.LogUtil - Valid Car: Maruti Suzuki Swift | Rating: 4.2
+2026-05-06 16:22:34 INFO  utilities.LogUtil - Valid Car: Maruti Suzuki Brezza | Rating: 4.2
+2026-05-06 16:22:35 INFO  utilities.LogUtil - Valid Car: Maruti Suzuki Baleno | Rating: 4.2
+2026-05-06 16:22:35 INFO  utilities.LogUtil - Valid Car: Maruti Suzuki Dzire | Rating: 4.5
+2026-05-06 16:22:35 INFO  utilities.LogUtil - Valid Car: Hyundai Aura | Rating: 4.2
+2026-05-06 16:22:35 INFO  utilities.LogUtil - Valid Car: Toyota Urban Cruiser Hyryder | Rating: 4.4
+2026-05-06 16:22:35 INFO  utilities.LogUtil - Valid Car: Nissan Gravite | Rating: 4.3
+2026-05-06 16:22:35 INFO  utilities.LogUtil - Valid Car: Tata Tiago | Rating: 4.4
+2026-05-06 16:22:35 INFO  utilities.LogUtil - Car skipped, rating <= 4: Kia Carens | Rating: 3.8
+2026-05-06 16:22:35 INFO  utilities.LogUtil - Car skipped, rating <= 4: Hyundai Exter | Rating: 3.9
+2026-05-06 16:22:35 INFO  utilities.LogUtil - Valid Car: Maruti Suzuki Wagon R | Rating: 5.0
+2026-05-06 16:22:35 INFO  utilities.LogUtil - Valid Car: Maruti Suzuki Alto K10 | Rating: 4.6
+2026-05-06 16:22:36 INFO  utilities.LogUtil - Valid Car: Maruti Suzuki Victoris | Rating: 4.2
+2026-05-06 16:22:36 INFO  utilities.LogUtil - Valid Car: Tata Altroz | Rating: 4.4
+2026-05-06 16:22:39 INFO  utilities.LogUtil - Excel exported successfully for CNG cars with rating > 4
+2026-05-06 16:22:39 INFO  utilities.LogUtil - ===== Test Finished Successfully =====
+2026-05-06 16:22:39 INFO  utilities.LogUtil - Closing browser
+2026-05-06 16:23:10 INFO  utilities.LogUtil - Starting browser setup
+2026-05-06 16:23:12 INFO  utilities.LogUtil - Launching application URL
+2026-05-06 16:23:19 INFO  utilities.LogUtil - ===== Test Started: Verify CNG Cars Rating > 4 =====
+2026-05-06 16:23:23 INFO  utilities.LogUtil - Navigated to CNG Cars section
+2026-05-06 16:23:23 INFO  utilities.LogUtil - Clicked View More on CNG Cars
+2026-05-06 16:23:24 INFO  utilities.LogUtil - Filtering cars with rating > 4
+2026-05-06 16:23:24 INFO  utilities.LogUtil - Valid Car: Tata Punch | Rating: 4.6
+2026-05-06 16:23:24 INFO  utilities.LogUtil - Valid Car: Maruti Suzuki FRONX | Rating: 4.3
+2026-05-06 16:23:24 INFO  utilities.LogUtil - Valid Car: Tata Nexon | Rating: 4.5
+2026-05-06 16:23:24 INFO  utilities.LogUtil - Valid Car: Maruti Suzuki Ertiga | Rating: 4.1
+2026-05-06 16:23:25 INFO  utilities.LogUtil - Valid Car: Maruti Suzuki Swift | Rating: 4.2
+2026-05-06 16:23:25 INFO  utilities.LogUtil - Valid Car: Maruti Suzuki Brezza | Rating: 4.2
+2026-05-06 16:23:25 INFO  utilities.LogUtil - Valid Car: Maruti Suzuki Baleno | Rating: 4.2
+2026-05-06 16:23:25 INFO  utilities.LogUtil - Valid Car: Maruti Suzuki Dzire | Rating: 4.5
+2026-05-06 16:23:25 INFO  utilities.LogUtil - Valid Car: Hyundai Aura | Rating: 4.2
+2026-05-06 16:23:25 INFO  utilities.LogUtil - Valid Car: Toyota Urban Cruiser Hyryder | Rating: 4.4
+2026-05-06 16:23:25 INFO  utilities.LogUtil - Valid Car: Nissan Gravite | Rating: 4.3
+2026-05-06 16:23:26 INFO  utilities.LogUtil - Valid Car: Tata Tiago | Rating: 4.4
+2026-05-06 16:23:26 INFO  utilities.LogUtil - Car skipped, rating <= 4: Kia Carens | Rating: 3.8
+2026-05-06 16:23:26 INFO  utilities.LogUtil - Car skipped, rating <= 4: Hyundai Exter | Rating: 3.9
+2026-05-06 16:23:26 INFO  utilities.LogUtil - Valid Car: Maruti Suzuki Wagon R | Rating: 5.0
+2026-05-06 16:23:26 INFO  utilities.LogUtil - Valid Car: Maruti Suzuki Alto K10 | Rating: 4.6
+2026-05-06 16:23:26 INFO  utilities.LogUtil - Valid Car: Maruti Suzuki Victoris | Rating: 4.2
+2026-05-06 16:23:26 INFO  utilities.LogUtil - Valid Car: Tata Altroz | Rating: 4.4
+2026-05-06 16:23:28 INFO  utilities.LogUtil - Excel exported successfully for CNG cars with rating > 4
+2026-05-06 16:23:28 INFO  utilities.LogUtil - ===== Test Finished Successfully =====
+2026-05-06 16:23:28 INFO  utilities.LogUtil - Closing browser
+2026-05-06 16:24:45 INFO  utilities.LogUtil - Starting browser setup
+2026-05-06 16:24:48 INFO  utilities.LogUtil - Launching application URL
+2026-05-06 16:24:59 INFO  utilities.LogUtil - Collected 41 car names and 41 car prices
+2026-05-06 16:24:59 INFO  utilities.LogUtil - Closing browser
+2026-05-06 16:26:08 INFO  utilities.LogUtil - Starting browser setup
+2026-05-06 16:26:10 INFO  utilities.LogUtil - Launching application URL
+2026-05-06 16:26:20 INFO  utilities.LogUtil - Car in price range: Tata Punch - 5.65 Lakh
+2026-05-06 16:26:21 INFO  utilities.LogUtil - Car in price range: Maruti Suzuki FRONX - 6.85 Lakh
+2026-05-06 16:26:21 INFO  utilities.LogUtil - Car in price range: Tata Nexon - 7.37 Lakh
+2026-05-06 16:26:21 INFO  utilities.LogUtil - Car in price range: Maruti Suzuki Ertiga - 8.8 Lakh
+2026-05-06 16:26:21 INFO  utilities.LogUtil - Car in price range: Maruti Suzuki Swift - 5.79 Lakh
+2026-05-06 16:26:21 INFO  utilities.LogUtil - Car in price range: Maruti Suzuki Brezza - 8.26 Lakh
+2026-05-06 16:26:21 INFO  utilities.LogUtil - Car in price range: Maruti Suzuki Baleno - 5.99 Lakh
+2026-05-06 16:26:21 INFO  utilities.LogUtil - Car in price range: Maruti Suzuki Dzire - 6.26 Lakh
+2026-05-06 16:26:21 INFO  utilities.LogUtil - Car in price range: Hyundai Aura - 6.0 Lakh
+2026-05-06 16:26:21 INFO  utilities.LogUtil - Car in price range: Toyota Urban Cruiser Hyryder - 10.99 Lakh
+2026-05-06 16:26:22 INFO  utilities.LogUtil - Car in price range: Nissan Gravite - 5.65 Lakh
+2026-05-06 16:26:22 INFO  utilities.LogUtil - Car in price range: Kia Carens - 11.0 Lakh
+2026-05-06 16:26:22 INFO  utilities.LogUtil - Car in price range: Hyundai Exter - 5.8 Lakh
+2026-05-06 16:26:22 INFO  utilities.LogUtil - Car in price range: Maruti Suzuki Victoris - 10.5 Lakh
+2026-05-06 16:26:22 INFO  utilities.LogUtil - Car in price range: Tata Altroz - 6.3 Lakh
+2026-05-06 16:26:22 INFO  utilities.LogUtil - Car in price range: Nissan Magnite - 5.65 Lakh
+2026-05-06 16:26:24 INFO  utilities.LogUtil - Closing browser
+2026-05-06 16:26:41 INFO  utilities.LogUtil - Starting browser setup
+2026-05-06 16:26:44 INFO  utilities.LogUtil - Launching application URL
+2026-05-06 16:26:51 INFO  utilities.LogUtil - Collected 41 EMI values
+2026-05-06 16:26:51 INFO  utilities.LogUtil - Car EMI in range: ₹10929
+2026-05-06 16:26:51 INFO  utilities.LogUtil - Car EMI in range: ₹13249
+2026-05-06 16:26:51 INFO  utilities.LogUtil - Car EMI in range: ₹14257
+2026-05-06 16:26:51 INFO  utilities.LogUtil - Car EMI in range: ₹11199
+2026-05-06 16:26:51 INFO  utilities.LogUtil - Car EMI in range: ₹11585
+2026-05-06 16:26:51 INFO  utilities.LogUtil - Car EMI in range: ₹12102
+2026-05-06 16:26:51 INFO  utilities.LogUtil - Car EMI in range: ₹11607
+2026-05-06 16:26:51 INFO  utilities.LogUtil - Car EMI in range: ₹10930
+2026-05-06 16:26:51 INFO  utilities.LogUtil - Car EMI in range: ₹8898
+2026-05-06 16:26:51 INFO  utilities.LogUtil - Car EMI in range: ₹11218
+2026-05-06 16:26:51 INFO  utilities.LogUtil - Car EMI in range: ₹9651
+2026-05-06 16:26:51 INFO  utilities.LogUtil - Car EMI in range: ₹12187
+2026-05-06 16:26:51 INFO  utilities.LogUtil - Car EMI in range: ₹9653
+2026-05-06 16:26:51 INFO  utilities.LogUtil - Car EMI in range: ₹10930
+2026-05-06 16:26:52 INFO  utilities.LogUtil - Total cars with EMI between 8000 and 15000: 14
+2026-05-06 16:26:52 INFO  utilities.LogUtil - Closing browser
+2026-05-06 16:29:25 INFO  utilities.LogUtil - Starting browser setup
+2026-05-06 16:29:29 INFO  utilities.LogUtil - Launching application URL
+2026-05-06 16:29:37 INFO  utilities.LogUtil - Collected 41 car names and 41 car prices
+2026-05-06 16:29:37 INFO  utilities.LogUtil - Closing browser
