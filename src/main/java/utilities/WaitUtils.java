@@ -30,11 +30,6 @@ public class WaitUtils {
     public WebElement waitForClickable(WebElement element) {
         return wait.until(ExpectedConditions.elementToBeClickable(element));
     }
-    public WebElement waitForPresence(By locator) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
-        return wait.until(ExpectedConditions.presenceOfElementLocated(locator));
-    }
-
 
     public boolean waitForCondition(Function<WebDriver, Boolean> condition) {
         return wait.until(condition);

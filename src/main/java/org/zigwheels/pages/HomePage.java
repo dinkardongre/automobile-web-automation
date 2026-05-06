@@ -44,9 +44,6 @@ public class HomePage extends CommonCode {
     @FindBy(xpath = "//a[@title='View all CNG Cars']")
     private WebElement viewAllCngCars;
 
-    @FindBy(xpath = "//*[@id='carModels']/div/span")
-    private WebElement viewMore;
-
     @FindBy(xpath = "//a[text()='Electric Bikes']")
     private WebElement electricBikes;
 
@@ -59,10 +56,6 @@ public class HomePage extends CommonCode {
         super(driver);
         PageFactory.initElements(driver, this);
         this.wait = new WaitUtils(driver);
-    }
-
-    public WebElement getNewBikesMenus() {
-        return newBikesMenu;
     }
 
     public void openElectricCars() {

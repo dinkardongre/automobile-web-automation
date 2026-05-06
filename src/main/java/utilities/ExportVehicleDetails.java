@@ -94,7 +94,6 @@ public class ExportVehicleDetails {
         workbook.close();
     }
 
-
     private static final String FILE_PATH1 =
             System.getProperty("user.dir")
                     + "/src/test/resources/testData/TVSScooters.xlsx";
