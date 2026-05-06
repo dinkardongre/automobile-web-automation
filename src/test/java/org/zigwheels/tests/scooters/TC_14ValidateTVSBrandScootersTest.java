@@ -9,7 +9,6 @@ import org.zigwheels.pages.SearchScooters;
 import utilities.ExportVehicleDetails;
 import utilities.LogUtil;
 import utilities.ScreenshotUtil;
-
 import java.util.ArrayList;
 import java.util.List;
 
