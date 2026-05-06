@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="25" passed="25" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2026-05-05T09:31:01 IST" name="ZigWheels Automation Suite" finished-at="2026-05-05T09:37:04 IST" duration-ms="362496">
+    <groups>
+    </groups>
+    <test started-at="2026-05-05T09:31:01 IST" name="ZigWheels Tests" finished-at="2026-05-05T09:37:04 IST" duration-ms="362496">
+      <class name="org.zigwheels.tests.electriccars.TC_7ElectricCars_CoreContent">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:org.zigwheels.tests.electriccars.TC_7ElectricCars_CoreContent@c0c2f8d]" started-at="2026-05-05T09:33:17 IST" name="setUp" finished-at="2026-05-05T09:33:22 IST" duration-ms="5003" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifyElectricCarsCoreContent()[pri:0, instance:org.zigwheels.tests.electriccars.TC_7ElectricCars_CoreContent@c0c2f8d]" started-at="2026-05-05T09:33:22 IST" name="verifyElectricCarsCoreContent" finished-at="2026-05-05T09:33:24 IST" duration-ms="2834" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyElectricCarsCoreContent -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:org.zigwheels.tests.electriccars.TC_7ElectricCars_CoreContent@c0c2f8d]" started-at="2026-05-05T09:33:24 IST" name="tearDown" finished-at="2026-05-05T09:33:27 IST" duration-ms="2915" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- org.zigwheels.tests.electriccars.TC_7ElectricCars_CoreContent -->
+      <class name="org.zigwheels.tests.scooters.TC_15SearchTVSJupiterUsingDropdown">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:org.zigwheels.tests.scooters.TC_15SearchTVSJupiterUsingDropdown@610f7aa]" started-at="2026-05-05T09:36:33 IST" name="setUp" finished-at="2026-05-05T09:36:38 IST" duration-ms="4908" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="validateTVSJupiterSearch()[pri:0, instance:org.zigwheels.tests.scooters.TC_15SearchTVSJupiterUsingDropdown@610f7aa]" started-at="2026-05-05T09:36:38 IST" name="validateTVSJupiterSearch" finished-at="2026-05-05T09:36:42 IST" duration-ms="4149" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateTVSJupiterSearch -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:org.zigwheels.tests.scooters.TC_15SearchTVSJupiterUsingDropdown@610f7aa]" started-at="2026-05-05T09:36:42 IST" name="tearDown" finished-at="2026-05-05T09:36:45 IST" duration-ms="3298" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- org.zigwheels.tests.scooters.TC_15SearchTVSJupiterUsingDropdown -->
+      <class name="org.zigwheels.tests.upcomingBikes.TC_16GetUrl">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:org.zigwheels.tests.upcomingBikes.TC_16GetUrl@672872e1]" started-at="2026-05-05T09:31:35 IST" name="setUp" finished-at="2026-05-05T09:31:39 IST" duration-ms="4811" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifyUpcomingBikesFlow()[pri:0, instance:org.zigwheels.tests.upcomingBikes.TC_16GetUrl@672872e1]" started-at="2026-05-05T09:31:39 IST" name="verifyUpcomingBikesFlow" finished-at="2026-05-05T09:31:43 IST" duration-ms="3447" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyUpcomingBikesFlow -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:org.zigwheels.tests.upcomingBikes.TC_16GetUrl@672872e1]" started-at="2026-05-05T09:31:43 IST" name="tearDown" finished-at="2026-05-05T09:31:46 IST" duration-ms="3096" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- org.zigwheels.tests.upcomingBikes.TC_16GetUrl -->
+      <class name="org.zigwheels.tests.upcomingBikes.TC_20ElectricBikesUnder50K">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:org.zigwheels.tests.upcomingBikes.TC_20ElectricBikesUnder50K@1fb700ee]" started-at="2026-05-05T09:36:45 IST" name="setUp" finished-at="2026-05-05T09:36:48 IST" duration-ms="2733" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifyAllBikePricesAreUnder50K()[pri:0, instance:org.zigwheels.tests.upcomingBikes.TC_20ElectricBikesUnder50K@1fb700ee]" started-at="2026-05-05T09:36:48 IST" name="verifyAllBikePricesAreUnder50K" finished-at="2026-05-05T09:36:51 IST" duration-ms="2869" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyAllBikePricesAreUnder50K -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:org.zigwheels.tests.upcomingBikes.TC_20ElectricBikesUnder50K@1fb700ee]" started-at="2026-05-05T09:36:51 IST" name="tearDown" finished-at="2026-05-05T09:36:53 IST" duration-ms="1913" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- org.zigwheels.tests.upcomingBikes.TC_20ElectricBikesUnder50K -->
+      <class name="org.zigwheels.tests.cng.TC_3CngCarsEmiRangeTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:org.zigwheels.tests.cng.TC_3CngCarsEmiRangeTest@302552ec]" started-at="2026-05-05T09:33:05 IST" name="setUp" finished-at="2026-05-05T09:33:10 IST" duration-ms="4923" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifyEmiRange()[pri:0, instance:org.zigwheels.tests.cng.TC_3CngCarsEmiRangeTest@302552ec]" started-at="2026-05-05T09:33:10 IST" name="verifyEmiRange" finished-at="2026-05-05T09:33:14 IST" duration-ms="3411" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyEmiRange -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:org.zigwheels.tests.cng.TC_3CngCarsEmiRangeTest@302552ec]" started-at="2026-05-05T09:33:14 IST" name="tearDown" finished-at="2026-05-05T09:33:17 IST" duration-ms="2947" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- org.zigwheels.tests.cng.TC_3CngCarsEmiRangeTest -->
+      <class name="org.zigwheels.tests.scooters.TC_14ValidateTVSBrandScootersTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:org.zigwheels.tests.scooters.TC_14ValidateTVSBrandScootersTest@6e509ffa]" started-at="2026-05-05T09:35:34 IST" name="setUp" finished-at="2026-05-05T09:35:39 IST" duration-ms="4980" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="validateAndExportTVSScooters()[pri:0, instance:org.zigwheels.tests.scooters.TC_14ValidateTVSBrandScootersTest@6e509ffa]" started-at="2026-05-05T09:35:39 IST" name="validateAndExportTVSScooters" finished-at="2026-05-05T09:35:43 IST" duration-ms="4257" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateAndExportTVSScooters -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:org.zigwheels.tests.scooters.TC_14ValidateTVSBrandScootersTest@6e509ffa]" started-at="2026-05-05T09:35:43 IST" name="tearDown" finished-at="2026-05-05T09:35:46 IST" duration-ms="3021" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- org.zigwheels.tests.scooters.TC_14ValidateTVSBrandScootersTest -->
+      <class name="org.zigwheels.tests.upcomingBikes.TC_17BikesUnder5lkhs">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:org.zigwheels.tests.upcomingBikes.TC_17BikesUnder5lkhs@60015ef5]" started-at="2026-05-05T09:32:42 IST" name="setUp" finished-at="2026-05-05T09:32:45 IST" duration-ms="2841" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="upcomingBikesRange()[pri:0, instance:org.zigwheels.tests.upcomingBikes.TC_17BikesUnder5lkhs@60015ef5]" started-at="2026-05-05T09:32:45 IST" name="upcomingBikesRange" finished-at="2026-05-05T09:32:50 IST" duration-ms="5529" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- upcomingBikesRange -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:org.zigwheels.tests.upcomingBikes.TC_17BikesUnder5lkhs@60015ef5]" started-at="2026-05-05T09:32:50 IST" name="tearDown" finished-at="2026-05-05T09:32:53 IST" duration-ms="2712" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- org.zigwheels.tests.upcomingBikes.TC_17BikesUnder5lkhs -->
+      <class name="org.zigwheels.tests.usedcars.TC_24UsedCars_ValidateResetFilterTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:org.zigwheels.tests.usedcars.TC_24UsedCars_ValidateResetFilterTest@1f97cf0d]" started-at="2026-05-05T09:35:57 IST" name="setUp" finished-at="2026-05-05T09:36:02 IST" duration-ms="4731" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="validateResetFilter()[pri:0, instance:org.zigwheels.tests.usedcars.TC_24UsedCars_ValidateResetFilterTest@1f97cf0d]" started-at="2026-05-05T09:36:02 IST" name="validateResetFilter" finished-at="2026-05-05T09:36:07 IST" duration-ms="4906" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateResetFilter -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:org.zigwheels.tests.usedcars.TC_24UsedCars_ValidateResetFilterTest@1f97cf0d]" started-at="2026-05-05T09:36:07 IST" name="tearDown" finished-at="2026-05-05T09:36:10 IST" duration-ms="3100" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- org.zigwheels.tests.usedcars.TC_24UsedCars_ValidateResetFilterTest -->
+      <class name="org.zigwheels.tests.usedcars.TC_21UsedCars_ValidateChennaiLocation">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:org.zigwheels.tests.usedcars.TC_21UsedCars_ValidateChennaiLocation@61d6015a]" started-at="2026-05-05T09:31:46 IST" name="setUp" finished-at="2026-05-05T09:31:51 IST" duration-ms="5412" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="validateChennaiLocationSelected()[pri:0, instance:org.zigwheels.tests.usedcars.TC_21UsedCars_ValidateChennaiLocation@61d6015a]" started-at="2026-05-05T09:31:51 IST" name="validateChennaiLocationSelected" finished-at="2026-05-05T09:32:03 IST" duration-ms="11512" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateChennaiLocationSelected -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:org.zigwheels.tests.usedcars.TC_21UsedCars_ValidateChennaiLocation@61d6015a]" started-at="2026-05-05T09:32:03 IST" name="tearDown" finished-at="2026-05-05T09:32:06 IST" duration-ms="3064" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- org.zigwheels.tests.usedcars.TC_21UsedCars_ValidateChennaiLocation -->
+      <class name="org.zigwheels.tests.usedcars.TC_25UsedCars_ExtractPopularModels">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:org.zigwheels.tests.usedcars.TC_25UsedCars_ExtractPopularModels@10959ece]" started-at="2026-05-05T09:36:53 IST" name="setUp" finished-at="2026-05-05T09:36:58 IST" duration-ms="4917" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="extractAndStorePopularModels()[pri:0, instance:org.zigwheels.tests.usedcars.TC_25UsedCars_ExtractPopularModels@10959ece]" started-at="2026-05-05T09:36:58 IST" name="extractAndStorePopularModels" finished-at="2026-05-05T09:37:01 IST" duration-ms="3042" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- extractAndStorePopularModels -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:org.zigwheels.tests.usedcars.TC_25UsedCars_ExtractPopularModels@10959ece]" started-at="2026-05-05T09:37:01 IST" name="tearDown" finished-at="2026-05-05T09:37:04 IST" duration-ms="2884" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- org.zigwheels.tests.usedcars.TC_25UsedCars_ExtractPopularModels -->
+      <class name="org.zigwheels.tests.scooters.TC_12SequentialScootersNavigationTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:org.zigwheels.tests.scooters.TC_12SequentialScootersNavigationTest@4c309d4d]" started-at="2026-05-05T09:32:28 IST" name="setUp" finished-at="2026-05-05T09:32:33 IST" duration-ms="5020" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testSequentialNavigationScootersOptions()[pri:0, instance:org.zigwheels.tests.scooters.TC_12SequentialScootersNavigationTest@4c309d4d]" started-at="2026-05-05T09:32:33 IST" name="testSequentialNavigationScootersOptions" finished-at="2026-05-05T09:32:39 IST" duration-ms="5633" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSequentialNavigationScootersOptions -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:org.zigwheels.tests.scooters.TC_12SequentialScootersNavigationTest@4c309d4d]" started-at="2026-05-05T09:32:39 IST" name="tearDown" finished-at="2026-05-05T09:32:42 IST" duration-ms="3169" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- org.zigwheels.tests.scooters.TC_12SequentialScootersNavigationTest -->
+      <class name="org.zigwheels.tests.cng.TC_5CngCarRatingGreater4">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:org.zigwheels.tests.cng.TC_5CngCarRatingGreater4@510f3d34]" started-at="2026-05-05T09:36:10 IST" name="setUp" finished-at="2026-05-05T09:36:14 IST" duration-ms="4692" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifyCngCarsRatingGreaterThan4()[pri:0, instance:org.zigwheels.tests.cng.TC_5CngCarRatingGreater4@510f3d34]" started-at="2026-05-05T09:36:14 IST" name="verifyCngCarsRatingGreaterThan4" finished-at="2026-05-05T09:36:19 IST" duration-ms="4145" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyCngCarsRatingGreaterThan4 -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:org.zigwheels.tests.cng.TC_5CngCarRatingGreater4@510f3d34]" started-at="2026-05-05T09:36:19 IST" name="tearDown" finished-at="2026-05-05T09:36:21 IST" duration-ms="2885" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- org.zigwheels.tests.cng.TC_5CngCarRatingGreater4 -->
+      <class name="org.zigwheels.tests.cng.TC_1CngCarsNavigationTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:org.zigwheels.tests.cng.TC_1CngCarsNavigationTest@73a1e9a9]" started-at="2026-05-05T09:31:01 IST" name="setUp" finished-at="2026-05-05T09:31:08 IST" duration-ms="6166" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifyCngCarsNavigation()[pri:0, instance:org.zigwheels.tests.cng.TC_1CngCarsNavigationTest@73a1e9a9]" started-at="2026-05-05T09:31:08 IST" name="verifyCngCarsNavigation" finished-at="2026-05-05T09:31:11 IST" duration-ms="3492" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyCngCarsNavigation -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:org.zigwheels.tests.cng.TC_1CngCarsNavigationTest@73a1e9a9]" started-at="2026-05-05T09:31:11 IST" name="tearDown" finished-at="2026-05-05T09:31:14 IST" duration-ms="3140" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- org.zigwheels.tests.cng.TC_1CngCarsNavigationTest -->
+      <class name="org.zigwheels.tests.usedcars.TC_23UsedCars_ValidateSortDropdown">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:org.zigwheels.tests.usedcars.TC_23UsedCars_ValidateSortDropdown@366647c2]" started-at="2026-05-05T09:33:51 IST" name="setUp" finished-at="2026-05-05T09:33:56 IST" duration-ms="4893" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="validateSortDropdownLowToHighSelection()[pri:0, instance:org.zigwheels.tests.usedcars.TC_23UsedCars_ValidateSortDropdown@366647c2]" started-at="2026-05-05T09:33:56 IST" name="validateSortDropdownLowToHighSelection" finished-at="2026-05-05T09:33:59 IST" duration-ms="3751" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateSortDropdownLowToHighSelection -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:org.zigwheels.tests.usedcars.TC_23UsedCars_ValidateSortDropdown@366647c2]" started-at="2026-05-05T09:33:59 IST" name="tearDown" finished-at="2026-05-05T09:34:02 IST" duration-ms="2985" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- org.zigwheels.tests.usedcars.TC_23UsedCars_ValidateSortDropdown -->
+      <class name="org.zigwheels.tests.electriccars.TC_8ElectricCars_DuplicateNameValidation">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:org.zigwheels.tests.electriccars.TC_8ElectricCars_DuplicateNameValidation@4e50c791]" started-at="2026-05-05T09:35:15 IST" name="setUp" finished-at="2026-05-05T09:35:28 IST" duration-ms="12799" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifyNoDuplicateElectricCarNames()[pri:0, instance:org.zigwheels.tests.electriccars.TC_8ElectricCars_DuplicateNameValidation@4e50c791]" started-at="2026-05-05T09:35:28 IST" name="verifyNoDuplicateElectricCarNames" finished-at="2026-05-05T09:35:31 IST" duration-ms="2538" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyNoDuplicateElectricCarNames -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:org.zigwheels.tests.electriccars.TC_8ElectricCars_DuplicateNameValidation@4e50c791]" started-at="2026-05-05T09:35:31 IST" name="tearDown" finished-at="2026-05-05T09:35:34 IST" duration-ms="3023" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- org.zigwheels.tests.electriccars.TC_8ElectricCars_DuplicateNameValidation -->
+      <class name="org.zigwheels.tests.scooters.TC_13ValidateScootersUnder40000PriceFilter">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:org.zigwheels.tests.scooters.TC_13ValidateScootersUnder40000PriceFilter@2d2ffcb7]" started-at="2026-05-05T09:33:27 IST" name="setUp" finished-at="2026-05-05T09:33:32 IST" duration-ms="5066" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="validateScootersUnder40000PriceFilter()[pri:0, instance:org.zigwheels.tests.scooters.TC_13ValidateScootersUnder40000PriceFilter@2d2ffcb7]" started-at="2026-05-05T09:33:32 IST" name="validateScootersUnder40000PriceFilter" finished-at="2026-05-05T09:33:36 IST" duration-ms="3128" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateScootersUnder40000PriceFilter -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:org.zigwheels.tests.scooters.TC_13ValidateScootersUnder40000PriceFilter@2d2ffcb7]" started-at="2026-05-05T09:33:36 IST" name="tearDown" finished-at="2026-05-05T09:33:39 IST" duration-ms="2938" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- org.zigwheels.tests.scooters.TC_13ValidateScootersUnder40000PriceFilter -->
+      <class name="org.zigwheels.tests.upcomingBikes.TC_18HondaManufacturer">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:org.zigwheels.tests.upcomingBikes.TC_18HondaManufacturer@36b4fe2a]" started-at="2026-05-05T09:33:39 IST" name="setUp" finished-at="2026-05-05T09:33:43 IST" duration-ms="4954" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifyHondaUpcomingBikes()[pri:0, instance:org.zigwheels.tests.upcomingBikes.TC_18HondaManufacturer@36b4fe2a]" started-at="2026-05-05T09:33:43 IST" name="verifyHondaUpcomingBikes" finished-at="2026-05-05T09:33:48 IST" duration-ms="4481" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyHondaUpcomingBikes -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:org.zigwheels.tests.upcomingBikes.TC_18HondaManufacturer@36b4fe2a]" started-at="2026-05-05T09:33:48 IST" name="tearDown" finished-at="2026-05-05T09:33:51 IST" duration-ms="2814" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- org.zigwheels.tests.upcomingBikes.TC_18HondaManufacturer -->
+      <class name="org.zigwheels.tests.electriccars.TC_6ElectricCars_CategoryFlow">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:org.zigwheels.tests.electriccars.TC_6ElectricCars_CategoryFlow@6200f9cb]" started-at="2026-05-05T09:32:17 IST" name="setUp" finished-at="2026-05-05T09:32:22 IST" duration-ms="5175" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifyElectricCarsCategoryFlow()[pri:0, instance:org.zigwheels.tests.electriccars.TC_6ElectricCars_CategoryFlow@6200f9cb]" started-at="2026-05-05T09:32:22 IST" name="verifyElectricCarsCategoryFlow" finished-at="2026-05-05T09:32:25 IST" duration-ms="3078" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyElectricCarsCategoryFlow -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:org.zigwheels.tests.electriccars.TC_6ElectricCars_CategoryFlow@6200f9cb]" started-at="2026-05-05T09:32:25 IST" name="tearDown" finished-at="2026-05-05T09:32:28 IST" duration-ms="2840" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- org.zigwheels.tests.electriccars.TC_6ElectricCars_CategoryFlow -->
+      <class name="org.zigwheels.tests.electriccars.TC_9ElectricCars_PriceIntegrity">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:org.zigwheels.tests.electriccars.TC_9ElectricCars_PriceIntegrity@399c4be1]" started-at="2026-05-05T09:36:21 IST" name="setUp" finished-at="2026-05-05T09:36:26 IST" duration-ms="4997" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifyElectricCarsPriceIntegrity()[pri:0, instance:org.zigwheels.tests.electriccars.TC_9ElectricCars_PriceIntegrity@399c4be1]" started-at="2026-05-05T09:36:26 IST" name="verifyElectricCarsPriceIntegrity" finished-at="2026-05-05T09:36:30 IST" duration-ms="3611" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyElectricCarsPriceIntegrity -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:org.zigwheels.tests.electriccars.TC_9ElectricCars_PriceIntegrity@399c4be1]" started-at="2026-05-05T09:36:30 IST" name="tearDown" finished-at="2026-05-05T09:36:33 IST" duration-ms="2903" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- org.zigwheels.tests.electriccars.TC_9ElectricCars_PriceIntegrity -->
+      <class name="org.zigwheels.tests.upcomingBikes.TC_19ValidateEVBikes">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:org.zigwheels.tests.upcomingBikes.TC_19ValidateEVBikes@36d585c]" started-at="2026-05-05T09:35:46 IST" name="setUp" finished-at="2026-05-05T09:35:51 IST" duration-ms="4896" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="validateEVTagsOnElectricBikesPage()[pri:0, instance:org.zigwheels.tests.upcomingBikes.TC_19ValidateEVBikes@36d585c]" started-at="2026-05-05T09:35:51 IST" name="validateEVTagsOnElectricBikesPage" finished-at="2026-05-05T09:35:54 IST" duration-ms="3363" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateEVTagsOnElectricBikesPage -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:org.zigwheels.tests.upcomingBikes.TC_19ValidateEVBikes@36d585c]" started-at="2026-05-05T09:35:54 IST" name="tearDown" finished-at="2026-05-05T09:35:57 IST" duration-ms="2699" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- org.zigwheels.tests.upcomingBikes.TC_19ValidateEVBikes -->
+      <class name="org.zigwheels.tests.scooters.TC_11ScootersDropdownTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:org.zigwheels.tests.scooters.TC_11ScootersDropdownTest@2e377400]" started-at="2026-05-05T09:31:27 IST" name="setUp" finished-at="2026-05-05T09:31:32 IST" duration-ms="5162" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testDropdownVisibility()[pri:0, instance:org.zigwheels.tests.scooters.TC_11ScootersDropdownTest@2e377400]" started-at="2026-05-05T09:31:32 IST" name="testDropdownVisibility" finished-at="2026-05-05T09:31:32 IST" duration-ms="285" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDropdownVisibility -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:org.zigwheels.tests.scooters.TC_11ScootersDropdownTest@2e377400]" started-at="2026-05-05T09:31:32 IST" name="tearDown" finished-at="2026-05-05T09:31:35 IST" duration-ms="2321" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- org.zigwheels.tests.scooters.TC_11ScootersDropdownTest -->
+      <class name="org.zigwheels.tests.electriccars.TC_10ElectricCars_BudgetFilterValidation">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:org.zigwheels.tests.electriccars.TC_10ElectricCars_BudgetFilterValidation@7d20d0b]" started-at="2026-05-05T09:31:14 IST" name="setUp" finished-at="2026-05-05T09:31:19 IST" duration-ms="5047" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifyCarsUnder20Lakh()[pri:0, instance:org.zigwheels.tests.electriccars.TC_10ElectricCars_BudgetFilterValidation@7d20d0b]" started-at="2026-05-05T09:31:19 IST" name="verifyCarsUnder20Lakh" finished-at="2026-05-05T09:31:24 IST" duration-ms="4864" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyCarsUnder20Lakh -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:org.zigwheels.tests.electriccars.TC_10ElectricCars_BudgetFilterValidation@7d20d0b]" started-at="2026-05-05T09:31:24 IST" name="tearDown" finished-at="2026-05-05T09:31:27 IST" duration-ms="2620" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- org.zigwheels.tests.electriccars.TC_10ElectricCars_BudgetFilterValidation -->
+      <class name="org.zigwheels.tests.usedcars.TC_22UsedCars_ValidateScrollAndSearch">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:org.zigwheels.tests.usedcars.TC_22UsedCars_ValidateScrollAndSearch@e1de817]" started-at="2026-05-05T09:32:53 IST" name="setUp" finished-at="2026-05-05T09:32:58 IST" duration-ms="4931" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="validateSearchButtonAfterScroll()[pri:0, instance:org.zigwheels.tests.usedcars.TC_22UsedCars_ValidateScrollAndSearch@e1de817]" started-at="2026-05-05T09:32:58 IST" name="validateSearchButtonAfterScroll" finished-at="2026-05-05T09:33:02 IST" duration-ms="4439" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateSearchButtonAfterScroll -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:org.zigwheels.tests.usedcars.TC_22UsedCars_ValidateScrollAndSearch@e1de817]" started-at="2026-05-05T09:33:02 IST" name="tearDown" finished-at="2026-05-05T09:33:05 IST" duration-ms="3095" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- org.zigwheels.tests.usedcars.TC_22UsedCars_ValidateScrollAndSearch -->
+      <class name="org.zigwheels.tests.cng.TC_4CngCarLowCostCity">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:org.zigwheels.tests.cng.TC_4CngCarLowCostCity@2aceadd4]" started-at="2026-05-05T09:34:02 IST" name="setUp" finished-at="2026-05-05T09:34:05 IST" duration-ms="2678" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="LowCostCity()[pri:0, instance:org.zigwheels.tests.cng.TC_4CngCarLowCostCity@2aceadd4]" started-at="2026-05-05T09:34:05 IST" name="LowCostCity" finished-at="2026-05-05T09:35:11 IST" duration-ms="66197" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LowCostCity -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:org.zigwheels.tests.cng.TC_4CngCarLowCostCity@2aceadd4]" started-at="2026-05-05T09:35:11 IST" name="tearDown" finished-at="2026-05-05T09:35:15 IST" duration-ms="4101" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- org.zigwheels.tests.cng.TC_4CngCarLowCostCity -->
+      <class name="org.zigwheels.tests.cng.TC_2CngCarsPriceRangeTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:org.zigwheels.tests.cng.TC_2CngCarsPriceRangeTest@1a677343]" started-at="2026-05-05T09:32:06 IST" name="setUp" finished-at="2026-05-05T09:32:09 IST" duration-ms="2793" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifyCarsInPriceRange()[pri:0, instance:org.zigwheels.tests.cng.TC_2CngCarsPriceRangeTest@1a677343]" started-at="2026-05-05T09:32:09 IST" name="verifyCarsInPriceRange" finished-at="2026-05-05T09:32:14 IST" duration-ms="5694" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyCarsInPriceRange -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:org.zigwheels.tests.cng.TC_2CngCarsPriceRangeTest@1a677343]" started-at="2026-05-05T09:32:14 IST" name="tearDown" finished-at="2026-05-05T09:32:17 IST" duration-ms="2442" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- org.zigwheels.tests.cng.TC_2CngCarsPriceRangeTest -->
+    </test> <!-- ZigWheels Tests -->
+  </suite> <!-- ZigWheels Automation Suite -->
+</testng-results>
