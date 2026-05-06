@@ -11,9 +11,11 @@ public class ExtentReportManager implements ITestListener {
 
     @Override
     public void onStart(ITestContext context) {
+
         ExtentSparkReporter spark =
-                new ExtentSparkReporter(System.getProperty("user.dir")
-                        + "/reports/ExtentReport.html");
+                new ExtentSparkReporter(
+                        System.getProperty("user.dir") + "/reports/ExtentReport.html"
+                );
 
         spark.config().setDocumentTitle("ZigWheels Automation Report");
         spark.config().setReportName("Full Regression Suite");
@@ -22,8 +24,14 @@ public class ExtentReportManager implements ITestListener {
         extent = new ExtentReports();
         extent.attachReporter(spark);
 
-        extent.setSystemInfo("Project", "ZigWheels");
+        extent.setSystemInfo("Project", "ZigWheels Automation");
         extent.setSystemInfo("Environment", "QA");
+
+        extent.setSystemInfo("Team Member 1", "Syed Suhail Mohiddin");
+        extent.setSystemInfo("Team Member 2", "Dinkar Dongre");
+        extent.setSystemInfo("Team Member 3", "Prateek Mahajan");
+        extent.setSystemInfo("Team Member 4", "Priyadarshini Panda");
+        extent.setSystemInfo("Team Member 5", "Harshit Sinotiya");
     }
 
     @Override
@@ -37,7 +45,7 @@ public class ExtentReportManager implements ITestListener {
 
     @Override
     public void onTestSuccess(ITestResult result) {
-        extentTest.get().pass("Test passed");
+        extentTest.get().pass("Test Passed");
     }
 
     @Override
