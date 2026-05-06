@@ -1,19 +1,45 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-
-<suite name="ZigWheels Automation Suite">
+<suite name="ZigWheels Automation Suite"
+       parallel="false">
 
     <listeners>
         <listener class-name="listeners.TestListener"/>
         <listener class-name="utilities.ExtentReportManager"/>
     </listeners>
 
-    <test name="ZigWheels Tests">
-            <packages>
-                <package name="org.zigwheels.tests.cng"/>
-                <package name="org.zigwheels.tests.electriccars"/>
-                <package name="org.zigwheels.tests.scooters"/>
-                <package name="org.zigwheels.tests.upcomingBikes"/>
-                <package name="org.zigwheels.tests.usedcars"/>
-            </packages>
+    <!-- 1. CNG -->
+    <test name="01 - CNG Tests">
+        <packages>
+            <package name="org.zigwheels.tests.cng"/>
+        </packages>
     </test>
+
+    <!-- 2. Electric Cars -->
+    <test name="02 - Electric Cars Tests">
+        <packages>
+            <package name="org.zigwheels.tests.electriccars"/>
+        </packages>
+    </test>
+
+    <!-- 3. Scooters -->
+    <test name="03 - Scooters Tests">
+        <packages>
+            <package name="org.zigwheels.tests.scooters"/>
+        </packages>
+    </test>
+
+    <!-- 4. Upcoming Bikes -->
+    <test name="04 - Upcoming Bikes Tests">
+        <packages>
+            <package name="org.zigwheels.tests.upcomingBikes"/>
+        </packages>
+    </test>
+
+    <!-- 5. Used Cars -->
+    <test name="05 - Used Cars Tests">
+        <packages>
+            <package name="org.zigwheels.tests.usedcars"/>
+        </packages>
+    </test>
+
 </suite>
