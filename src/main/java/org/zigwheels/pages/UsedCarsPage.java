@@ -96,8 +96,8 @@ public class UsedCarsPage extends CommonCode {
             waitUtils.waitForCondition(driver ->
                     autoCompleteOptions.size() > 0
             );
-
             LogUtil.info("Autocomplete suggestions count: " + autoCompleteOptions.size());
+
             return autoCompleteOptions.size() > 0;
 
         } catch (Exception e) {
