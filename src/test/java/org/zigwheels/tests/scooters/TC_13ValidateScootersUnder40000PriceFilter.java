@@ -8,7 +8,6 @@ import org.zigwheels.pages.HomePage;
 import org.zigwheels.pages.SearchScooters;
 import utilities.LogUtil;
 import utilities.ScreenshotUtil;
-
 import java.io.IOException;
 import java.util.List;
 

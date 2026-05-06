@@ -8,7 +8,6 @@ import org.testng.annotations.Test;
 import org.zigwheels.pages.HomePage;
 import utilities.LogUtil;
 import utilities.ScreenshotUtil;
-
 import java.io.IOException;
 
 public class TC_12SequentialScootersNavigationTest extends BaseTest {

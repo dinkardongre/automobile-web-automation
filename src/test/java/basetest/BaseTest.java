@@ -24,7 +24,7 @@ public class BaseTest {
 
             case "chrome":
                 ChromeOptions chromeOptions = new ChromeOptions();
-//                chromeOptions.addArguments("--headless=new");
+               // chromeOptions.addArguments("--headless=new");
                 chromeOptions.addArguments("--disable-notifications");
                 chromeOptions.addArguments("--disable-popup-blocking");
                 chromeOptions.addArguments("--disable-infobars");

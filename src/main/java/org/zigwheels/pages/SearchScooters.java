@@ -49,7 +49,15 @@ public class SearchScooters extends CommonCode {
 
     public void clickScootersUnder40000Filter() {
         scrollIntoView(scrollToScootersByBudget);
-        waitUtils.waitForClickable(scootersUnder40000Filter).click();
+
+        if (!scootersUnder40000Filter.isDisplayed()) {
+            jsClick(scrollToScootersByBudget);
+        }
+
+        waitUtils.waitForVisibility(scootersUnder40000Filter);
+
+        jsClick(scootersUnder40000Filter);
+
     }
 
     public List<WebElement> getAllScooterPrices() {

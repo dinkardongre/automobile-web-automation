@@ -1,10 +1,8 @@
 package org.zigwheels.pages;
-
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.CommonCode;
-
 import java.util.List;
 
 public class CngCarsPage extends CommonCode {
@@ -14,27 +12,25 @@ public class CngCarsPage extends CommonCode {
         PageFactory.initElements(driver, this);
     }
 
-    @FindBy(xpath = "//*[@id='carModels']/div/span")
+    @FindBy(xpath = "//ul[@id='carModels']/div/span")
     private WebElement viewMore;
 
-    @FindBy(xpath = "//*[@id='modelList']/li/div/div[2]/div[1]")
+    @FindBy(xpath = "//a[@data-track-label='-model-name']")
     private List<WebElement> carNames;
 
-    @FindBy(xpath = "//*[@id='modelList']/li/div/div/span[1]")
+    @FindBy(xpath = "//span[contains(@class,'b fnt-black fnt-14 fl')]")
     private List<WebElement> carPrices;
 
     @FindBy(xpath = "//span[contains(@class,'clr-bl fr')]")
     private List<WebElement> emiValues;
 
-    @FindBy(xpath = "//*[@id='modelList']/li/div/div/a")
+    @FindBy(xpath = "//ul[@id='modelList']/li/div/div/a")
     private List<WebElement> carLinks;
 
     @FindBy(xpath = "//table[contains(@class,'new-price-container-rhs')]//tbody/tr")
     private List<WebElement> rhsPriceRows;
 
-
-
-    @FindBy(xpath = "//ul[@id='modelList']/li/div/a/div[1]")
+    @FindBy(xpath = "//div[contains(@class,'r-w fnt-12 rel i-b rt-lg')]")
     private List<WebElement> carRatings;
 
     public List<WebElement> getCarRatings() {
@@ -43,7 +39,6 @@ public class CngCarsPage extends CommonCode {
         }
         return carRatings;
     }
-
 
     public void clickViewMore() {
         try {
