@@ -103,7 +103,6 @@ public class ExportVehicleDetails {
         Workbook workbook = new XSSFWorkbook();
         Sheet sheet = workbook.createSheet("TVS Scooters");
 
-        // Header
         Row header = sheet.createRow(0);
         header.createCell(0).setCellValue("Scooter Name");
 
