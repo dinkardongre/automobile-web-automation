@@ -7,10 +7,10 @@ import org.testng.*;
 public class ExtentReportManager implements ITestListener {
 
     private static ExtentReports extent;
-    private static ThreadLocal<ExtentTest> parentTest = new ThreadLocal<>();
-    private static ThreadLocal<ExtentTest> childTest = new ThreadLocal<>();
+    private static ExtentTest test;
 
-    private synchronized ExtentReports getExtentInstance() {
+    @Override
+    public void onStart(ITestContext context) {
 
         if (extent == null) {
 
@@ -19,61 +19,45 @@ public class ExtentReportManager implements ITestListener {
                             System.getProperty("user.dir") + "/reports/ExtentReport.html"
                     );
 
-            spark.config().setDocumentTitle("ZigWheels Automation Report");
-            spark.config().setReportName("Full Regression Suite");
+            spark.config().setDocumentTitle("ZigWheels Report");
+            spark.config().setReportName("Automation Execution");
             spark.config().setTheme(Theme.STANDARD);
 
             extent = new ExtentReports();
             extent.attachReporter(spark);
 
-            extent.setSystemInfo("Project", "ZigWheels Automation");
+            extent.setSystemInfo("Project", "ZigWheels");
             extent.setSystemInfo("Environment", "QA");
-            extent.setSystemInfo("Execution Type", "Regression Suite");
-
             extent.setSystemInfo("Team",
                     "Syed Suhail Mohiddin, Dinkar Dongre, Prateek Mahajan, Priyadarshini Panda, Harshit Sinotiya");
         }
-
-        return extent;
-    }
-
-    @Override
-    public void onStart(ITestContext context) {
-
-        ExtentReports ext = getExtentInstance();
-
-        // ✅ Create Parent Node (Module Level)
-        ExtentTest parent = ext.createTest(context.getName());
-
-        parentTest.set(parent);
     }
 
     @Override
     public void onTestStart(ITestResult result) {
-
-        ExtentTest child = parentTest.get()
-                .createNode(result.getMethod().getMethodName());
-
-        childTest.set(child);
+        test = extent.createTest(
+                result.getTestClass().getName() + " :: " +
+                        result.getMethod().getMethodName()
+        );
     }
 
     @Override
     public void onTestSuccess(ITestResult result) {
-        childTest.get().pass("Test Passed");
+        test.pass("Test Passed");
     }
 
     @Override
     public void onTestFailure(ITestResult result) {
-        childTest.get().fail(result.getThrowable());
+        test.fail(result.getThrowable());
     }
 
     @Override
     public void onTestSkipped(ITestResult result) {
-        childTest.get().skip("Test Skipped");
+        test.skip("Test Skipped");
     }
 
     @Override
     public void onFinish(ITestContext context) {
-        getExtentInstance().flush();
+        extent.flush();
     }
 }
